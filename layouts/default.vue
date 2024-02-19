@@ -10,4 +10,10 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+body {
+  font-family: Arial, sans-serif;
+ 
+ 
+}
+</style>
