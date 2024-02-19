@@ -8,7 +8,7 @@
         <p>Our team members have worked on projects across the nation and are committed to delivering<br>the highest level of service and quality</p>
       </div>
       <div class="tabs">
-        <button class="button" @click="activeTab = 'management'" :class="{ active: activeTab === 'management' }">Management</button>
+        <button class="button" @click="activateTab('management')" :class="{ active: activeTab === 'management', focus: activeTab === 'management' }">Management</button>
         <button class="button" @click="activeTab = 'engineering'" :class="{ active: activeTab === 'engineering' }">Engineering</button>
         <button class="button" @click="activeTab = 'admin'" :class="{ active: activeTab === 'admin' }">Admin</button>
         <button class="button" @click="activeTab = 'it'" :class="{ active: activeTab === 'it' }">Information Technology</button>
@@ -54,10 +54,20 @@ const activeComponent = computed(() => {
       return Management
   }
 })
+
+const activateTab = (tab) => {
+  activeTab.value = tab
+}
+
 </script>
 
 <style lang="scss" scoped>
-
+.button.focus {
+  color: #205fad;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+}
 .button:focus {
   color: #205fad;
   text-decoration: underline;
