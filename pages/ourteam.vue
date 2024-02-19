@@ -2,7 +2,7 @@
   <div>
     <div class="banner">
       <NuxtImg class="img" src="/hero.jpg" height="467px" />
-      <NuxtImg class="rectangle" src="/rectangle.png" />
+      <NuxtImg class="rectangle" src="/rectangle.png"  width="157px" height="247px"/>
       <div class="hero-div">
         <h1>Our team</h1>
         <p>Our team members have worked on projects across the nation and are committed to delivering<br>the highest level of service and quality</p>
