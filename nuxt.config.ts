@@ -2,12 +2,9 @@ import { defineNuxtConfig } from "nuxt/config";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules:["@nuxtjs/tailwindcss",'nuxt-icon'], 
+  modules:["@nuxtjs/tailwindcss",'nuxt-icon', '@nuxt/image',], 
   devtools: { enabled: true },
-  modules: [
-    '@nuxt/image',
-  ],
-  image: {
-    quality: 100,
-  }
+  // image: {
+  //   quality: 100,
+  // }
 });
