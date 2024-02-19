@@ -23,11 +23,21 @@ const toggleDropdown2 = () => {
       <nav class="nav-links">
         <button class="button" @click="toggleDropdown1">
           <NuxtLink>Who we are</NuxtLink>
-          <NuxtImg v-bind:src="NuxtImgSrc1" alt="arrow" height="24" width="24" />
+          <NuxtImg
+            v-bind:src="NuxtImgSrc1"
+            alt="arrow"
+            height="24"
+            width="24"
+          />
         </button>
-        <button class="button"  @click="toggleDropdown2">
+        <button class="button" @click="toggleDropdown2">
           <NuxtLink>What we do</NuxtLink>
-          <NuxtImg v-bind:src="NuxtImgSrc2" alt="arrow" height="24" width="24" />
+          <NuxtImg
+            v-bind:src="NuxtImgSrc2"
+            alt="arrow"
+            height="24"
+            width="24"
+          />
         </button>
         <button class="button"><NuxtLink class="">Projects</NuxtLink></button>
         <button class="button">
@@ -37,7 +47,7 @@ const toggleDropdown2 = () => {
     </header>
     <div class="input-logo">
       <div class="input">
-        <input class="input-tag" /><NuxtImg
+        <input class="input-tag focus-visible:ring-0 focus-visible:ring-offset-0" /><NuxtImg
           src="/search.png"
           width="24"
           height="24"
@@ -47,15 +57,31 @@ const toggleDropdown2 = () => {
         <NuxtLink
           ><NuxtImg src="Facebook.png" alt="facebook" height="24" width="24"
         /></NuxtLink>
-        <NuxtLink><NuxtImg src="Linkedin.png" alt="facebook" height="24" width="24"/></NuxtLink>
+        <NuxtLink
+          ><NuxtImg src="Linkedin.png" alt="facebook" height="24" width="24"
+        /></NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.focus-visible\:ring-0:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-visible\:ring-offset-0:focus-visible {
+  --tw-ring-offset-width: 0px;
+}
+
 .input-tag {
   border: none;
+  outline: none;
 }
 
 .logo {
@@ -92,7 +118,6 @@ const toggleDropdown2 = () => {
 .nav-links {
   display: flex;
   gap: 1rem;
-  
 }
 
 .input {
