@@ -1,12 +1,17 @@
 <script setup>
 import { ref } from "vue";
 
-const NuxtImgSrc = ref("/down.png");
-const isDropdownOpen = ref(false);
-
-const toggleDropdown = () => {
-  isDropdownOpen.value = !isDropdownOpen.value;
-  NuxtImgSrc.value = isDropdownOpen.value ? "/down.png" : "/up.png";
+const NuxtImgSrc1 = ref("/down.png");
+const NuxtImgSrc2 = ref("/down.png");
+const isDropdownOpen1 = ref(false);
+const isDropdownOpen2 = ref(false);
+const toggleDropdown1 = () => {
+  isDropdownOpen1.value = !isDropdownOpen1.value;
+  NuxtImgSrc1.value = isDropdownOpen1.value ? "/down.png" : "/up.png";
+};
+const toggleDropdown2 = () => {
+  isDropdownOpen2.value = !isDropdownOpen2.value;
+  NuxtImgSrc2.value = isDropdownOpen2.value ? "/down.png" : "/up.png";
 };
 </script>
 
@@ -16,13 +21,13 @@ const toggleDropdown = () => {
 
     <header>
       <nav class="nav-links">
-        <button class="button" @click="toggleDropdown">
+        <button class="button" @click="toggleDropdown1">
           <NuxtLink>Who we are</NuxtLink>
-          <NuxtImg v-bind:src="NuxtImgSrc" alt="arrow" height="24" width="24" />
+          <NuxtImg v-bind:src="NuxtImgSrc1" alt="arrow" height="24" width="24" />
         </button>
-        <button class="button">
+        <button class="button"  @click="toggleDropdown2">
           <NuxtLink>What we do</NuxtLink>
-          <NuxtImg v-bind:src="NuxtImgSrc" alt="arrow" height="24" width="24" />
+          <NuxtImg v-bind:src="NuxtImgSrc2" alt="arrow" height="24" width="24" />
         </button>
         <button class="button"><NuxtLink class="">Projects</NuxtLink></button>
         <button class="button">
@@ -70,6 +75,7 @@ const toggleDropdown = () => {
   gap: 0.5rem;
   align-items: center;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .nuxtlink {
@@ -86,6 +92,7 @@ const toggleDropdown = () => {
 .nav-links {
   display: flex;
   gap: 1rem;
+  
 }
 
 .input {
