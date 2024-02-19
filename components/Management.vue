@@ -61,10 +61,13 @@ const mappedArray = computed(() => {
 
 <style lang="scss" scoped>
 .text {
-    text-align: center;
-    padding-bottom: 1rem;
-    padding-top: 0.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
 
+.text p {
+  margin-top: -0.9rem;
 }
 
 .management {

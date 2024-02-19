@@ -1,16 +1,21 @@
 <template>
   <div>
     <div class="banner">
-      <NuxtImg class="img" src="/hero.png" />
+      <NuxtImg class="img" src="/hero.jpg" height="467px" />
+      <NuxtImg class="rectangle" src="/rectangle.png" />
+      <div class="hero-div">
+        <h1>Our team</h1>
+        <p>Our team members have worked on projects across the nation and are committed to delivering<br>the highest level of service and quality</p>
+      </div>
       <div class="tabs">
-        <button class="button">Management</button>
-        <button class="button">Engineering</button>
-        <button class="button">Admin</button>
-        <button class="button">Information Technology</button>
-        <button class="button">Contractors</button>
+        <button class="button" @click="activeTab = 'management'" :class="{ active: activeTab === 'management' }">Management</button>
+        <button class="button" @click="activeTab = 'engineering'" :class="{ active: activeTab === 'engineering' }">Engineering</button>
+        <button class="button" @click="activeTab = 'admin'" :class="{ active: activeTab === 'admin' }">Admin</button>
+        <button class="button" @click="activeTab = 'it'" :class="{ active: activeTab === 'it' }">Information Technology</button>
+        <button class="button" @click="activeTab = 'contractors'" :class="{ active: activeTab === 'contractors' }">Contractors</button>
       </div>
     </div>
-    <Management />
+    <component :is="activeComponent" />
     <div class="projects">
       <h2 class="convinced">Convinced yet? Check out projects we have done.</h2>
       <div class="convinced">
@@ -25,11 +30,43 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Management from '@/components/Management.vue'
+import Engineering from '@/components/Engineering.vue'
+import Admin from '@/components/Admin.vue'
+import InformationTechnology from '@/components/InfoTech.vue'
+import Contractors from '@/components/Contractors.vue'
+import { ref, computed } from 'vue'
+
+const activeTab = ref("management")
+
+const activeComponent = computed(() => {
+  switch (activeTab.value) {
+    case 'engineering':
+      return Engineering
+    case 'admin':
+      return Admin
+    case 'it':
+      return InformationTechnology
+    case 'contractors':
+      return Contractors
+    default:
+      return Management
+  }
+})
+</script>
 
 <style lang="scss" scoped>
+
+.button:focus {
+  color: #205fad;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+}
+
 .project-button {
-  background-color: #205FAD;
+  background-color: #205fad;
   padding: 0.8rem;
   border-radius: 0.7rem;
   color: white;
@@ -62,17 +99,40 @@
   font-weight: 900;
 }
 
-.button:focus {
-  color: #205fad;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-thickness: 4px;
-}
+
 .banner {
   background-color: #f1f1f1;
+  position: relative;
 }
 
 .img {
   width: 100%;
+  filter: brightness(25%);
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  top: 43%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-div {
+  color: white;
+  position: absolute;
+  top: 44%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-div h1{
+  font-weight: 900;
+  font-size: 3.3rem;
+}
+
+.hero-div p{
+  margin-top: -2rem;
+  font-size: 1.2rem;
 }
 </style>
