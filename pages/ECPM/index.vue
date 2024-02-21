@@ -71,6 +71,7 @@ const convince = {
 
 <template>
   <MultiPage
+    Hero.title="Power Ditribution"
     :Heads="Heads"
     About="We are committed to providing innovative solutions and exceptional
         service to our clients in the oil and gas industry. With decades of
