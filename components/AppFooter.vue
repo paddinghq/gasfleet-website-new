@@ -75,7 +75,7 @@
 
 <script setup></script>
 
-<style lang="scss" scoped>
+<style scoped>
 .link-headings h3 {
 font-weight: 900;
 }

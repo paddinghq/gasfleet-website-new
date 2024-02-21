@@ -65,7 +65,7 @@ const toggleDropdown2 = () => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .focus-visible\:ring-0:focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
     var(--tw-ring-offset-width) var(--tw-ring-offset-color);
