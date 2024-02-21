@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <div class="relative min-h-screen">
+  <div class="relative min-h-screen">
     <img src="/image/hero-image.png" alt="hero" class="object-cover h-full w-full absolute insert-0"/>
     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
     <div class="relative h-full container mx-auto">
@@ -109,7 +108,6 @@
       <img src="/image/greenville.png" alt="">
       <img src="/image/chcg.png" alt="">
     </div>
-  </div>
   </div>
 </template>
 

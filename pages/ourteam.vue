@@ -1,33 +1,3 @@
-<script setup>
-import Management from '@/components/Management.vue'
-import Engineering from '@/components/Engineering.vue'
-import Admin from '@/components/Admin.vue'
-import InformationTechnology from '@/components/InfoTech.vue'
-import Contractors from '@/components/Contractors.vue'
-import { ref, computed } from 'vue'
-
-const activeTab = ref("management")
-
-const activeComponent = computed(() => {
-  switch (activeTab.value) {
-    case 'engineering':
-      return Engineering
-    case 'admin':
-      return Admin
-    case 'it':
-      return InformationTechnology
-    case 'contractors':
-      return Contractors
-    default:
-      return Management
-  }
-})
-
-const activateTab = (tab) => {
-  activeTab.value = tab
-}
-</script>
-
 <template>
   <div>
     <div class="banner">
@@ -59,6 +29,37 @@ const activateTab = (tab) => {
     </div>
   </div>
 </template>
+
+<script setup>
+import Management from '@/components/Management.vue'
+import Engineering from '@/components/Engineering.vue'
+import Admin from '@/components/Admin.vue'
+import InformationTechnology from '@/components/InfoTech.vue'
+import Contractors from '@/components/Contractors.vue'
+import { ref, computed } from 'vue'
+
+const activeTab = ref("management")
+
+const activeComponent = computed(() => {
+  switch (activeTab.value) {
+    case 'engineering':
+      return Engineering
+    case 'admin':
+      return Admin
+    case 'it':
+      return InformationTechnology
+    case 'contractors':
+      return Contractors
+    default:
+      return Management
+  }
+})
+
+const activateTab = (tab) => {
+  activeTab.value = tab
+}
+
+</script>
 
 <style lang="scss" scoped>
 .button.focus {
