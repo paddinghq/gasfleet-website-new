@@ -59,7 +59,7 @@ const mappedArray = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .text {
   text-align: center;
   padding-bottom: 1rem;
