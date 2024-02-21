@@ -60,7 +60,7 @@ const activateTab = (tab) => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .button.focus {
   color: #205fad;
   text-decoration: underline;
