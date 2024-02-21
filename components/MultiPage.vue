@@ -4,17 +4,13 @@ import { ref } from "vue";
 const props = defineProps({
   Heads: Array,
   About: String,
+  MissionSection: Array,
   OtherServiceHeader: String,
   OtherServices: Array,
   ConvinceTitle: String,
   ConvinceText: String,
   ConvinceBtn: String,
 });
-
-const ImgSrc1 = ref("/image/eng-img.png");
-const ImgSrc2 = ref("/image/procurement-img.png");
-const ImgSrc3 = ref("/image/construction-img.png");
-const ImgSrc4 = ref("/image/management-img.png");
 </script>
 
 <template>
@@ -30,89 +26,18 @@ const ImgSrc4 = ref("/image/management-img.png");
     </div>
 
     <div class="container mx-auto flex flex-col gap-16">
-      <div class="flex justify-between items-center">
+      <div v-for="mission in MissionSection" :key="mission.id" class="flex justify-between items-center" :class="mission.id === 2 || mission.id === 4 ? 'flex-row-reverse' : 'flex-row'">
         <div class="w-1/2">
           <NuxtImg
-            :src="ImgSrc1"
+            :src="mission.img"
             alt="eng-img"
             height="340"
             width="548"
           />
         </div>
         <div class="w-1/2">
-          <h3 class="font-bold text-4xl text-sky-700">Engineering</h3>
-          <p class="mt-4 w-10/12">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse,
-            maiores. Facere eum praesentium numquam debitis. Explicabo error
-            dolores, ad vero earum modi ipsam nobis illum ea incidunt quae ipsum
-            magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Magni veniam nemo dolores delectus vero,
-          </p>
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center">
-        <div class="w-1/2">
-          <h3 class="font-bold text-4xl text-sky-700">Procurement</h3>
-          <p class="mt-4 w-10/12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            molestias alias dolore ipsa eaque nam voluptate veniam nemo tenetur
-            quam asperiores ea, aut ratione repellat repudiandae vitae
-            consectetur quod debitis? soluta distinctio minima debitis minus eum
-            omnis suscipit adipisci architecto ipsa sapiente atque laboriosam ad
-            magnam?
-          </p>
-        </div>
-        <div class="w-1/2">
-          <NuxtImg
-            :src="ImgSrc2"
-            alt="eng-img"
-            height="340"
-            width="548"
-          />
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center">
-        <div class="w-1/2">
-          <NuxtImg
-            :src="ImgSrc3"
-            alt="eng-img"
-            height="340"
-            width="548"
-          />
-        </div>
-        <div class="w-1/2">
-          <h3 class="font-bold text-4xl text-sky-700">Construction</h3>
-          <p class="mt-4 w-10/12">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse,
-            maiores. Facere eum praesentium numquam debitis. Explicabo error
-            dolores, ad vero earum modi ipsam nobis illum ea incidunt quae ipsum
-            magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Magni veniam nemo dolores delectus vero,
-          </p>
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center">
-        <div class="w-1/2">
-          <h3 class="font-bold text-4xl text-sky-700">Management</h3>
-          <p class="mt-4 w-10/12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-            molestias alias dolore ipsa eaque nam voluptate veniam nemo tenetur
-            quam asperiores ea, aut ratione repellat repudiandae vitae
-            consectetur quod debitis? soluta distinctio minima debitis minus eum
-            omnis suscipit adipisci architecto ipsa sapiente atque laboriosam ad
-            magnam?
-          </p>
-        </div>
-        <div class="w-1/2">
-          <NuxtImg
-            :src="ImgSrc4"
-            alt="eng-img"
-            height="340"
-            width="548"
-          />
+          <h3 class="font-bold text-4xl text-sky-700">{{ mission.title }}</h3>
+          <p class="mt-4 w-10/12">{{ mission.text }}</p>
         </div>
       </div>
     </div>
@@ -144,6 +69,3 @@ const ImgSrc4 = ref("/image/management-img.png");
     </div>
   </div>
 </template>
-
-<style>
-</style>
