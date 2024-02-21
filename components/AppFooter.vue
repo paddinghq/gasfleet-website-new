@@ -3,7 +3,7 @@
     <footer class="footer">
       <div class="top">
         <div class="left">
-          <img src="/colored.png" alt="logo" class="img" />
+          <NuxtImg src="/colored.png" alt="logo" class="NuxtImg" />
           <p>
             We are committed to providing innovative<br />
             solutions and exceptional service to our clients<br />
@@ -12,14 +12,14 @@
           <div class="icons">
             <NuxtLink
               ><NuxtImg
-                src="Facebookwhite.png"
+                src="/Facebookwhite.png"
                 alt="facebook"
                 height="24"
                 width="24"
             /></NuxtLink>
             <NuxtLink
               ><NuxtImg
-                src="Linkedinwhite.png"
+                src="/Linkedinwhite.png"
                 alt="facebook"
                 height="24"
                 width="24"
@@ -77,13 +77,13 @@
 
 <style scoped>
 .link-headings h3 {
-font-weight: 900;
+  font-weight: 900;
 }
 .left p {
   font-size: 1.3rem;
 }
 
-.img {
+.NuxtImg {
   margin-top: 1.2rem;
 }
 
