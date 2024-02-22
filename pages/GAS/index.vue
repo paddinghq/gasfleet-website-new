@@ -2,6 +2,14 @@
 import { ref } from "vue";
 import MultiPage from "../../components/MultiPage.vue";
 
+// const ImgSrc = ref("/image/epm-image.png");
+
+// const hero = ref({
+//     img:ImgSrc, 
+//     title: "ecpm",
+//     text: "natural gas distribution"
+// })
+
 const Heads = [
   "Natural Gas Distribution",
   "Power Distribution",
@@ -84,20 +92,19 @@ const convince = {
       <div
         class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
       >
-        <h1 class="font-bold mt-5 text-5xl uppercase">EPCM</h1>
+        <h1 class="font-bold mt-5 text-5xl uppercase">natural gas distribution</h1>
         <p class="text-[1.2rem]">
-          We utilize the latest technology & software to develop effective and cost effective solution from <br />
-           drilling platform to pipeline system & more.
+          Given our strategic mandate of diversifying our business model towards becoming an integrated <br />
+          value chain player, we are making significant in-roads into the natural gas value chain.
         </p>
       </div>
-    </div>
+  </div>
   <MultiPage
     :Heads="Heads"
-    About="We are committed to providing innovative solutions and exceptional
-        service to our clients in the oil and gas industry. With decades of
-        experience, our team of experts has a deep understanding of the industry
-        and the challenges our clients face. We work closely with our clients to
-        develop customized solutions that meet their unique needs and goals."
+    About="We are currently pioneering the development of Nigeria's foremost private
+            sector-led Natural Gas to Industrialbase mode. This we believe will set 
+            us at the forefront of becoming one of the
+            key player in Gas distribution in Nigeria."
     :MissionSection="missions"
     OtherServiceHeader="Other Services"
     :OtherServices="OtherServices"

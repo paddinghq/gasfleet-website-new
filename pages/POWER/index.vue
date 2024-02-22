@@ -84,20 +84,17 @@ const convince = {
       <div
         class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
       >
-        <h1 class="font-bold mt-5 text-5xl uppercase">EPCM</h1>
+        <h1 class="font-bold mt-5 text-5xl uppercase">power distribution</h1>
         <p class="text-[1.2rem]">
-          We utilize the latest technology & software to develop effective and cost effective solution from <br />
-           drilling platform to pipeline system & more.
+         Accessibility, affordability and availability of uninterrupted power supply is one of the biggest  <br />
+         monster confronting Nigerians and Nigeria as a whole.
         </p>
       </div>
-    </div>
+  </div>
   <MultiPage
     :Heads="Heads"
-    About="We are committed to providing innovative solutions and exceptional
-        service to our clients in the oil and gas industry. With decades of
-        experience, our team of experts has a deep understanding of the industry
-        and the challenges our clients face. We work closely with our clients to
-        develop customized solutions that meet their unique needs and goals."
+    About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as 
+            a value added services to our customers through the provision embedded and captive power solutions to stranded customers ."
     :MissionSection="missions"
     OtherServiceHeader="Other Services"
     :OtherServices="OtherServices"

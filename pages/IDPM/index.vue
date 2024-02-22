@@ -77,27 +77,26 @@ const convince = {
         src="/image/epm-image.png"
       />
       <NuxtImg
-        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
+        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[300px]"
         src="/rectangle.png"
         alt="rectangle"
       />
       <div
-        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
+        class="text-white absolute top-[44%] left-[41%] transform -translate-x-1/2 -translate-y-1/2"
       >
-        <h1 class="font-bold mt-5 text-5xl uppercase">EPCM</h1>
+        <h1 class="font-bold pt-10 text-5xl capitalize">infrastructure development & project management</h1>
         <p class="text-[1.2rem]">
-          We utilize the latest technology & software to develop effective and cost effective solution from <br />
-           drilling platform to pipeline system & more.
+          We understand that the presence of Gas & Power infrastructure support the development of <br/>
+          industial hubs to enable delivery of cleaner, cheaper and more environmentally friendly fuel <br />to the market.
         </p>
       </div>
-    </div>
+  </div>
+
   <MultiPage
     :Heads="Heads"
-    About="We are committed to providing innovative solutions and exceptional
-        service to our clients in the oil and gas industry. With decades of
-        experience, our team of experts has a deep understanding of the industry
-        and the challenges our clients face. We work closely with our clients to
-        develop customized solutions that meet their unique needs and goals."
+    About="We are currently pioneering the development of Nigeria's foremost private
+            sector-led Natural Gas to Industrialbase mode. This we believe will set us 
+            at the forefront of becoming one of the key player in Gas distribution in Nigeria."
     :MissionSection="missions"
     OtherServiceHeader="Other Services"
     :OtherServices="OtherServices"

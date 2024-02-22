@@ -12,7 +12,29 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="">
+    <!-- <div class="relative bg-[#f1f1f1]">
+      <NuxtImg
+        class="w-full filter brightness-[0.3] relative h-[467px]"
+        alt="ourteam-image"
+        :src="Hero.img"
+      />
+      <NuxtImg
+        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
+        src="/rectangle.png"
+        alt="rectangle"
+      />
+      <div
+        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <h1 class="font-bold mt-5 text-5xl uppercase">{{HeroHeader}}</h1>
+        <h1 class="mt-4 text-[1.2rem]">
+          {{HeroText}}
+        </h1>
+      </div>
+    </div> -->
+    
+
     <div class="bg-gray-200">
       <ul class="flex justify-between max-w-4xl py-8 mx-auto">
         <li class="font-bold text-xl" v-for="Head in Heads" :key="Head">{{ Head }}</li>
