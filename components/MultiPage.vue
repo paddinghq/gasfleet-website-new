@@ -1,6 +1,5 @@
 <script setup>
 const props = defineProps({
-  Hero: Array,
   Heads: Array,
   About: String,
   MissionSection: Array,
@@ -14,20 +13,27 @@ const props = defineProps({
 
 <template>
   <div class="">
-    <div class="flex">
+    <!-- <div class="relative bg-[#f1f1f1]">
       <NuxtImg
+        class="w-full filter brightness-[0.3] relative h-[467px]"
+        alt="ourteam-image"
         :src="Hero.img"
-        alt="eng-img"
-        class="object-cover insert-0"
       />
-      <div class="bg-black flex justify-between ">
-        <NuxtImg class="" src="/rectangle.png"  width="157px" height="247px"/>
-        <h2 class="font-bold text-4xl text-black">{{HeroHeader}}</h2>
-        <hp class="font-bold text-xl ">{{HeroText}}</hp>
+      <NuxtImg
+        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
+        src="/rectangle.png"
+        alt="rectangle"
+      />
+      <div
+        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <h1 class="font-bold mt-5 text-5xl uppercase">{{HeroHeader}}</h1>
+        <h1 class="mt-4 text-[1.2rem]">
+          {{HeroText}}
+        </h1>
       </div>
-
-
-    </div>
+    </div> -->
+    
 
     <div class="bg-gray-200">
       <ul class="flex justify-between max-w-4xl py-8 mx-auto">

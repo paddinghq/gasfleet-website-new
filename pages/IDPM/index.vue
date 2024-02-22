@@ -70,6 +70,28 @@ const convince = {
 </script>
 
 <template>
+  <div class="relative bg-[#f1f1f1]">
+      <NuxtImg
+        class="w-full filter brightness-[0.3] relative h-[467px]"
+        alt="epm-image"
+        src="/image/epm-image.png"
+      />
+      <NuxtImg
+        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[300px]"
+        src="/rectangle.png"
+        alt="rectangle"
+      />
+      <div
+        class="text-white absolute top-[44%] left-[41%] transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <h1 class="font-bold pt-10 text-5xl capitalize">infrastructure development & project management</h1>
+        <p class="text-[1.2rem]">
+          We understand that the presence of Gas & Power infrastructure support the development of <br/>
+          industial hubs to enable delivery of cleaner, cheaper and more environmentally friendly fuel <br />to the market.
+        </p>
+      </div>
+  </div>
+
   <MultiPage
     :Heads="Heads"
     About="We are currently pioneering the development of Nigeria's foremost private

@@ -70,6 +70,27 @@ const convince = {
 </script>
 
 <template>
+  <div class="relative bg-[#f1f1f1]">
+      <NuxtImg
+        class="w-full filter brightness-[0.3] relative h-[467px]"
+        alt="epm-image"
+        src="/image/epm-image.png"
+      />
+      <NuxtImg
+        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
+        src="/rectangle.png"
+        alt="rectangle"
+      />
+      <div
+        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <h1 class="font-bold mt-5 text-5xl uppercase">EPCM</h1>
+        <p class="text-[1.2rem]">
+          We utilize the latest technology & software to develop effective and cost effective solution from <br />
+           drilling platform to pipeline system & more.
+        </p>
+      </div>
+    </div>
   <MultiPage
     :Heads="Heads"
     About="We are committed to providing innovative solutions and exceptional
