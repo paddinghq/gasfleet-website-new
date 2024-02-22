@@ -93,11 +93,11 @@ const activateTab = (tab) => {
     </div>
     <component :is="activeComponent" />
 
-    <div class="bg-[#eff6ff] text-center py-[3rem]">
-      <h2 class="text-[#333333]">
+    <div class="bg-[#eff6ff] text-center py-[3.8rem]">
+      <h2 class="text-[#333333] text-[32px] font-bold tracking-tighter">
         Convinced yet? Check out projects we have done.
       </h2>
-      <div class="text-[#333333]">
+      <div class="text-[#333333] mt-3 text-lg tracking-wide">
         <p>
           Unleash the potential of your projects with our pioneering oil and gas
           engineering solutions<br />Let's shape the future together. Talk to us
@@ -105,7 +105,7 @@ const activateTab = (tab) => {
         </p>
       </div>
       <button
-        class="bg-[#205fad] p-[0.8rem] rounded-xl border-none text-white mt-[1rem]"
+        class="bg-[#205fad] p-[1rem] text-semibold text-lg rounded-xl border-none text-white mt-[1.3rem]"
       >
         Projects
       </button>
