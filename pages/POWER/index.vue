@@ -67,34 +67,27 @@ const convince = {
   text: "Unleash the potential of your projects with our pioneering oil and gas engineering solutions. Let's shape the future together. Talk to us about your next groundbreaking project.",
   btn: "Projects",
 };
+
+const ImgSrc8 = ref("/image/epm-image.png");
+const rectangleImg = ref("/rectangle.png");
+
+const Heros = ref([
+  {
+    id: 3,
+    img: ImgSrc8,
+    rectangle: rectangleImg,
+    title: "Power Distribution",
+    text: "Accessibility, affordability and availability of uninterrupted power supply is one of the biggest monster confronting Nigerians and Nigeria as a whole.",
+  },
+]);
 </script>
 
 <template>
-  <div class="relative bg-[#f1f1f1]">
-      <NuxtImg
-        class="w-full filter brightness-[0.3] relative h-[467px]"
-        alt="epm-image"
-        src="/image/epm-image.png"
-      />
-      <NuxtImg
-        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
-        src="/rectangle.png"
-        alt="rectangle"
-      />
-      <div
-        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <h1 class="font-bold mt-5 text-5xl uppercase">power distribution</h1>
-        <p class="text-[1.2rem]">
-         Accessibility, affordability and availability of uninterrupted power supply is one of the biggest  <br />
-         monster confronting Nigerians and Nigeria as a whole.
-        </p>
-      </div>
-  </div>
   <MultiPage
+    :Heros="Heros"
     :Heads="Heads"
     About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as 
-            a value added services to our customers through the provision embedded and captive power solutions to stranded customers ."
+      a value added services to our customers through the provision embedded and captive power solutions to stranded customers ."
     :MissionSection="missions"
     OtherServiceHeader="Other Services"
     :OtherServices="OtherServices"

@@ -43,6 +43,7 @@ const activateTab = (tab) => {
           We are committed to providing our clients with comprehensive and innovative solutions to the <br /> complex challenges facing the oil and gas industry.
         </p>
       </div>
+      
       <div class="flex gap-12 items-center justify-center pb-8 pt-6">
         <button
           class="button"

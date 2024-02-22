@@ -67,31 +67,25 @@ const convince = {
   text: "Unleash the potential of your projects with our pioneering oil and gas engineering solutions. Let's shape the future together. Talk to us about your next groundbreaking project.",
   btn: "Projects",
 };
+
+const ImgSrc8 = ref("/image/epm-image.png");
+const rectangleImg = ref("/rectangle.png");
+
+const Heros = ref([
+  {
+    id: 1,
+    img: ImgSrc8,
+    rectangle: rectangleImg,
+    title: "ECPM",
+    text: "We utilize the latest technology & software to develop effective and cost effective solution from drilling platform to pipeline system & more.",
+  },
+]);
 </script>
 
 <template>
-  <div class="relative bg-[#f1f1f1]">
-      <NuxtImg
-        class="w-full filter brightness-[0.3] relative h-[467px]"
-        alt="epm-image"
-        src="/image/epm-image.png"
-      />
-      <NuxtImg
-        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
-        src="/rectangle.png"
-        alt="rectangle"
-      />
-      <div
-        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <h1 class="font-bold mt-5 text-5xl uppercase">EPCM</h1>
-        <p class="text-[1.2rem]">
-          We utilize the latest technology & software to develop effective and cost effective solution from <br />
-           drilling platform to pipeline system & more.
-        </p>
-      </div>
-    </div>
+<div>
   <MultiPage
+    :Heros="Heros"
     :Heads="Heads"
     About="We are committed to providing innovative solutions and exceptional
         service to our clients in the oil and gas industry. With decades of
@@ -105,4 +99,5 @@ const convince = {
     :ConvinceText="convince.text"
     :ConvinceBtn="convince.btn"
   />
+</div>
 </template>
