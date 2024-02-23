@@ -3,31 +3,29 @@
     <footer class="footer">
       <div class="top">
         <div class="left">
-          <img src="/colored.png" alt="logo" class="img" />
-          <p>
+          <NuxtImg src="/colored.png" alt="logo" class="" />
+          <p class="text-lg mt-5">
             We are committed to providing innovative<br />
             solutions and exceptional service to our clients<br />
             in the oil and gas industry
           </p>
-          <div class="icons">
+          <div class="flex gap-4 mt-4">
             <NuxtLink
               ><NuxtImg
-                src="Facebookwhite.png"
+                src="/Facebookwhite.png"
                 alt="facebook"
-                height="24"
-                width="24"
+                
             /></NuxtLink>
             <NuxtLink
               ><NuxtImg
-                src="Linkedinwhite.png"
+                src="/Linkedinwhite.png"
                 alt="facebook"
-                height="24"
-                width="24"
+               
             /></NuxtLink>
           </div>
         </div>
         <div class="link-headings">
-          <h3>Quick Links</h3>
+          <h3 class="text-lg">Quick Links</h3>
           <div class="links">
             <NuxtLink>Home</NuxtLink>
             <NuxtLink>About Us</NuxtLink>
@@ -36,7 +34,7 @@
           </div>
         </div>
         <div class="link-headings">
-          <h3>Our Services</h3>
+          <h3 class="text-lg">Our Services</h3>
           <div class="links">
             <NuxtLink>Engineering</NuxtLink>
             <NuxtLink>Procurement</NuxtLink>
@@ -45,7 +43,7 @@
           </div>
         </div>
         <div class="link-headings">
-          <h3>Contact Us</h3>
+          <h3 class="text-lg">Contact Us</h3>
           <div class="links">
             <NuxtLink
               >17, M.A Oke Street, opposite Diamond Estate, Igando,
@@ -77,13 +75,11 @@
 
 <style scoped>
 .link-headings h3 {
-font-weight: 900;
-}
-.left p {
-  font-size: 1.3rem;
+  font-weight: 900;
 }
 
-.img {
+
+.NuxtImg {
   margin-top: 1.2rem;
 }
 
@@ -100,12 +96,10 @@ font-weight: 900;
   flex-direction: column;
   gap: 1rem;
   font-weight: 100;
+  margin-top: 1rem;
 }
 
-.icons {
-  display: flex;
-  gap: 1rem;
-}
+
 
 .bottom {
   background: #191919;

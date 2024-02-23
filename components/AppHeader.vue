@@ -47,18 +47,16 @@ const toggleDropdown2 = () => {
     </header>
     <div class="input-logo">
       <div class="input">
-        <input class="input-tag focus-visible:ring-0 focus-visible:ring-offset-0" /><NuxtImg
-          src="/search.png"
-          width="24"
-          height="24"
-        />
+        <input
+          class="input-tag focus-visible:ring-0 focus-visible:ring-offset-0"
+        /><NuxtImg src="/search.png" width="24" height="24" />
       </div>
       <div class="logo">
         <NuxtLink
-          ><NuxtImg src="Facebook.png" alt="facebook" height="24" width="24"
+          ><NuxtImg src="/Facebook.png" alt="facebook" height="24" width="24"
         /></NuxtLink>
         <NuxtLink
-          ><NuxtImg src="Linkedin.png" alt="facebook" height="24" width="24"
+          ><NuxtImg src="/Linkedin.png" alt="facebook" height="24" width="24"
         /></NuxtLink>
       </div>
     </div>
