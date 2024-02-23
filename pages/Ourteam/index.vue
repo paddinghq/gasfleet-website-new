@@ -52,38 +52,39 @@ const activateTab = (tab) => {
       </div>
       <div class="flex gap-12 items-center justify-center pb-8 pt-6">
         <button
-          class="button"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activateTab('management')"
           :class="{
             active: activeTab === 'management',
-            focus: activeTab === 'management',
           }"
+          autofocus
+          style="outline: none"
         >
           Management
         </button>
         <button
-          class="button"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'engineering'"
           :class="{ active: activeTab === 'engineering' }"
         >
           Engineering
         </button>
         <button
-          class="button"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'admin'"
           :class="{ active: activeTab === 'admin' }"
         >
           Admin
         </button>
         <button
-          class="button"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'it'"
           :class="{ active: activeTab === 'it' }"
         >
           Information Technology
         </button>
         <button
-          class="button"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'contractors'"
           :class="{ active: activeTab === 'contractors' }"
         >
@@ -113,24 +114,4 @@ const activateTab = (tab) => {
   </div>
 </template>
 
-<style scoped>
-.button {
-  color: #777777;
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 900;
-}
-.button:focus {
-  color: #205fad;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-thickness: 4px;
-}
-
-.button.focus {
-  color: #205fad;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-  text-decoration-thickness: 4px;
-}
-</style>
+<style scoped></style>
