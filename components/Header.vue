@@ -29,14 +29,20 @@ const toggleDropdown2 = () => {
           @click="toggleDropdown1"
         >
           <NuxtLink>Who we are</NuxtLink>
-          <span class="mt-1" v-html="isDropdownOpen1 ? upArrow : downArrow"></span>
+          <span
+            class="mt-1"
+            v-html="isDropdownOpen1 ? upArrow : downArrow"
+          ></span>
         </button>
         <button
           class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
           @click="toggleDropdown2"
         >
           <NuxtLink>What we do</NuxtLink>
-          <span class="mt-1" v-html="isDropdownOpen2 ? upArrow : downArrow"></span>
+          <span
+            class="mt-1"
+            v-html="isDropdownOpen2 ? upArrow : downArrow"
+          ></span>
         </button>
         <button
           class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
