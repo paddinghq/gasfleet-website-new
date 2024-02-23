@@ -16,13 +16,15 @@ const toggleDropdown2 = () => {
 </script>
 
 <template>
-  <div class="nav">
-    <div><NuxtImg src="/colored.png" alt="logo" height="34" width="34" /></div>
+  <div class="nav container mx-auto">
+    <div>
+      <NuxtImg src="/colored.png" alt="logo" height="34" width="34" />
+    </div>
 
     <header>
       <nav class="nav-links">
         <button class="button" @click="toggleDropdown1">
-          <NuxtLink>Who we are</NuxtLink>
+          <NuxtLink class="sans text-lg transition-all hover:text-gray-500">Who we are</NuxtLink>
           <NuxtImg
             v-bind:src="NuxtImgSrc1"
             alt="arrow"
@@ -31,7 +33,7 @@ const toggleDropdown2 = () => {
           />
         </button>
         <button class="button" @click="toggleDropdown2">
-          <NuxtLink>What we do</NuxtLink>
+          <NuxtLink class="sans text-lg transition-all hover:text-gray-500">What we do</NuxtLink>
           <NuxtImg
             v-bind:src="NuxtImgSrc2"
             alt="arrow"
@@ -39,12 +41,15 @@ const toggleDropdown2 = () => {
             width="24"
           />
         </button>
-        <button class="button"><NuxtLink class="">Projects</NuxtLink></button>
         <button class="button">
-          <NuxtLink class="">Sustainability </NuxtLink>
+          <NuxtLink class="sans text-lg transition-all hover:text-gray-500">Projects</NuxtLink>
+        </button>
+        <button class="button">
+          <NuxtLink class="sans text-lg transition-all hover:text-gray-500">Sustainability </NuxtLink>
         </button>
       </nav>
     </header>
+
     <div class="input-logo">
       <div class="input">
         <input
@@ -107,7 +112,7 @@ const toggleDropdown2 = () => {
 }
 
 .nav {
-  padding: 2rem 4rem;
+  padding: 2rem 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

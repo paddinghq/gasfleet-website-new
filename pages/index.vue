@@ -11,11 +11,11 @@
       ></div>
       <div class="relative h-full container mx-auto">
         <div class="text-white pt-48 flex flex-col gap-3">
-          <h1 class="capitalize text-6xl font-bold">
+          <h1 class="capitalize text-6xl">
             gasfleet engineering <br />
             limited - EPCM company
           </h1>
-          <p>
+          <p class="text-lg">
             We are committed to providing innovative solutions and exceptional
             service <br />
             to our clients in the oil and gas industry. With decades of
@@ -28,12 +28,12 @@
       </div>
     </div>
     <div class="flex bg-white gap-10">
-      <img src="/image/services.png" alt="service" />
+      <img src="/image/services.png" alt="service" class="object-cover" />
 
       <div class="mt-5 px-10 py-10">
-        <h1 class="text-[#205FAD] text-6xl font-bold">Our Services</h1>
+        <h1 class="text-[#205FAD] text-5xl font-medium">Our Services</h1>
 
-        <p class="mt-5">
+        <p class="text-lg mt-5">
           We deliver science, technology and engineering solutions to <br />
           government and companies around the world
         </p>
@@ -41,7 +41,7 @@
         <div class="flex gap-4 items-center mt-5">
           <div class="bg-gray-100 p-5">
             <img src="/image/epm.png" alt="emp" />
-            <h5 class="uppercase font-bold text-2xl my-1">epcm</h5>
+            <h2 class="uppercase font-bold text-2xl my-1">epcm</h2>
             <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
@@ -49,9 +49,9 @@
           </div>
           <div class="bg-gray-100 p-5">
             <img src="/image/gas.png" alt="gas" />
-            <h5 class="capitalize font-bold text-2xl my-1">
+            <h2 class="capitalize font-bold text-2xl my-1">
               natural gas distribution
-            </h5>
+            </h2>
             <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
@@ -61,9 +61,9 @@
         <div class="flex gap-4 items-center mt-5">
           <div class="bg-gray-100 p-5">
             <img src="/image/power.png" alt="power" />
-            <h5 class="capitalize font-bold text-2xl my-1">
+            <h2 class="capitalize font-bold text-2xl my-1">
               Power distribution
-            </h5>
+            </h2>
             <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
@@ -71,9 +71,9 @@
           </div>
           <div class="bg-gray-100 p-5">
             <img src="/image/development.png" alt="development" />
-            <h5 class="capitalize font-bold text-2xl my-1">
+            <h2 class="capitalize font-bold text-2xl my-1">
               infrastructure development
-            </h5>
+            </h2>
             <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
@@ -87,7 +87,7 @@
       <div
         class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white ml-10"
       >
-        <h2 class="capitalize text-xl font-bold">our executed projects</h2>
+        <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
         <p class="text-justify">
           We pride ourseleves on our commitment to safety and <br />
           quality. We have a proven track record of delivering <br />
@@ -96,11 +96,11 @@
           the well being of our employees and the communities <br />
           in which we operate
         </p>
-        <div
-          class="bg-white text-[#205FAD] text-center rounded-lg p-2 w-36 cursor-pointer"
+        <button
+          class="bg-white text-[#205FAD] text-center rounded-lg p-2 w-36 cursor-pointer transition-all hover:bg-gray-200"
         >
           See all Projects
-        </div>
+        </button>
       </div>
       <div class="flex flex-col">
         <div class="flex justify-between gap-10">
@@ -138,7 +138,7 @@
     </div>
 
     <div class="text-center bg-white p-10 mt-5">
-      <h1 class="font-bold text-3xl text-[#205FAD] capitalize">our client</h1>
+      <h2 class="font-bold text-4xl text-[#205FAD] capitalize">Our Client</h2>
 
       <div
         class="grid grid-cols-4 justify-center gap-5 items-center ml-10 mt-5"
@@ -155,9 +155,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts">
-export default {
-  name: "IndexPage",
-};
-</script>
