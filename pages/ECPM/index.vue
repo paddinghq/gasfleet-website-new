@@ -2,11 +2,20 @@
 import { ref } from "vue";
 import MultiPage from "../../components/MultiPage.vue";
 
-const Heads = [
-  "Natural Gas Distribution",
-  "Power Distribution",
-  "Infrastructure Development",
-];
+const Heads = ref([
+  {
+    name: "Natural Gas Distribution",
+    link: "gas"
+  },
+  {
+    name: "Power Distribution",
+    link: "power"
+  },
+  {
+    name: "Infrastructure Development",
+    link: "IDPM"
+  }
+])
 
 const ImgSrc1 = ref("/image/eng-img.png");
 const ImgSrc2 = ref("/image/procurement-img.png");

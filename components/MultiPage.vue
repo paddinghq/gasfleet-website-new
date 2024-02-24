@@ -40,8 +40,8 @@ const props = defineProps({
 
     <div class="bg-gray-200">
       <ul class="flex justify-between max-w-4xl py-8 mx-auto">
-        <li class="font-bold text-xl sans" v-for="Head in Heads" :key="Head">
-          {{ Head }}
+        <li class="font-bold text-xl sans transition-all hover:text-gray-600" v-for="Head in Heads" :key="Head">
+          <NuxtLink :to="Head.link">{{ Head.name }}</NuxtLink>
         </li>
       </ul>
     </div>
@@ -98,11 +98,13 @@ const props = defineProps({
       <div class="container mx-auto py-10 text-center">
         <h2 class="font-bold text-4xl">{{ ConvinceTitle }}</h2>
         <p class="w-3/4 mx-auto my-6 text-xl">{{ ConvinceText }}</p>
-        <button
-          class="py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
-        >
-          {{ ConvinceBtn }}
-        </button>
+        <NuxtLink to="project">
+          <button
+            class="py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
+          >
+            {{ ConvinceBtn }}
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>

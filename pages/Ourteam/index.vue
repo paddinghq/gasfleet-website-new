@@ -99,11 +99,13 @@ const activateTab = (tab) => {
           about your next groundbreaking project
         </p>
       </div>
-      <button
-        class=" mt-4 py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
-      >
-        Projects
-      </button>
+      <NuxtLink to="projects">
+        <button
+          class=" mt-4 py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
+        >
+          Projects
+        </button>
+      </NuxtLink>
     </div>
   </div>
 </template>

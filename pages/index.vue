@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="relative">
-      <img
-        src="/image/hero-image.png"
-        alt="hero"
-        class="object-cover h-full w-full absolute insert-0"
-      />
+      <NuxtLink to="/">
+        <img
+          src="/image/hero-image.png"
+          alt="hero"
+          class="object-cover h-full w-full absolute insert-0"
+        />
+      </NuxtLink>
       <div
         class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
       ></div>
@@ -65,7 +67,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               Power distribution
             </h2>
-            <p >
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -86,22 +88,19 @@
 
     <div class="bg-gray-100">
       <div class="container mx-auto flex py-10 bg-gray-100 gap-10">
-        <div
-          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white"
-        >
+        <div class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white">
           <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
           <p class="text-justify w-96">
-            We pride ourseleves on our commitment to safety and 
-            quality. We have a proven track record of delivering 
-            projects that meet or exceed industry standard, while 
-            also minimizing environmental impact and promoting 
-            the well being of our employees and the communities 
-            in which we operate
+            We pride ourseleves on our commitment to safety and quality. We have
+            a proven track record of delivering projects that meet or exceed
+            industry standard, while also minimizing environmental impact and
+            promoting the well being of our employees and the communities in
+            which we operate
           </p>
           <button
             class="bg-white text-[#205FAD] text-center rounded-lg p-2 w-36 cursor-pointer transition-all hover:bg-gray-200"
           >
-            See all Projects
+            <NuxtLink to="projects">See all Projects</NuxtLink>
           </button>
         </div>
         <div class="flex flex-col">
