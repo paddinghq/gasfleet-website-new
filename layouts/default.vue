@@ -27,4 +27,29 @@ p, .sans {
 h1, h2, h3 {
   font-family: Oswald;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: fade(0.1rem);
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #205FAD;
+  border-radius: 10px;
+}
+
 </style>

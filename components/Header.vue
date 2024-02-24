@@ -42,10 +42,10 @@ const toggleDropdown2 = () => {
           />
         </button>
         <button class="button">
-          <NuxtLink class="sans text-lg transition-all hover:text-gray-500">Projects</NuxtLink>
+          <NuxtLink class="sans text-lg transition-all hover:text-gray-500" to="/projects">Projects</NuxtLink>
         </button>
         <button class="button">
-          <NuxtLink class="sans text-lg transition-all hover:text-gray-500">Sustainability </NuxtLink>
+          <NuxtLink class="sans text-lg transition-all hover:text-gray-500" to="sustainability">Sustainability </NuxtLink>
         </button>
       </nav>
     </header>
