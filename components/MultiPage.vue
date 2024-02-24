@@ -1,5 +1,8 @@
 <script setup>
+import Hero from "./Hero.vue";
+
 const props = defineProps({
+  Heros: Array,
   Heads: Array,
   About: String,
   MissionSection: Array,
@@ -14,19 +17,40 @@ const props = defineProps({
 
 <template>
   <div>
+    <div class="relative bg-[#f1f1f1]" v-for="Hero in Heros" :key="Hero.id">
+      <NuxtImg
+        class="w-full filter brightness-[0.3] relative h-[467px] object-cover"
+        alt="ourteam-image"
+        :src="Hero.img"
+      />
+      <div class="container mx-auto relative bottom-60">
+        <NuxtImg
+          class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
+          :src="Hero.rectangle"
+          alt="rectangle"
+        />
+        <div
+          class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <h1 class="font-bold mt-5 uppercase" :class="Hero.id === 4 ? 'text-4xl' : 'text-5xl'">{{ Hero.title }}</h1>
+          <p class="mt-4" :class="Hero.id === 4 ? 'text-[1rem]' : 'text-[1.2rem]'">{{ Hero.text }}</p>
+        </div>
+      </div>
+    </div>
+
     <div class="bg-gray-200">
       <ul class="flex justify-between max-w-4xl py-8 mx-auto">
-        <li class="font-bold text-xl" v-for="Head in Heads" :key="Head">
+        <li class="font-bold text-xl sans" v-for="Head in Heads" :key="Head">
           {{ Head }}
         </li>
       </ul>
     </div>
 
-    <div class="py-16 px-48">
+    <div class="container mx-auto py-16 px-48">
       <p class="font-bold text-2xl">{{ About }}</p>
     </div>
 
-    <div class="container mx-auto flex flex-col gap-16 my-10">
+    <div class="container mx-auto flex flex-col gap-16">
       <div
         v-for="mission in MissionSection"
         :key="mission.id"
