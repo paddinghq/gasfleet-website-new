@@ -4,18 +4,18 @@ import MultiPage from "../../components/MultiPage.vue";
 
 const Heads = ref([
   {
-    name: "Natural Gas Distribution",
-    link: "gas"
+    name: "ECPM",
+    link: "ECPM"
   },
   {
-    name: "Power Distribution",
-    link: "power"
+    name: "Natural Gas Distribution",
+    link: "GAS"
   },
   {
     name: "Infrastructure Development",
     link: "IDPM"
   }
-])
+]);
 
 const ImgSrc1 = ref("/image/eng-img.png");
 const ImgSrc2 = ref("/image/procurement-img.png");
@@ -82,25 +82,21 @@ const rectangleImg = ref("/rectangle.png");
 
 const Heros = ref([
   {
-    id: 1,
+    id: 3,
     img: ImgSrc8,
     rectangle: rectangleImg,
-    title: "ECPM",
-    text: "We utilize the latest technology & software to develop effective and cost effective solution from drilling platform to pipeline system & more.",
+    title: "Power Distribution",
+    text: "Accessibility, affordability and availability of uninterrupted power supply is one of the biggest monster confronting Nigerians and Nigeria as a whole.",
   },
 ]);
 </script>
 
 <template>
-<div>
   <MultiPage
     :Heros="Heros"
     :Heads="Heads"
-    About="We are committed to providing innovative solutions and exceptional
-        service to our clients in the oil and gas industry. With decades of
-        experience, our team of experts has a deep understanding of the industry
-        and the challenges our clients face. We work closely with our clients to
-        develop customized solutions that meet their unique needs and goals."
+    About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as 
+      a value added services to our customers through the provision embedded and captive power solutions to stranded customers ."
     :MissionSection="missions"
     OtherServiceHeader="Other Services"
     :OtherServices="OtherServices"
@@ -108,5 +104,4 @@ const Heros = ref([
     :ConvinceText="convince.text"
     :ConvinceBtn="convince.btn"
   />
-</div>
 </template>
