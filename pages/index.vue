@@ -15,7 +15,7 @@
             gasfleet engineering <br />
             limited - EPCM company
           </h1>
-          <p class="text-lg sans">
+          <p class="text-lg">
             We are committed to providing innovative solutions and exceptional
             service <br />
             to our clients in the oil and gas industry. With decades of
@@ -34,7 +34,7 @@
       <div class="mt-5 px-10 py-10">
         <h1 class="text-[#205FAD] text-5xl font-medium">Our Services</h1>
 
-        <p class="text-lg mt-5 sans">
+        <p class="text-lg mt-5">
           We deliver science, technology and engineering solutions to <br />
           government and companies around the world
         </p>
@@ -43,7 +43,7 @@
           <div class="bg-gray-100 p-5">
             <img src="/image/epm.png" alt="emp" />
             <h2 class="uppercase font-bold text-2xl my-1">epcm</h2>
-            <p class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -53,7 +53,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               natural gas distribution
             </h2>
-            <p class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -65,7 +65,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               Power distribution
             </h2>
-            <p  class="sans">
+            <p >
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -75,7 +75,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               infrastructure development
             </h2>
-            <p class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -90,7 +90,7 @@
           class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white"
         >
           <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
-          <p class="text-justify w-96 sans">
+          <p class="text-justify w-96">
             We pride ourseleves on our commitment to safety and 
             quality. We have a proven track record of delivering 
             projects that meet or exceed industry standard, while 
@@ -109,14 +109,14 @@
             <div class="flex flex-col gap-3">
               <img src="/image/project.png" alt="project" />
               <div class="">
-                <p class="sans">Abuja gas fleet expansion</p>
+                <p>Abuja gas fleet expansion</p>
                 <span>2023</span>
               </div>
             </div>
             <div class="flex flex-col gap-3">
               <img src="/image/project.png" alt="project" />
               <div class="text-base">
-                <p class="sans">Abuja gas fleet expansion</p>
+                <p>Abuja gas fleet expansion</p>
                 <span>2023</span>
               </div>
             </div>

@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-
 const ImgSrc1 = ref("../../hero.jpg");
 const rectangleImg = ref("../../rectangle.png");
 
@@ -56,7 +55,7 @@ const Heros = ref([
           alt="line"
         />
       </div>
-      <p class="text-center text-[#0A0A0A] text-lg mt-5 sans">
+      <p class="text-center text-[#0A0A0A] text-lg mt-5">
         Providing sustainable Gas & Power solution with innovation and service
         excellence
       </p>
@@ -71,7 +70,7 @@ const Heros = ref([
         </div>
         <div class="self-center">
           <h1 class="text-[#205FAD] font-bold text-4xl">Our Mission</h1>
-          <p class="text-[#0A0A0A] mt-5 tracking-wide text-lg sans w-[37rem]">
+          <p class="text-[#0A0A0A] mt-5 tracking-wide text-lg w-[37rem]">
             To provide world class EPCM services delivery to our
             valued client in a manner that is consistent with our core
             values and best safety practices.
@@ -82,7 +81,7 @@ const Heros = ref([
       <div class="relative flex gap-[10rem] mt-12">
         <div class="self-center">
           <h1 class="text-[#205FAD] font-bold text-4xl">Our Vision</h1>
-          <p class="text-[#0A0A0A] mt-5 tracking-wide text-lg sans w-[32rem]">
+          <p class="text-[#0A0A0A] mt-5 tracking-wide text-lg w-[32rem]">
             To become a world-class oil and gas servicing firm known
             for its superior service delivery in engineering,
             procurement, construction, and management (EPCM) and
@@ -109,7 +108,7 @@ const Heros = ref([
         </div>
         <div class="self-center">
           <h1 class="text-[#205FAD] font-bold text-4xl">Our Core Values</h1>
-          <p class="text-[#0A0A0A] mt-5 tracking-wide text-lg sans w-[37rem]">
+          <p class="text-[#0A0A0A] mt-5 tracking-wide text-lg w-[37rem]">
             Making an effort to contribute by communicating openly
             and honestly with clients, finding innovative solutions for
             them, and ensuring that everyone on the team is on the

@@ -5,6 +5,18 @@ import Admin from "@/components/Admin.vue";
 import InformationTechnology from "@/components/InfoTech.vue";
 import Contractors from "@/components/Contractors.vue";
 import { ref, computed } from "vue";
+const ImgSrc1 = ref("../../hero.jpg");
+const rectangleImg = ref("../../rectangle.png");
+
+const Heros = ref([
+  {
+    id: 2,
+    img: ImgSrc1,
+    rectangle: rectangleImg,
+    title: "Our Team",
+    text: "Our team members have worked on projects across the nation and are committed to delivering the highest level of service and quality",
+  },
+]);
 
 const activeTab = ref("management");
 
@@ -31,28 +43,10 @@ const activateTab = (tab) => {
 <template>
   <div>
     <div class="relative bg-[#f1f1f1]">
-      <NuxtImg
-        class="w-full filter brightness-[0.3] relative h-[467px]"
-        alt="ourteam-image"
-        src="/hero.jpg"
-      />
-      <NuxtImg
-        class="absolute top-[43%] left-36 transform -translate-x-1/2 -translate-y-1/2 w-[157px] h-[247px]"
-        src="/rectangle.png"
-        alt="rectangle"
-      />
-      <div
-        class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <h1 class="font-bold mt-5 text-5xl">Our team</h1>
-        <h1 class="mt-4 text-[1.2rem]">
-          Our team members have worked on projects across the nation and are
-          committed to delivering<br />the highest level of service and quality
-        </h1>
-      </div>
+      <Hero :Heros="Heros" />
       <div class="flex gap-12 items-center justify-center pb-8 pt-6">
         <button
-          class="button"
+          class="button sans"
           @click="activateTab('management')"
           :class="{
             active: activeTab === 'management',
@@ -62,28 +56,28 @@ const activateTab = (tab) => {
           Management
         </button>
         <button
-          class="button"
+          class="button sans"
           @click="activeTab = 'engineering'"
           :class="{ active: activeTab === 'engineering' }"
         >
           Engineering
         </button>
         <button
-          class="button"
+          class="button sans"
           @click="activeTab = 'admin'"
           :class="{ active: activeTab === 'admin' }"
         >
           Admin
         </button>
         <button
-          class="button"
+          class="button sans"
           @click="activeTab = 'it'"
           :class="{ active: activeTab === 'it' }"
         >
           Information Technology
         </button>
         <button
-          class="button"
+          class="button sans"
           @click="activeTab = 'contractors'"
           :class="{ active: activeTab === 'contractors' }"
         >
@@ -91,7 +85,8 @@ const activateTab = (tab) => {
         </button>
       </div>
     </div>
-    <component :is="activeComponent" />
+
+    <component class="container mx-auto" :is="activeComponent" />
 
     <div class="bg-[#eff6ff] text-center py-[3.8rem]">
       <h2 class="text-[#333333] text-[32px] font-bold tracking-tighter">
@@ -105,7 +100,7 @@ const activateTab = (tab) => {
         </p>
       </div>
       <button
-        class="bg-[#205fad] p-[1rem] text-semibold text-lg rounded-xl border-none text-white mt-[1.3rem]"
+        class=" mt-4 py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
       >
         Projects
       </button>

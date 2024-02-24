@@ -1,4 +1,6 @@
 <script setup>
+import Hero from "./Hero.vue";
+
 const props = defineProps({
   Heros: Array,
   Heads: Array,
@@ -13,7 +15,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="">
+  <div>
     <div class="relative bg-[#f1f1f1]" v-for="Hero in Heros" :key="Hero.id">
       <NuxtImg
         class="w-full filter brightness-[0.3] relative h-[467px] object-cover"
@@ -37,13 +39,13 @@ const props = defineProps({
 
     <div class="bg-gray-200">
       <ul class="flex justify-between max-w-4xl py-8 mx-auto">
-        <li class="font-bold text-xl" v-for="Head in Heads" :key="Head">
+        <li class="font-bold text-xl sans" v-for="Head in Heads" :key="Head">
           {{ Head }}
         </li>
       </ul>
     </div>
 
-    <div class="py-16 px-48">
+    <div class="container mx-auto py-16 px-48">
       <p class="font-bold text-2xl">{{ About }}</p>
     </div>
 

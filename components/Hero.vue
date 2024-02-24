@@ -19,7 +19,8 @@ const props = defineProps({
         alt="rectangle"
       />
       <div
-        class="text-white absolute top-[52%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
+        class="text-white absolute top-[52%] transform -translate-x-1/2 -translate-y-1/2"
+        :class="Hero.id === 2 ? 'left-[41%]' : 'left-[40%]'"
       >
         <h1 class="font-bold mt-5 text-5xl">{{ Hero.title }}</h1>
         <p class="mt-4 text-[1.2rem] sans">{{ Hero.text }}</p>
