@@ -29,14 +29,33 @@ const missions = ref([
 
 const shouldShowSection = ref(false);
 
+const ImgSrc4 = ref("/image/epm-image.png");
+const rectangleImg = ref("/rectangle.png");
 
+const Heros = ref([
+  {
+    id: 1,
+    img: ImgSrc4,
+    rectangle: rectangleImg,
+    title: "Sustainability",
+    text: "Accessibility, affordability and availability of uninterrupted power supply is one of the biggest monster confronting Nigerians and Nigeria as a whole",
+  },
+]);
 </script>
 
 <template>
-  <MultiPage
-    Hero.title="Power Ditribution"
-    About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as a  value added services to our customers through the provision embedded and captive power solutions to “stranded” customers"
-    :MissionSection="missions"
-    :showSection="shouldShowSection"
-  />
+  <div>
+    <MultiPage
+      :Heros="Heros"
+      About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as a  value added services to our customers through the provision embedded and captive power solutions to “stranded” customers"
+      :MissionSection="missions"
+      :showSection="shouldShowSection"
+    />
+
+    <NuxtImg
+      class="w-full mt-8"
+      alt="sustainability cta"
+      src="/CTA.png"
+    />
+  </div>
 </template>
