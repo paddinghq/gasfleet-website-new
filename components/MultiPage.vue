@@ -6,6 +6,7 @@ const props = defineProps({
   Heads: Array,
   About: String,
   MissionSection: Array,
+  showSection: { type: Boolean, default: true },
   OtherServiceHeader: String,
   OtherServices: Array,
   ConvinceTitle: String,
@@ -68,7 +69,7 @@ const props = defineProps({
       </div>
     </div>
 
-    <div class="bg-gray-100 mt-16">
+    <div class="bg-gray-100 mt-16" v-if="showSection">
       <div class="container mx-auto py-16">
         <div class="text-center">
           <h2 class="font-bold text-4xl text-sky-700">
@@ -93,7 +94,7 @@ const props = defineProps({
       </div>
     </div>
 
-    <div class="bg-blue-100">
+    <div class="bg-blue-100"  v-if="showSection">
       <div class="container mx-auto py-10 text-center">
         <h2 class="font-bold text-4xl">{{ ConvinceTitle }}</h2>
         <p class="w-3/4 mx-auto my-6 text-xl">{{ ConvinceText }}</p>
