@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="relative">
-      <img
-        src="/image/hero-image.png"
-        alt="hero"
-        class="object-cover h-full w-full absolute insert-0"
-      />
+      <NuxtLink to="/">
+        <img
+          src="/image/hero-image.png"
+          alt="hero"
+          class="object-cover h-full w-full absolute insert-0"
+        />
+      </NuxtLink>
       <div
         class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
       ></div>
@@ -15,7 +17,7 @@
             gasfleet engineering <br />
             limited - EPCM company
           </h1>
-          <p class="text-lg sans">
+          <p class="text-lg">
             We are committed to providing innovative solutions and exceptional
             service <br />
             to our clients in the oil and gas industry. With decades of
@@ -34,7 +36,7 @@
       <div class="mt-5 px-10 py-10">
         <h1 class="text-[#205FAD] text-5xl font-medium">Our Services</h1>
 
-        <p class="text-lg mt-5 sans">
+        <p class="text-lg mt-5">
           We deliver science, technology and engineering solutions to <br />
           government and companies around the world
         </p>
@@ -43,7 +45,7 @@
           <div class="bg-gray-100 p-5">
             <img src="/image/epm.png" alt="emp" />
             <h2 class="uppercase font-bold text-2xl my-1">epcm</h2>
-            <p class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -53,7 +55,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               natural gas distribution
             </h2>
-            <p class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -65,7 +67,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               Power distribution
             </h2>
-            <p  class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -75,7 +77,7 @@
             <h2 class="capitalize font-bold text-2xl my-1">
               infrastructure development
             </h2>
-            <p class="sans">
+            <p>
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
@@ -86,22 +88,19 @@
 
     <div class="bg-gray-100">
       <div class="container mx-auto flex py-10 bg-gray-100 gap-10">
-        <div
-          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white"
-        >
+        <div class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white">
           <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
-          <p class="text-justify w-96 sans">
-            We pride ourseleves on our commitment to safety and 
-            quality. We have a proven track record of delivering 
-            projects that meet or exceed industry standard, while 
-            also minimizing environmental impact and promoting 
-            the well being of our employees and the communities 
-            in which we operate
+          <p class="text-justify w-96">
+            We pride ourseleves on our commitment to safety and quality. We have
+            a proven track record of delivering projects that meet or exceed
+            industry standard, while also minimizing environmental impact and
+            promoting the well being of our employees and the communities in
+            which we operate
           </p>
           <button
             class="bg-white text-[#205FAD] text-center rounded-lg p-2 w-36 cursor-pointer transition-all hover:bg-gray-200"
           >
-            See all Projects
+            <NuxtLink to="projects">See all Projects</NuxtLink>
           </button>
         </div>
         <div class="flex flex-col">
@@ -109,14 +108,14 @@
             <div class="flex flex-col gap-3">
               <img src="/image/project.png" alt="project" />
               <div class="">
-                <p class="sans">Abuja gas fleet expansion</p>
+                <p>Abuja gas fleet expansion</p>
                 <span>2023</span>
               </div>
             </div>
             <div class="flex flex-col gap-3">
               <img src="/image/project.png" alt="project" />
               <div class="text-base">
-                <p class="sans">Abuja gas fleet expansion</p>
+                <p>Abuja gas fleet expansion</p>
                 <span>2023</span>
               </div>
             </div>

@@ -1,19 +1,3 @@
-<template>
-  <div class="grid grid-cols-3 gap-[3.5rem] p-[4rem]">
-    <div
-      v-for="(item, index) in mappedArray"
-      :key="index"
-      class="bg-[#f1f1f1] rounded-2xl"
-    >
-      <NuxtImg :src="item.NuxtImg" :alt="item.alt" class="w-full" />
-      <div class="text-center my-6">
-        <h2 class="text-2xl font-bold">{{ item.name }}</h2>
-        <p class="mt-1">{{ item.position }}</p>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { ref, computed } from "vue";
 
@@ -63,4 +47,18 @@ const mappedArray = computed(() => {
 });
 </script>
 
-<style scoped></style>
+<template>
+  <div class="grid grid-cols-3 gap-[3.5rem] p-[4rem]">
+    <div
+      v-for="(item, index) in mappedArray"
+      :key="index"
+      class="bg-[#f1f1f1] rounded-2xl"
+    >
+      <NuxtImg :src="item.NuxtImg" :alt="item.alt" class="w-full" />
+      <div class="text-center my-6">
+        <h2 class="text-2xl font-bold">{{ item.name }}</h2>
+        <p class="mt-1 sans">{{ item.position }}</p>
+      </div>
+    </div>
+  </div>
+</template>

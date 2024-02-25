@@ -84,6 +84,56 @@
             <NuxtLink>Email: info@gasfleeteng.com</NuxtLink>
             <NuxtLink>Tel: +234(0) 908 954 5886</NuxtLink>
             <NuxtLink>Management</NuxtLink>
+=======
+  <div class="bg-[#222222]">
+    <footer>
+      <div class="container mx-auto">
+        <div class="top">
+          <div class="left">
+            <NuxtLink to="/"><NuxtImg src="/colored.png" alt="logo" class="" /></NuxtLink>
+            
+            <p class="text-lg mt-5 sans">
+              We are committed to providing innovative<br />
+              solutions and exceptional service to our clients<br />
+              in the oil and gas industry
+            </p>
+            <div class="flex gap-4 mt-4">
+              <NuxtLink><NuxtImg src="/Facebookwhite.png" alt="facebook"/></NuxtLink>
+              <NuxtLink><NuxtImg src="/Linkedinwhite.png" alt="facebook"/></NuxtLink>
+            </div>
+          </div>
+          <div class="link-headings">
+            <h3 class="text-lg">Quick Links</h3>
+            <div class="links">
+              <NuxtLink class="sans" to="/">Home</NuxtLink>
+              <NuxtLink class="sans" to="aboutus">About Us</NuxtLink>
+              <NuxtLink class="sans" to="projects">Projects</NuxtLink>
+              <NuxtLink class="sans" to="sustainability">Sustainability</NuxtLink>
+            </div>
+          </div>
+          <div class="link-headings">
+            <h3 class="text-lg">Our Services</h3>
+            <div class="links">
+              <NuxtLink class="sans" to="power">Engineering</NuxtLink>
+              <NuxtLink class="sans" to="power">Procurement</NuxtLink>
+              <NuxtLink class="sans" to="power">Construction</NuxtLink>
+              <NuxtLink class="sans" to="power">Management</NuxtLink>
+            </div>
+          </div>
+          <div class="link-headings">
+            <h3 class="text-lg">Contact Us</h3>
+            <div class="links">
+              <NuxtLink class="sans"
+                >17, M.A Oke Street, opposite Diamond Estate, Igando,
+                Lagos</NuxtLink
+              >
+              <NuxtLink class="sans">
+                Email: <a href="mailto:info@gasfleeteng.com">info@gasfleeteng.com</a>
+              </NuxtLink>
+              <NuxtLink class="sans">Tel: <a href="tel:+234(0)9089545886">+234(0) 908 954 5886</a></NuxtLink>
+              <NuxtLink class="sans">Management</NuxtLink>
+            </div>
+
           </div>
         </div>
       </div>
