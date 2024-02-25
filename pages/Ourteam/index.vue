@@ -5,8 +5,8 @@ import Admin from "@/components/Admin.vue";
 import InformationTechnology from "@/components/InfoTech.vue";
 import Contractors from "@/components/Contractors.vue";
 import { ref, computed } from "vue";
-const ImgSrc1 = ref("../../hero.jpg");
-const rectangleImg = ref("../../rectangle.png");
+const ImgSrc1 = ref("hero.jpg");
+const rectangleImg = ref("rectangle.png");
 
 const Heros = ref([
   {
