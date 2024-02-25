@@ -8,11 +8,11 @@ const isDropdownOpen2 = ref(false);
 
 const toggleDropdown1 = () => {
   isDropdownOpen1.value = !isDropdownOpen1.value;
-  isDropdownOpen2.value = !isDropdownOpen2.value;
+  isDropdownOpen2.value = false;
   NuxtImgSrc1.value = isDropdownOpen1.value ? "/down.png" : "/up.png";
 };
 const toggleDropdown2 = () => {
-  isDropdownOpen1.value = !isDropdownOpen1.value;
+  isDropdownOpen1.value = false;
   isDropdownOpen2.value = !isDropdownOpen2.value;
   NuxtImgSrc2.value = isDropdownOpen2.value ? "/down.png" : "/up.png";
 };
