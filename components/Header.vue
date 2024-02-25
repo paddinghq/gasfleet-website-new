@@ -10,12 +10,10 @@ const downArrow = `<svg width="17" height="16" viewBox="0 0 17 16" fill="none" x
 </svg>`;
 const isDropdownOpen1 = ref(false);
 const isDropdownOpen2 = ref(false);
-
 const toggleDropdown1 = () => {
   isDropdownOpen1.value = !isDropdownOpen1.value;
 };
 const toggleDropdown2 = () => {
-  isDropdownOpen1.value = !isDropdownOpen1.value;
   isDropdownOpen2.value = !isDropdownOpen2.value;
 };
 </script>
