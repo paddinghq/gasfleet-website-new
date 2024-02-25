@@ -8,9 +8,11 @@ const isDropdownOpen2 = ref(false);
 
 const toggleDropdown1 = () => {
   isDropdownOpen1.value = !isDropdownOpen1.value;
+  isDropdownOpen2.value = !isDropdownOpen2.value;
   NuxtImgSrc1.value = isDropdownOpen1.value ? "/down.png" : "/up.png";
 };
 const toggleDropdown2 = () => {
+  isDropdownOpen1.value = !isDropdownOpen1.value;
   isDropdownOpen2.value = !isDropdownOpen2.value;
   NuxtImgSrc2.value = isDropdownOpen2.value ? "/down.png" : "/up.png";
 };
@@ -19,7 +21,7 @@ const toggleDropdown2 = () => {
 <template>
   <div class="nav container mx-auto">
     <div>
-      <NuxtImg src="/colored.png" alt="logo" height="34" width="34" />
+      <NuxtLink to="/"><NuxtImg src="/colored.png" alt="logo" height="34" width="34" /></NuxtLink>
     </div>
 
     <header>

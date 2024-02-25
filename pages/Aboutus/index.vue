@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
-const ImgSrc1 = ref("../../hero.jpg");
-const rectangleImg = ref("../../rectangle.png");
+const ImgSrc1 = ref("hero.jpg");
+const rectangleImg = ref("rectangle.png");
 
 const Heros = ref([
   {
