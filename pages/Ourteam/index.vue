@@ -5,6 +5,18 @@ import Admin from "@/components/Admin.vue";
 import InformationTechnology from "@/components/InfoTech.vue";
 import Contractors from "@/components/Contractors.vue";
 import { ref, computed } from "vue";
+const ImgSrc1 = ref("hero.jpg");
+const rectangleImg = ref("rectangle.png");
+
+const Heros = ref([
+  {
+    id: 2,
+    img: ImgSrc1,
+    rectangle: rectangleImg,
+    title: "Our Team",
+    text: "Our team members have worked on projects across the nation and are committed to delivering the highest level of service and quality",
+  },
+]);
 
 const activeTab = ref("management");
 
@@ -92,7 +104,8 @@ const activateTab = (tab) => {
         </button>
       </div>
     </div>
-    <component :is="activeComponent" />
+
+    <component class="container mx-auto" :is="activeComponent" />
 
     <div class="bg-[#eff6ff] text-center py-[3.8rem]">
       <h2 class="text-[#333333] text-[32px] font-bold tracking-tighter">
@@ -105,11 +118,13 @@ const activateTab = (tab) => {
           about your next groundbreaking project
         </p>
       </div>
-      <button
-        class="bg-[#205fad] p-[1rem] text-semibold text-lg rounded-xl border-none text-white mt-[1.3rem]"
-      >
-        Projects
-      </button>
+      <NuxtLink to="projects">
+        <button
+          class=" mt-4 py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
+        >
+          Projects
+        </button>
+      </NuxtLink>
     </div>
   </div>
 </template>

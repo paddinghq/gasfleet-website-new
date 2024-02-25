@@ -1,9 +1,12 @@
 <script setup>
+import Hero from "./Hero.vue";
+
 const props = defineProps({
   Heros: Array,
   Heads: Array,
   About: String,
   MissionSection: Array,
+  showSection: { type: Boolean, default: true },
   OtherServiceHeader: String,
   OtherServices: Array,
   ConvinceTitle: String,
@@ -13,7 +16,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="">
+  <div>
     <div class="relative bg-[#f1f1f1]" v-for="Hero in Heros" :key="Hero.id">
       <NuxtImg
         class="w-full filter brightness-[0.3] relative h-[467px] object-cover"
@@ -37,13 +40,13 @@ const props = defineProps({
 
     <div class="bg-gray-200">
       <ul class="flex justify-between max-w-4xl py-8 mx-auto">
-        <li class="font-bold text-xl" v-for="Head in Heads" :key="Head">
-          {{ Head }}
+        <li class="font-bold text-xl sans transition-all hover:text-gray-600" v-for="Head in Heads" :key="Head">
+          <NuxtLink :to="Head.link">{{ Head.name }}</NuxtLink>
         </li>
       </ul>
     </div>
 
-    <div class="py-16 px-48">
+    <div class="container mx-auto py-16 px-48">
       <p class="font-bold text-2xl">{{ About }}</p>
     </div>
 
@@ -66,7 +69,7 @@ const props = defineProps({
       </div>
     </div>
 
-    <div class="bg-gray-100 mt-16">
+    <div class="bg-gray-100 mt-16" v-if="showSection">
       <div class="container mx-auto py-16">
         <div class="text-center">
           <h2 class="font-bold text-4xl text-sky-700">
@@ -91,15 +94,17 @@ const props = defineProps({
       </div>
     </div>
 
-    <div class="bg-blue-100">
+    <div class="bg-blue-100"  v-if="showSection">
       <div class="container mx-auto py-10 text-center">
         <h2 class="font-bold text-4xl">{{ ConvinceTitle }}</h2>
         <p class="w-3/4 mx-auto my-6 text-xl">{{ ConvinceText }}</p>
-        <button
-          class="py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
-        >
-          {{ ConvinceBtn }}
-        </button>
+        <NuxtLink to="project">
+          <button
+            class="py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
+          >
+            {{ ConvinceBtn }}
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>
