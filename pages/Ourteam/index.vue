@@ -54,7 +54,7 @@ const activateTab = (tab) => {
         alt="rectangle"
       />
       <div
-        class="text-white absolute top-[44%] left-[32.6%] transform -translate-x-1/2 -translate-y-1/2"
+        class="text-white absolute top-[44%] left-[32.5%] transform -translate-x-1/2 -translate-y-1/2"
       >
         <h1 class="font-bold mt-5 text-5xl">Our team</h1>
         <h1 class="mt-4 text-[1.2rem]">
@@ -120,7 +120,7 @@ const activateTab = (tab) => {
       </div>
       <NuxtLink to="projects">
         <button
-          class=" mt-4 py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
+          class="mt-4 py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
         >
           Projects
         </button>
