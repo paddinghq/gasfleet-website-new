@@ -84,7 +84,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
             class="relative h-[690px] top-[-43rem] pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent"
           >
             <div class="text-white flex flex-col gap-3">
-              <h1 class="w-2/5 text-6xl">{{ item.title }}</h1>
+              <h1 class="w-[45%] text-6xl">{{ item.title }}</h1>
               <p class="text-lg w-[47.5%]">{{ item.text }}</p>
             </div>
           </div>
