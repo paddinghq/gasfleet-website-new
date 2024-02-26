@@ -24,26 +24,42 @@ const toggleDropdown2 = () => {
 
     <header>
       <nav class="flex gap-[2rem]">
-        <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
-          @click="toggleDropdown1"
-        >
-          <NuxtLink>Who we are</NuxtLink>
-          <span
-            class="mt-1"
-            v-html="isDropdownOpen1 ? upArrow : downArrow"
-          ></span>
-        </button>
-        <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
-          @click="toggleDropdown2"
-        >
-          <NuxtLink>What we do</NuxtLink>
-          <span
-            class="mt-1"
-            v-html="isDropdownOpen2 ? upArrow : downArrow"
-          ></span>
-        </button>
+        <div class="relative" @click="toggleDropdown1">
+          <button
+            class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
+          >
+            <span>Who we are</span>
+            <span
+              class="mt-1"
+              v-html="isDropdownOpen1 ? upArrow : downArrow"
+            ></span>
+          </button>
+          <div
+            v-if="isDropdownOpen1"
+            class="absolute top-full left-[-3.4rem] mt-2 p-3 bg-white shadow-md rounded-md z-10 flex flex-col gap-1 w-[10rem]"
+          >
+            <NuxtLink to="/about">About Us</NuxtLink>
+            <NuxtLink to="/location">Our Team</NuxtLink>
+          </div>
+        </div>
+        <div class="relative" @click="toggleDropdown2">
+          <button
+            class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
+          >
+            <span>What we do</span>
+            <span
+              class="mt-1"
+              v-html="isDropdownOpen2 ? upArrow : downArrow"
+            ></span>
+          </button>
+          <div
+            v-if="isDropdownOpen2"
+            class="absolute top-full left-0 mt-2 bg-white shadow-md rounded-md"
+          >
+            <NuxtLink to="/mission">Mission</NuxtLink>
+            <NuxtLink to="/vision">Vision</NuxtLink>
+          </div>
+        </div>
         <button
           class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
         >
