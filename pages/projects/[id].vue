@@ -1,3 +1,14 @@
+<script setup>
+import { projects } from "@/store/projects"
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const projectId = ref(router.currentRoute.value.params.id);
+
+const project = computed(() => projects.find(project => project.id === parseInt(projectId.value)));
+</script>
+
 <template>
   <div>
     <div class="relative bg-[#f1f1f1]">
@@ -15,7 +26,7 @@
         class="text-white absolute top-[44%] left-[40%] transform -translate-x-1/2 -translate-y-1/2"
       >
         <h1 class="font-bold mt-5 text-5xl">
-          Spurline Gas Pipeline Construction to Apex Industries
+          Spurline Gas Pipeline Construction to Apex Industries <span>{{ project.id }}</span>
         </h1>
         <p class="text-[1.2rem]">
           We are committed to providing our clients with comprehensive and
@@ -63,7 +74,7 @@
         </div>
         <hr class="border-2 my-3 border-[#333333]" />
 
-        <div class="flex flex-row w-full gap-10 mt-10">
+        <div class="flex flex-row w-full gap-10 my-10">
           <div class="w-[70%]">
             <h1
               class="text-[#205FAD] font-oswald text-4xl font-semibold leading-10 tracking-tighter"
@@ -87,7 +98,7 @@
               local companies, led by our company as the main contractor. The
               project was supported by the Nigerian government, the Nigerian
               National Petroleum Corporation (NNPC), and the local communities.
-              <br />
+              <br /> <br>
               The project objectives were to:
             </p>
             <ul class="list-disc ml-10">
@@ -111,9 +122,9 @@
           </div>
           <div class="w-[30%]">
             <NuxtImg
-              class="w-[500px] h-[470px] border-r-[10px] border- border-[#205FAD] border-t-[10px]"
+              class="w-full h-full object-cover"
               alt="single-project-image"
-              src="/single.jpeg"
+              src="/single.png"
             />
           </div>
         </div>
@@ -227,7 +238,7 @@
                 <h4
                   class="font-oswald font-semibold text-white text-3xl leading-8 tracking-wider"
                 >
-                  Abuja Gas Plant Expansion
+                {{ project.name }} {{ project.id }}
                 </h4>
                 <div class="mt-4">
                   <p
@@ -246,7 +257,7 @@
                 <h4
                   class="font-oswald font-semibold text-white text-3xl leading-8 tracking-wider"
                 >
-                  Abuja Gas Plant Expansion
+                  {{ project.name }} {{ project.id }}
                 </h4>
                 <div class="mt-4">
                   <p
@@ -263,13 +274,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
-</script>
-
-<style scoped></style>
