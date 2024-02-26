@@ -36,11 +36,11 @@ const toggleDropdown2 = () => {
         <div class="relative" @click="toggleDropdown1">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
-            :class="{ 'focus:text-[#205fad]': isDropdownOpen1 }"
+            :class="{ 'focus:text-[#205FAD]': isDropdownOpen1 }"
             @focus="isDropdownOpen1 = true"
             @blur="isDropdownOpen1 = false"
           >
-            <span :class="{ 'text-[#205fad]': isDropdownOpen1 }"
+            <span :class="{ 'text-[#205FAD]': isDropdownOpen1 }"
               >Who we are</span
             >
             <span
@@ -50,23 +50,31 @@ const toggleDropdown2 = () => {
           </button>
           <div
             v-if="isDropdownOpen1"
-            class="absolute top-[4.2rem] left-0 mt-2 p-8 bg-white shadow-md rounded-md z-10 flex flex-col gap-4 w-[15rem] text-sm font-normal"
+            class="absolute top-[4.2rem] left-0 mt-2 p-8 bg-white shadow-md rounded-md z-10 flex flex-col gap-5 w-[16rem] text-base font-normal"
           >
-            <NuxtLink to="/Aboutus">About Us</NuxtLink>
-            <NuxtLink to="/Brand">Brand</NuxtLink>
-            <NuxtLink to="/Ourteam">Our Team</NuxtLink>
-            <NuxtLink to="/Ourmission">Our Mission</NuxtLink>
-            <NuxtLink to="/Ourvision">Our Vision</NuxtLink>
+            <NuxtLink class="hover:text-[#205FAD]" to="/Aboutus"
+              >About Us</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/Brand">Brand</NuxtLink>
+            <NuxtLink class="hover:text-[#205FAD]" to="/Ourteam"
+              >Our Team</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/Ourmission"
+              >Our Mission</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/Ourvision"
+              >Our Vision</NuxtLink
+            >
           </div>
         </div>
         <div class="relative" @click="toggleDropdown2">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
-            :class="{ 'focus:text-[#205fad]': isDropdownOpen2 }"
+            :class="{ 'focus:text-[#205FAD]': isDropdownOpen2 }"
             @focus="isDropdownOpen2 = true"
             @blur="isDropdownOpen2 = false"
           >
-            <span :class="{ 'text-[#205fad]': isDropdownOpen2 }"
+            <span :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
               >What we do</span
             >
             <span
@@ -76,19 +84,38 @@ const toggleDropdown2 = () => {
           </button>
           <div
             v-if="isDropdownOpen2"
-            class="absolute top-[4.2rem] left-0 mt-2 bg-white p-3 shadow-md rounded-md z-10 flex flex-col gap-4 w-[15rem] text-sm font-normal"
+            class="absolute p-8 top-[4.2rem] left-0 mt-2 bg-white shadow-md rounded-md z-10 flex flex-col gap-5 w-[18rem] text-base font-normal"
           >
-            <NuxtLink to="/mission">Mission</NuxtLink>
-            <NuxtLink to="/vision">Vision</NuxtLink>
+            <NuxtLink class="hover:text-[#205FAD]" to="/mission"
+              >Engineering</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+              >Procurement</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+              >Construction</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+              >Management</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+              >Power Distribution</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+              >Natural Gas Distribution</NuxtLink
+            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+              >Infrastructure Development</NuxtLink
+            >
           </div>
         </div>
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205fad]"
+          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
         >
           <NuxtLink class="">Projects</NuxtLink>
         </button>
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205fad]"
+          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
         >
           <NuxtLink class="">Sustainability </NuxtLink>
         </button>
