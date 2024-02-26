@@ -1,31 +1,104 @@
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+
+const items = ref([
+  {
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering Limited - EPCM company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+  },
+  {
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering Limited - EPCM company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+  },
+  {
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering Limited - EPCM company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+  },
+]);
+const currentIndex = ref(0);
+let autoSlideInterval = null;
+
+const next = () => {
+  currentIndex.value = (currentIndex.value + 1) % items.value.length;
+};
+
+const startAutoSlide = () => {
+  autoSlideInterval = setInterval(next, 4000);
+};
+
+const stopAutoSlide = () => {
+  clearInterval(autoSlideInterval);
+};
+
+const goTo = (index) => {
+  currentIndex.value = index;
+};
+
+onMounted(startAutoSlide);
+onBeforeUnmount(() => clearInterval(autoSlideInterval));
+</script>
+
+<style scoped>
+.carousel-wrapper {
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+}
+
+.dot {
+  content: "";
+  background: rgb(176, 176, 176);
+}
+
+.active {
+  background: white;
+  width: 2rem;
+}
+</style>
+
 <template>
   <div>
-    <div class="relative">
-      <NuxtLink to="/">
-        <img
-          src="/image/hero-image.png"
-          alt="hero"
-          class="object-cover h-full w-full absolute insert-0"
-        />
-      </NuxtLink>
+    <div
+      class="overflow-hidden h-[690px] relative"
+      @mouseenter="stopAutoSlide"
+      @mouseleave="startAutoSlide"
+    >
       <div
-        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
-      ></div>
-      <div class="relative h-full container mx-auto">
-        <div class="text-white py-28 flex flex-col gap-3">
-          <h1 class="capitalize text-6xl">
-            gasfleet engineering <br />
-            limited - EPCM company
-          </h1>
-          <p class="text-lg">
-            We are committed to providing innovative solutions and exceptional
-            service <br />
-            to our clients in the oil and gas industry. With decades of
-            experience, our <br />
-            team of experts has a deep understanding of the industry and the
-            <br />
-            challenges our clients face.
-          </p>
+        class="carousel-wrapper w-screen flex"
+        :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+      >
+        <div v-for="(item, index) in items" :key="index">
+          <div class="carousel-item w-screen h-[684px]">
+            <img
+              :src="item.image"
+              alt="Carousel Item"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="relative h-[690px] top-[-43rem] pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+          >
+            <div class="text-white flex flex-col gap-3">
+              <h1 class="w-2/5 text-6xl">{{ item.title }}</h1>
+              <p class="text-lg w-[47.5%]">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-5 left-0 right-0 mb-8 flex justify-center">
+        <div class="carousel-dots w-24 flex justify-between">
+          <span
+            v-for="(item, index) in items"
+            :key="index"
+            @click="goTo(index)"
+            :class="{ active: currentIndex === index }"
+            class="dot cursor-pointer h-2 w-4 rounded-2xl"
+          ></span>
         </div>
       </div>
     </div>
@@ -86,7 +159,7 @@
       </div>
     </div>
 
-    <div class="bg-gray-100">
+    <div class="bg-gray-100 py-20">
       <div class="container mx-auto flex py-10 bg-gray-100 gap-10">
         <div class="bg-[#205FAD] rounded-lg flex gap-4 flex-col p-5 text-white">
           <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
@@ -139,7 +212,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto text-center bg-white p-10 mt-5">
+    <div class="container mx-auto text-center bg-white my-16">
       <h2 class="font-bold text-4xl text-[#205FAD] capitalize">Our Client</h2>
 
       <div
@@ -157,3 +230,5 @@
     </div>
   </div>
 </template>
+
+

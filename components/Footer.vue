@@ -1,15 +1,15 @@
 <template>
   <div>
     <footer class="bg-[#222222]">
-      <div class="flex justify-between text-[#fffdfd] py-[2rem] px-[5rem]">
+      <div class="flex justify-between text-[#fffdfd] py-[4rem] px-[5rem]">
         <div class="left">
           <NuxtImg src="/colored.png" alt="logo" class="w-12" />
-          <p class="text-lg mt-5">
+          <p class="text-base mt-8">
             We are committed to providing innovative<br />
             solutions and exceptional service to our clients<br />
             in the oil and gas industry
           </p>
-          <div class="flex gap-4 mt-4">
+          <div class="flex gap-4 mt-8">
             <NuxtLink
               ><svg
                 width="32"
@@ -57,32 +57,37 @@
           </div>
         </div>
         <div class="">
-          <h3 class="text-lg font-black">Quick Links</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[1rem]">
-            <NuxtLink>Home</NuxtLink>
-            <NuxtLink>About Us</NuxtLink>
-            <NuxtLink>Projects</NuxtLink>
-            <NuxtLink>Sustainability</NuxtLink>
+          <h3 class="text-lg font-semibold">Quick Links</h3>
+          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+            <NuxtLink class="sans text-lg" to="/">Home</NuxtLink>
+            <NuxtLink class="sans text-lg" to="/aboutus">About Us</NuxtLink>
+            <NuxtLink class="sans text-lg" to="/projects">Projects</NuxtLink>
+            <NuxtLink class="sans text-lg" to="/sustainability"
+              >Sustainability</NuxtLink
+            >
           </div>
         </div>
         <div class="">
           <h3 class="text-lg font-black">Our Services</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[1rem]">
-            <NuxtLink>Engineering</NuxtLink>
-            <NuxtLink>Procurement</NuxtLink>
-            <NuxtLink>Construction</NuxtLink>
-            <NuxtLink>Management</NuxtLink>
+          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+            <NuxtLink class="sans text-lg" to="/">Engineering</NuxtLink>
+            <NuxtLink class="sans text-lg" to="/">Procurement</NuxtLink>
+            <NuxtLink class="sans text-lg" to="/">Construction</NuxtLink>
+            <NuxtLink class="sans text-lg" to="/">Management</NuxtLink>
           </div>
         </div>
         <div class="">
           <h3 class="text-lg font-black">Contact Us</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[1rem]">
-            <NuxtLink
-              >17, M.A Oke Street, opposite Diamond Estate, Igando,
-              Lagos</NuxtLink
-            >
-            <NuxtLink>Email: info@gasfleeteng.com</NuxtLink>
-            <NuxtLink>Tel: +234(0) 908 954 5886</NuxtLink>
+          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+            <p>17, M.A Oke Street, opposite Diamond Estate, Igando, Lagos</p>
+            <p>
+              Email:
+              <a href="mailto:info@gasfleeteng.com" class="hover:underline">info@gasfleeteng.com </a>
+            </p>
+            <p>
+              Tell:
+              <a href="tel:+2349089545886" class="hover:underline">+234(0) 908 954 5886 </a>
+            </p>
             <NuxtLink>Management</NuxtLink>
           </div>
         </div>

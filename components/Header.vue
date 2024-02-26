@@ -1,50 +1,67 @@
 <script setup>
 import { ref } from "vue";
+const upArrowBlue = `<svg width="17" height="16" viewBox="0 0 17 16" fill="#205FAD" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.7046 4.8C8.23794 4.8 7.77127 4.97994 7.41794 5.33338L3.07127 9.68005C2.87794 9.87338 2.87794 10.1934 3.07127 10.3867C3.2646 10.5801 3.5846 10.5801 3.77794 10.3867L8.1246 6.04005C8.4446 5.72005 8.9646 5.72005 9.2846 6.04005L13.6313 10.3867C13.8246 10.5801 14.1446 10.5801 14.3379 10.3867C14.5313 10.1934 14.5313 9.87338 14.3379 9.68005L9.99127 5.33338C9.63794 4.97994 9.17127 4.8 8.7046 4.8Z" fill="#205FAD"/>
+    </svg>`;
 
-const NuxtImgSrc1 = ref("/down.png");
-const NuxtImgSrc2 = ref("/down.png");
+const upArrow = `<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.7046 4.8C8.23794 4.8 7.77127 4.97994 7.41794 5.33338L3.07127 9.68005C2.87794 9.87338 2.87794 10.1934 3.07127 10.3867C3.2646 10.5801 3.5846 10.5801 3.77794 10.3867L8.1246 6.04005C8.4446 5.72005 8.9646 5.72005 9.2846 6.04005L13.6313 10.3867C13.8246 10.5801 14.1446 10.5801 14.3379 10.3867C14.5313 10.1934 14.5313 9.87338 14.3379 9.68005L9.99127 5.33338C9.63794 4.97994 9.17127 4.8 8.7046 4.8Z" fill="#0A0A0A"/>
+</svg>`;
+
+const downArrow = `<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.7046 11.2C8.23794 11.2 7.77127 11.0201 7.41794 10.6667L3.07127 6.32005C2.87794 6.12672 2.87794 5.80672 3.07127 5.61338C3.2646 5.42005 3.5846 5.42005 3.77794 5.61338L8.1246 9.96005C8.4446 10.2801 8.9646 10.2801 9.2846 9.96005L13.6313 5.61338C13.8246 5.42005 14.1446 5.42005 14.3379 5.61338C14.5313 5.80672 14.5313 6.12672 14.3379 6.32005L9.99127 10.6667C9.63794 11.0201 9.17127 11.2 8.7046 11.2Z" fill="#0A0A0A"/>
+</svg>`;
 
 const isDropdownOpen1 = ref(false);
 const isDropdownOpen2 = ref(false);
 
 const toggleDropdown1 = () => {
-  isDropdownOpen1.value = !isDropdownOpen1.value;
-  isDropdownOpen2.value = false;
-  NuxtImgSrc1.value = isDropdownOpen1.value ? "/down.png" : "/up.png";
+  isDropdownOpen1.value = true;
+  if (isDropdownOpen1.value) {
+    isDropdownOpen2.value = false;
+  }
 };
 
 const toggleDropdown2 = () => {
-  isDropdownOpen1.value = false;
-  isDropdownOpen2.value = !isDropdownOpen2.value;
-  NuxtImgSrc2.value = isDropdownOpen2.value ? "/down.png" : "/up.png";
+  isDropdownOpen2.value = true;
+  if (isDropdownOpen2.value) {
+    isDropdownOpen1.value = false;
+  }
 };
 </script>
 
 <template>
-  <div class="py-[2rem] px-[4rem] flex justify-between items-center">
-    <div><NuxtImg src="/colored.png" alt="logo" class="w-12" /></div>
+  <div class="py-[1rem] px-[4rem] flex justify-between items-center">
+    <div>
+      <NuxtLink to="/">
+        <NuxtImg src="/colored.png" alt="logo" class="w-12" />
+      </NuxtLink>
+    </div>
 
     <header>
       <nav class="flex gap-[2rem]">
-        <div class="relative">
-          <button @click="toggleDropdown1" class="button flex justify-between items-center">
-            <NuxtLink class="sans text-lg transition-all hover:text-gray-500"
-              >Who we are</NuxtLink
+        <div class="relative" @click="toggleDropdown1">
+          <button
+            class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
+            :class="{ 'focus:text-[#205FAD]': isDropdownOpen1 }"
+            @focus="isDropdownOpen1 = true"
+            @blur="isDropdownOpen1 = false"
+          >
+            <span class="sans text-lg" :class="{ 'text-[#205FAD]': isDropdownOpen1 }" 
+              >Who we are</span
             >
-            <NuxtImg
-              :src="NuxtImgSrc1"
-              alt="arrow"
-              height="24"
-              width="24"
-            />
+            <span
+              class="mt-1"
+              v-html="isDropdownOpen1 ? upArrowBlue : downArrow"
+            ></span>
           </button>
 
           <transition name="fade">
             <div
               v-if="isDropdownOpen1"
-              class="absolute z-10 right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
+              class="absolute z-10 right-0 mt-8 w-48 bg-white rounded-md shadow-lg"
             >
-              <ul class="py-1">
+              <ul class="pl-4 py-8 flex flex-col gap-2 justify-between">
                 <li @click="toggleDropdown1">
                   <NuxtLink
                     to="aboutus"
@@ -54,47 +71,84 @@ const toggleDropdown2 = () => {
                 </li>
                 <li @click="toggleDropdown1">
                   <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Brand</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown1">
+                  <NuxtLink
                     to="ourteam"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >Our Team</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown1">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Our Mission</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown1">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Our Vision</NuxtLink
                   >
                 </li>
               </ul>
             </div>
           </transition>
         </div>
-
-        <div class="relative">
-          <button @click="toggleDropdown2" class="button  flex justify-between items-center">
-            <NuxtLink class="sans text-lg transition-all hover:text-gray-500"
-              >What we do</NuxtLink
+        <div class="relative" @click="toggleDropdown2">
+          <button
+            class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
+            :class="{ 'focus:text-[#205FAD]': isDropdownOpen2 }"
+            @focus="isDropdownOpen2 = true"
+            @blur="isDropdownOpen2 = false"
+          >
+            <span class="sans text-lg" :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
+              >What we do</span
             >
-            <NuxtImg
-              :src="NuxtImgSrc2"
-              alt="arrow"
-              height="24"
-              width="24"
-            />
+            <span
+              class="mt-1"
+              v-html="isDropdownOpen2 ? upArrowBlue : downArrow"
+            ></span>
           </button>
 
           <transition name="fade">
             <div
               v-if="isDropdownOpen2"
-              class="absolute z-10 right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
+              class="absolute z-10 right-0 mt-8 w-72 bg-white rounded-md shadow-lg"
             >
-              <ul class="py-1">
+              <ul class="pl-4 py-8 flex flex-col gap-2 justify-between">
                 <li @click="toggleDropdown2">
                   <NuxtLink
-                    to="ECPM"
+                    to="/"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >ECPM</NuxtLink
+                    >Engineering</NuxtLink
                   >
                 </li>
                 <li @click="toggleDropdown2">
                   <NuxtLink
-                    to="GAS"
+                    to="/"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >Gas Distribution</NuxtLink
+                    >Procurement</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown2">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Contruction</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown2">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Management</NuxtLink
                   >
                 </li>
                 <li @click="toggleDropdown2">
@@ -106,28 +160,35 @@ const toggleDropdown2 = () => {
                 </li>
                 <li @click="toggleDropdown2">
                   <NuxtLink
+                    to="GAS"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Natural Gas Distribution</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown2">
+                  <NuxtLink
                     to="IDPM"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >IDPM</NuxtLink
+                    >Infrastructure Development</NuxtLink
                   >
                 </li>
               </ul>
             </div>
           </transition>
         </div>
-
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
+          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
         >
-          <NuxtLink class="">Projects</NuxtLink>
+          <NuxtLink to="projects" class="sans text-lg">Projects</NuxtLink>
         </button>
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
+          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
         >
-          <NuxtLink class="">Sustainability </NuxtLink>
+          <NuxtLink to="sustainability" class="sans text-lg">Sustainability </NuxtLink>
         </button>
       </nav>
     </header>
+    
     <div class="flex gap-[2rem]">
       <div class="flex items-center">
         <input
@@ -198,5 +259,3 @@ const toggleDropdown2 = () => {
     </div>
   </div>
 </template>
-
-<style scoped></style>
