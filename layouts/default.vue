@@ -44,11 +44,9 @@ h3 {
 
 <template>
   <div>
-    <div class="xl:hidden">
-      mobile & tab design not ready yet
-    </div>
+    <div class="xl:hidden">mobile & tab design not ready yet</div>
 
-    <div class=" xl:block">
+    <div class="hidden xl:block">
       <Header />
       <slot></slot>
       <Footer />
