@@ -52,16 +52,14 @@ const toggleDropdown2 = () => {
             v-if="isDropdownOpen1"
             class="absolute top-[4.2rem] left-0 mt-2 p-8 bg-white shadow-md rounded-md z-10 flex flex-col gap-5 w-[16rem] text-base font-normal"
           >
-            <NuxtLink class="hover:text-[#205FAD]" to="/Aboutus"
+            <NuxtLink class="hover:text-[#205FAD]" to="/next"
               >About Us</NuxtLink
             >
             <NuxtLink class="hover:text-[#205FAD]" to="/Brand">Brand</NuxtLink>
             <NuxtLink class="hover:text-[#205FAD]" to="/Ourteam"
               >Our Team</NuxtLink
             >
-            <NuxtLink class="hover:text-[#205FAD]" to="/Ourmission"
-              >Our Mission</NuxtLink
-            >
+            <NuxtLink class="hover:text-[#205FAD]" to="/">Our Mission</NuxtLink>
             <NuxtLink class="hover:text-[#205FAD]" to="/Ourvision"
               >Our Vision</NuxtLink
             >
@@ -92,19 +90,19 @@ const toggleDropdown2 = () => {
             <NuxtLink class="hover:text-[#205FAD]" to="/vision"
               >Procurement</NuxtLink
             >
-            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+            <NuxtLink class="hover:text-[#205FAD]" to="/"
               >Construction</NuxtLink
             >
-            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+            <NuxtLink class="hover:text-[#205FAD]" to="/"
               >Management</NuxtLink
             >
-            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+            <NuxtLink class="hover:text-[#205FAD]" to="/"
               >Power Distribution</NuxtLink
             >
-            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+            <NuxtLink class="hover:text-[#205FAD]" to="/"
               >Natural Gas Distribution</NuxtLink
             >
-            <NuxtLink class="hover:text-[#205FAD]" to="/vision"
+            <NuxtLink class="hover:text-[#205FAD]" to="/"
               >Infrastructure Development</NuxtLink
             >
           </div>
@@ -112,12 +110,12 @@ const toggleDropdown2 = () => {
         <button
           class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
         >
-          <NuxtLink class="">Projects</NuxtLink>
+          <NuxtLink class="/projects">Projects</NuxtLink>
         </button>
         <button
           class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
         >
-          <NuxtLink class="">Sustainability </NuxtLink>
+          <NuxtLink class="/Sustainability">Sustainability </NuxtLink>
         </button>
       </nav>
     </header>
