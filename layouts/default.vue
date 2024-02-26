@@ -1,8 +1,9 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-p, .sans {
+p,
+.sans {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -10,7 +11,9 @@ p, .sans {
   font-family: "Oswald";
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Oswald;
 }
 
@@ -34,7 +37,7 @@ h1, h2, h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #205FAD;
+  background-color: #205fad;
   border-radius: 10px;
 }
 </style>

@@ -52,7 +52,7 @@ const activateTab = (tab) => {
       </div>
       <div class="flex gap-12 items-center justify-center pb-8 pt-6">
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activateTab('management')"
           :class="{
             active: activeTab === 'management',
@@ -63,28 +63,28 @@ const activateTab = (tab) => {
           Management
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'engineering'"
           :class="{ active: activeTab === 'engineering' }"
         >
           Engineering
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'admin'"
           :class="{ active: activeTab === 'admin' }"
         >
           Admin
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'it'"
           :class="{ active: activeTab === 'it' }"
         >
           Information Technology
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205fad] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'contractors'"
           :class="{ active: activeTab === 'contractors' }"
         >
@@ -106,7 +106,7 @@ const activateTab = (tab) => {
         </p>
       </div>
       <button
-        class="bg-[#205fad] p-[1rem] text-semibold text-lg rounded-xl border-none text-white mt-[1.3rem]"
+        class="bg-[#205FAD] p-[1rem] text-semibold text-lg rounded-xl border-none text-white mt-[1.3rem]"
       >
         Projects
       </button>
