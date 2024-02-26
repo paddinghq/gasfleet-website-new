@@ -16,13 +16,13 @@ const Heros = ref([
   },
 ]);
 
-const activeTab = ref("management");
+const activeTab = ref('management');
 
 const activeComponent = computed(() => {
   switch (activeTab.value) {
-    case "completed":
+    case 'completed':
       return Completed;
-    case "ongoing":
+    case 'ongoing':
       return Ongoing;
     default:
       return All;
@@ -68,14 +68,6 @@ const activateTab = (tab) => {
     </div>
 
     <component class="container mx-auto" :is="activeComponent" />
-
-    <div class="flex justify-center my-10">
-      <button
-        class="py-2 px-4 text-black border-2 text-xl rounded-xl hover:bg-blue-300 transition-all cursor-pointer"
-      >
-        Load More
-      </button>
-    </div>
 
     <div class="bg-blue-100 mt-5 py-10">
       <div class="container mx-auto py-10 text-center">
