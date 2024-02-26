@@ -21,14 +21,18 @@ const toggleDropdown2 = () => {
 </script>
 
 <template>
-  <div class="py-[2rem] px-[4rem] flex justify-between items-center">
-    <div><NuxtImg src="/colored.png" alt="logo" class="w-12" /></div>
+  <div class="py-[1rem] px-[4rem] flex justify-between items-center">
+    <div>
+      <NuxtLink to="/">
+        <NuxtImg src="/colored.png" alt="logo" class="w-12" />
+      </NuxtLink>
+    </div>
 
     <header>
       <nav class="flex gap-[2rem]">
         <div class="relative">
           <button @click="toggleDropdown1" class="button flex justify-between items-center">
-            <NuxtLink class="sans text-lg transition-all hover:text-gray-500"
+            <NuxtLink class="sans text-lg mr-1 transition-all hover:text-gray-500"
               >Who we are</NuxtLink
             >
             <NuxtImg
@@ -42,9 +46,9 @@ const toggleDropdown2 = () => {
           <transition name="fade">
             <div
               v-if="isDropdownOpen1"
-              class="absolute z-10 right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
+              class="absolute z-10 right-0 mt-7 w-48 bg-white rounded-md shadow-lg"
             >
-              <ul class="py-1">
+              <ul class="pl-4 py-8 flex flex-col gap-2 justify-between">
                 <li @click="toggleDropdown1">
                   <NuxtLink
                     to="aboutus"
@@ -54,9 +58,30 @@ const toggleDropdown2 = () => {
                 </li>
                 <li @click="toggleDropdown1">
                   <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Brand</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown1">
+                  <NuxtLink
                     to="ourteam"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >Our Team</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown1">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Our Mission</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown1">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Our Vision</NuxtLink
                   >
                 </li>
               </ul>
@@ -66,7 +91,7 @@ const toggleDropdown2 = () => {
 
         <div class="relative">
           <button @click="toggleDropdown2" class="button  flex justify-between items-center">
-            <NuxtLink class="sans text-lg transition-all hover:text-gray-500"
+            <NuxtLink class="sans text-lg mr-1 transition-all hover:text-gray-500"
               >What we do</NuxtLink
             >
             <NuxtImg
@@ -80,21 +105,35 @@ const toggleDropdown2 = () => {
           <transition name="fade">
             <div
               v-if="isDropdownOpen2"
-              class="absolute z-10 right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
+              class="absolute z-10 right-0 mt-7 w-72 bg-white rounded-md shadow-lg"
             >
-              <ul class="py-1">
+              <ul class="pl-4 py-8 flex flex-col gap-2 justify-between">
                 <li @click="toggleDropdown2">
                   <NuxtLink
-                    to="ECPM"
+                    to="/"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >ECPM</NuxtLink
+                    >Engineering</NuxtLink
                   >
                 </li>
                 <li @click="toggleDropdown2">
                   <NuxtLink
-                    to="GAS"
+                    to="/"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >Gas Distribution</NuxtLink
+                    >Procurement</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown2">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Contruction</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown2">
+                  <NuxtLink
+                    to="/"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Management</NuxtLink
                   >
                 </li>
                 <li @click="toggleDropdown2">
@@ -106,9 +145,16 @@ const toggleDropdown2 = () => {
                 </li>
                 <li @click="toggleDropdown2">
                   <NuxtLink
+                    to="GAS"
+                    class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >Natural Gas Distribution</NuxtLink
+                  >
+                </li>
+                <li @click="toggleDropdown2">
+                  <NuxtLink
                     to="IDPM"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                    >IDPM</NuxtLink
+                    >Infrastructure Development</NuxtLink
                   >
                 </li>
               </ul>
@@ -117,17 +163,18 @@ const toggleDropdown2 = () => {
         </div>
 
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
+          class="bg-white border-none flex gap-[0.5rem] items-center"
         >
-          <NuxtLink class="">Projects</NuxtLink>
+          <NuxtLink class="sans text-lg">Projects</NuxtLink>
         </button>
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
+          class="bg-white border-none flex gap-[0.5rem] items-center"
         >
-          <NuxtLink class="">Sustainability </NuxtLink>
+          <NuxtLink class="sans text-lg">Sustainability </NuxtLink>
         </button>
       </nav>
     </header>
+    
     <div class="flex gap-[2rem]">
       <div class="flex items-center">
         <input
@@ -198,5 +245,3 @@ const toggleDropdown2 = () => {
     </div>
   </div>
 </template>
-
-<style scoped></style>
