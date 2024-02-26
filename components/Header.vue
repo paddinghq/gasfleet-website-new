@@ -47,7 +47,9 @@ const toggleDropdown2 = () => {
             @focus="isDropdownOpen1 = true"
             @blur="isDropdownOpen1 = false"
           >
-            <span class="sans text-lg" :class="{ 'text-[#205FAD]': isDropdownOpen1 }" 
+            <span
+              class="sans text-lg"
+              :class="{ 'text-[#205FAD]': isDropdownOpen1 }"
               >Who we are</span
             >
             <span
@@ -108,7 +110,9 @@ const toggleDropdown2 = () => {
             @focus="isDropdownOpen2 = true"
             @blur="isDropdownOpen2 = false"
           >
-            <span class="sans text-lg" :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
+            <span
+              class="sans text-lg"
+              :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
               >What we do</span
             >
             <span
@@ -177,18 +181,24 @@ const toggleDropdown2 = () => {
           </transition>
         </div>
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
+          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
         >
-          <NuxtLink to="projects" class="sans text-lg">Projects</NuxtLink>
+          <NuxtLink to="projects" class="sans text-lg focus:text-[#205FAD]"
+            >Projects</NuxtLink
+          >
         </button>
         <button
-          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center focus:text-[#205FAD]"
+          class="text-base font-semibold bg-white border-none flex gap-[0.5rem] items-center"
         >
-          <NuxtLink to="sustainability" class="sans text-lg">Sustainability </NuxtLink>
+          <NuxtLink
+            to="sustainability"
+            class="sans text-lg focus:text-[#205FAD]"
+            >Sustainability
+          </NuxtLink>
         </button>
       </nav>
     </header>
-    
+
     <div class="flex gap-[2rem]">
       <div class="flex items-center">
         <input
