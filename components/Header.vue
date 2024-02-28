@@ -96,7 +96,7 @@ const toggleDropdown2 = () => {
                 </li>
                 <li>
                   <NuxtLink
-                    to="/"
+                    to="#mission"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown1"
@@ -105,7 +105,7 @@ const toggleDropdown2 = () => {
                 </li>
                 <li>
                   <NuxtLink
-                    to="/"
+                    to="#vision"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown1"

@@ -71,7 +71,7 @@
         excellence
       </p>
 
-      <div class="flex gap-[10rem] mt-20">
+      <div class="flex gap-[10rem] mt-20" id="mission">
         <div class="w-1/2 relative h-[28rem]">
           <NuxtImg src="/Rectangle6.png" class="w-[30rem]" />
           <NuxtImg
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="relative flex gap-[10rem] mt-12">
+      <div class="relative flex gap-[10rem] mt-12" id="vision">
         <div class="self-center">
           <h1 class="text-[#205FAD] font-bold text-[2.5rem]">Our Vision</h1>
           <p class="text-[#0A0A0A] mt-5 tracking-wide text-sm">
