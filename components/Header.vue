@@ -31,7 +31,7 @@ const toggleDropdown2 = () => {
 
 <template>
   <div
-    class="bg-white z-10 sticky top-0 py-[1rem] px-[4rem] flex justify-between items-center"
+    class="bg-white z-10 sticky top-0 py-5 px-20 flex justify-between items-center"
   >
     <div>
       <NuxtLink to="/">
@@ -51,7 +51,7 @@ const toggleDropdown2 = () => {
             "
           >
             <span
-              class="sans text-base font-light"
+              class="sans text-base font-light text-[#0A0A0A]"
               :class="{ 'text-[#205FAD]': isDropdownOpen1 }"
               >Who we are</span
             >
@@ -126,7 +126,7 @@ const toggleDropdown2 = () => {
             "
           >
             <span
-              class="sans text-base font-light"
+              class="sans text-base font-light text-[#0A0A0A]"
               :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
               >What we do</span
             >
@@ -218,7 +218,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="projects"
-            class="sans text-base active:text-[#205FAD] hover:text-[#205FAD] font-light"
+            class="sans text-base text-[#0A0A0A] active:text-[#205FAD] hover:text-[#205FAD] font-light"
             >Projects</NuxtLink
           >
         </button>
@@ -231,7 +231,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="sustainability"
-            class="sans text-base active:text-[#205FAD] hover:text-[#205FAD] font-light"
+            class="sans text-base text-[#0A0A0A] active:text-[#205FAD] hover:text-[#205FAD] font-light"
             >Sustainability
           </NuxtLink>
         </button>

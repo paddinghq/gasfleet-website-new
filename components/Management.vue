@@ -56,8 +56,8 @@ const mappedArray = computed(() => {
     >
       <NuxtImg :src="item.NuxtImg" :alt="item.alt" class="w-full" />
       <div class="text-center my-6">
-        <h2 class="text-2xl font-bold">{{ item.name }}</h2>
-        <p class="mt-1 sans">{{ item.position }}</p>
+        <h2 class="text-xl font-semibold">{{ item.name }}</h2>
+        <p class="mt-2 sans text-base">{{ item.position }}</p>
       </div>
     </div>
   </div>

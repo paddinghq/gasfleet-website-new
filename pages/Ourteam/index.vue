@@ -42,17 +42,17 @@ const activateTab = (tab) => {
         alt="rectangle"
       />
       <div
-        class="text-white absolute top-[44%] left-[32.5%] transform -translate-x-1/2 -translate-y-1/2"
+        class="text-white absolute top-[42%] left-[29.6rem] transform -translate-x-1/2 -translate-y-1/2"
       >
-        <h1 class="font-bold mt-5 text-5xl">Our team</h1>
-        <h1 class="mt-4 text-[1.2rem]">
+        <h1 class="font-semibold mt-5 text-[64px]">Our team</h1>
+        <p class="text-[14px] font-semibold">
           Our team members have worked on projects across the nation and are
           committed to delivering<br />the highest level of service and quality
-        </h1>
+        </p>
       </div>
-      <div class="flex gap-12 items-center justify-center pb-8 pt-6">
+      <div class="flex gap-12 items-center justify-center py-4 px-20">
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[20px] font-semibold focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-2"
           @click="activateTab('management')"
           :class="{
             active: activeTab === 'management',
@@ -63,28 +63,28 @@ const activateTab = (tab) => {
           Management
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[20px] font-semibold focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-2"
           @click="activeTab = 'engineering'"
           :class="{ active: activeTab === 'engineering' }"
         >
           Engineering
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[20px] font-semibold focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-2"
           @click="activeTab = 'admin'"
           :class="{ active: activeTab === 'admin' }"
         >
           Admin
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[20px] font-semibold focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-2"
           @click="activeTab = 'it'"
           :class="{ active: activeTab === 'it' }"
         >
           Information Technology
         </button>
         <button
-          class="text-[#777777] border-none text-[1.3rem] font-black focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+          class="text-[#777777] border-none text-[20px] font-semibold focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-2"
           @click="activeTab = 'contractors'"
           :class="{ active: activeTab === 'contractors' }"
         >
@@ -94,11 +94,13 @@ const activateTab = (tab) => {
     </div>
     <component :is="activeComponent" />
 
-    <div class="bg-[#eff6ff] text-center py-[3.8rem]">
-      <h2 class="text-[#333333] text-[32px] font-bold tracking-tighter">
+    <div class="bg-[#eff6ff] text-center py-[64px] px-[132px]">
+      <h2 class="text-[#333333] text-[32px] font-semibold tracking-tighter">
         Convinced yet? Check out projects we have done.
       </h2>
-      <div class="text-[#333333] mt-3 text-lg tracking-wide">
+      <div
+        class="text-[#333333] mt-3 text-lg tracking-wide font-normal leading-[26.1px]"
+      >
         <p>
           Unleash the potential of your projects with our pioneering oil and gas
           engineering solutions<br />Let's shape the future together. Talk to us
@@ -106,9 +108,9 @@ const activateTab = (tab) => {
         </p>
       </div>
       <button
-        class="bg-[#205FAD] p-[1rem] text-semibold text-lg rounded-xl border-none text-white mt-[1.3rem]"
+        class="bg-[#205FAD] py-3 px-4 text-semibold text-sm rounded-lg border-none text-white mt-[1.3rem]"
       >
-        Projects
+        <NuxtLink to="projects">Projects</NuxtLink>
       </button>
     </div>
   </div>
