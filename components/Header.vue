@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from "vue";
-const upArrowBlue = `<svg width="17" height="16" viewBox="0 0 17 16" fill="#205FAD" xmlns="http://www.w3.org/2000/svg">
+const upArrowBlue = `<svg width="14" height="16" viewBox="0 0 17 16" fill="#205FAD" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.7046 4.8C8.23794 4.8 7.77127 4.97994 7.41794 5.33338L3.07127 9.68005C2.87794 9.87338 2.87794 10.1934 3.07127 10.3867C3.2646 10.5801 3.5846 10.5801 3.77794 10.3867L8.1246 6.04005C8.4446 5.72005 8.9646 5.72005 9.2846 6.04005L13.6313 10.3867C13.8246 10.5801 14.1446 10.5801 14.3379 10.3867C14.5313 10.1934 14.5313 9.87338 14.3379 9.68005L9.99127 5.33338C9.63794 4.97994 9.17127 4.8 8.7046 4.8Z" fill="#205FAD"/>
     </svg>`;
 
-const upArrow = `<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+const upArrow = `<svg width="14" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M8.7046 4.8C8.23794 4.8 7.77127 4.97994 7.41794 5.33338L3.07127 9.68005C2.87794 9.87338 2.87794 10.1934 3.07127 10.3867C3.2646 10.5801 3.5846 10.5801 3.77794 10.3867L8.1246 6.04005C8.4446 5.72005 8.9646 5.72005 9.2846 6.04005L13.6313 10.3867C13.8246 10.5801 14.1446 10.5801 14.3379 10.3867C14.5313 10.1934 14.5313 9.87338 14.3379 9.68005L9.99127 5.33338C9.63794 4.97994 9.17127 4.8 8.7046 4.8Z" fill="#0A0A0A"/>
 </svg>`;
 
-const downArrow = `<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+const downArrow = `<svg width="14" height="15" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.7046 11.2C8.23794 11.2 7.77127 11.0201 7.41794 10.6667L3.07127 6.32005C2.87794 6.12672 2.87794 5.80672 3.07127 5.61338C3.2646 5.42005 3.5846 5.42005 3.77794 5.61338L8.1246 9.96005C8.4446 10.2801 8.9646 10.2801 9.2846 9.96005L13.6313 5.61338C13.8246 5.42005 14.1446 5.42005 14.3379 5.61338C14.5313 5.80672 14.5313 6.12672 14.3379 6.32005L9.99127 10.6667C9.63794 11.0201 9.17127 11.2 8.7046 11.2Z" fill="#0A0A0A"/>
 </svg>`;
 
@@ -30,7 +30,9 @@ const toggleDropdown2 = () => {
 </script>
 
 <template>
-  <div class="py-[1rem] px-[4rem] flex justify-between items-center">
+  <div
+    class="bg-white z-10 sticky top-0 py-[1rem] px-[4rem] flex justify-between items-center"
+  >
     <div>
       <NuxtLink to="/">
         <NuxtImg src="/colored.png" alt="logo" class="w-12" />
@@ -49,7 +51,7 @@ const toggleDropdown2 = () => {
             "
           >
             <span
-              class="sans text-lg font-light"
+              class="sans text-base font-light"
               :class="{ 'text-[#205FAD]': isDropdownOpen1 }"
               >Who we are</span
             >
@@ -124,7 +126,7 @@ const toggleDropdown2 = () => {
             "
           >
             <span
-              class="sans text-lg font-light"
+              class="sans text-base font-light"
               :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
               >What we do</span
             >
@@ -216,7 +218,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="projects"
-            class="sans text-lg active:text-[#205FAD] hover:text-[#205FAD] font-light"
+            class="sans text-base active:text-[#205FAD] hover:text-[#205FAD] font-light"
             >Projects</NuxtLink
           >
         </button>
@@ -229,7 +231,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="sustainability"
-            class="sans text-lg active:text-[#205FAD] hover:text-[#205FAD] font-light"
+            class="sans text-base active:text-[#205FAD] hover:text-[#205FAD] font-light"
             >Sustainability
           </NuxtLink>
         </button>
