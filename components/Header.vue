@@ -142,7 +142,7 @@ const toggleDropdown2 = () => {
               <ul class="pl-4 py-8 flex flex-col gap-2 justify-between">
                 <li>
                   <NuxtLink
-                    to="/"
+                    to=""
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown2"
@@ -169,7 +169,7 @@ const toggleDropdown2 = () => {
                 </li>
                 <li>
                   <NuxtLink
-                    to="/"
+                    to="ourteam"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown2"

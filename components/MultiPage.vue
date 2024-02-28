@@ -47,7 +47,7 @@ const props = defineProps({
     </div>
 
     <div class="container mx-auto py-16 px-48">
-      <p class="font-bold text-2xl">{{ About }}</p>
+      <p class="font-bold text-2xl text-justify">{{ About }}</p>
     </div>
 
     <div class="container mx-auto flex flex-col gap-16">
@@ -64,7 +64,7 @@ const props = defineProps({
         </div>
         <div class="w-1/2">
           <h3 class="font-bold text-4xl text-sky-700">{{ mission.title }}</h3>
-          <p class="mt-4 w-10/12">{{ mission.text }}</p>
+          <p class="mt-4 w-10/12 text-justify">{{ mission.text }}</p>
         </div>
       </div>
     </div>
