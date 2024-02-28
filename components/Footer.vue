@@ -59,36 +59,36 @@
         <div class="">
           <h3 class="text-lg font-semibold">Quick Links</h3>
           <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <NuxtLink class="sans text-lg" to="/">Home</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/aboutus">About Us</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/projects">Projects</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/sustainability"
+            <NuxtLink class="sans text-sm" to="/">Home</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/aboutus">About Us</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/projects">Projects</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/sustainability"
               >Sustainability</NuxtLink
             >
           </div>
         </div>
         <div class="">
           <h3 class="text-lg font-black">Our Services</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <NuxtLink class="sans text-lg" to="/">Engineering</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/">Procurement</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/">Construction</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/">Management</NuxtLink>
+          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem] ">
+            <NuxtLink class="sans text-sm" to="/">Engineering</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/">Procurement</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/">Construction</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/">Management</NuxtLink>
           </div>
         </div>
         <div class="">
           <h3 class="text-lg font-black">Contact Us</h3>
           <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <p>17, M.A Oke Street, opposite Diamond Estate, Igando, Lagos</p>
-            <p>
+            <p class="text-sm">17, M.A Oke Street, opposite Diamond Estate, Igando, Lagos</p>
+            <p class="text-sm">
               Email:
               <a href="mailto:info@gasfleeteng.com" class="hover:underline">info@gasfleeteng.com </a>
             </p>
-            <p>
-              Tell:
+            <p class="text-sm">
+              Tel:
               <a href="tel:+2349089545886" class="hover:underline">+234(0) 908 954 5886 </a>
             </p>
-            <NuxtLink>Management</NuxtLink>
+            <NuxtLink class="text-sm">Management</NuxtLink>
           </div>
         </div>
       </div>
