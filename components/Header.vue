@@ -49,7 +49,7 @@ const toggleDropdown2 = () => {
             "
           >
             <span
-              class="sans text-lg"
+              class="sans text-lg font-light"
               :class="{ 'text-[#205FAD]': isDropdownOpen1 }"
               >Who we are</span
             >
@@ -124,7 +124,7 @@ const toggleDropdown2 = () => {
             "
           >
             <span
-              class="sans text-lg"
+              class="sans text-lg font-light"
               :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
               >What we do</span
             >
@@ -216,7 +216,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="projects"
-            class="sans text-lg active:text-[#205FAD] hover:text-[#205FAD]"
+            class="sans text-lg active:text-[#205FAD] hover:text-[#205FAD] font-light"
             >Projects</NuxtLink
           >
         </button>
@@ -229,7 +229,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="sustainability"
-            class="sans text-lg active:text-[#205FAD] hover:text-[#205FAD]"
+            class="sans text-lg active:text-[#205FAD] hover:text-[#205FAD] font-light"
             >Sustainability
           </NuxtLink>
         </button>
