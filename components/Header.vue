@@ -28,8 +28,15 @@ const toggleDropdown2 = () => {
   isDropdownOpen2.value = false;
 };
 
-function Menu(e) {
-  e.name === 'menu' ? e.name === 'close' : e.name === 'menu';
+function toggleMenu() {
+  const navList = document.getElementById('navList');
+
+  // Toggle the 'hidden' class on the navList
+  navList.classList.toggle('hidden');
+
+  // Change the button text to 'X' or 'H' based on the visibility of the navList
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  mobileMenuButton.innerText = navList.classList.contains('hidden') ? 'H' : 'X';
 }
 </script>
 
@@ -43,11 +50,11 @@ function Menu(e) {
       </NuxtLink>
     </div>
 
-    <header class="">
+    <header class="list hidden sm:block" id="navList">
       <nav
         class="z-[-1] absolute bg-white w-full sm:static left-0 sm:flex sm:z-auto gap-[2rem] sm:w-auto transition-all ease-in duration-500"
       >
-        <div class="relative py-4 mt-10 mx-5 sm:py-0 sm:m-0">
+        <div class="relative py-4 mt-10 mx-5 sm:py-0 sm:m-0" id="navList">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
             :class="{ 'focus:text-[#205FAD]': isDropdownOpen1 }"
@@ -242,7 +249,6 @@ function Menu(e) {
           </NuxtLink>
         </button>
       </nav>
-      <span class="text-3xl cursor-pointer mx-2 sm:hidden"></span>
     </header>
 
     <div class="flex gap-[2rem]">
@@ -265,6 +271,13 @@ function Menu(e) {
             fill="#292D32"
           />
         </svg>
+        <button
+          id="mobileMenuButton"
+          class="text-3xl cursor-pointer mx-2 sm:hidden"
+          onclick="toggleMenu()"
+        >
+          X
+        </button>
       </div>
       <div class="flex flex-row gap-[2rem] hidden sm:inline-flex">
         <NuxtLink to="/"

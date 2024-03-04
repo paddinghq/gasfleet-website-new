@@ -64,7 +64,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 <template>
   <div>
     <div
-      class="overflow-hidden h-[690px] relative"
+      class="overflow-hidden h-[455px] sm:h-[690px] relative"
       @mouseenter="stopAutoSlide"
       @mouseleave="startAutoSlide"
     >
@@ -81,11 +81,13 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
             />
           </div>
           <div
-            class="relative h-[690px] top-[-43rem] pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+            class="relative h-[455px] sm:h-[690px] top-[-43rem] px-5 sm:pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent"
           >
             <div class="text-white flex flex-col gap-5">
-              <h1 class="w-[40%] text-6xl">{{ item.title }}</h1>
-              <p class="text-lg w-[45%]">{{ item.text }}</p>
+              <h1 class="w-full text-3xl sm:w-[40%] sm:text-6xl">
+                {{ item.title }}
+              </h1>
+              <p class="text-md sm:text-lg sm:w-[45%]">{{ item.text }}</p>
             </div>
           </div>
         </div>
@@ -172,10 +174,10 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 
     <div class="bg-gray-100 px-5 2xl:px-0 lg:px-0 md:px-0">
       <div
-        class="2xl:px-[5rem] grid py-10 bg-gray-100 gap-10 2xl:grid-cols-2 lg:grid-cols-2 md:flex-col px-10"
+        class="2xl:px-[5rem] grid py-10 bg-gray-100 gap-10 2xl:grid-cols-2 lg:grid-cols-2 md:flex-col px-3"
       >
         <div
-          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col px-5 py-12 text-white w-94"
+          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col px-5 py-12 text-white sm:w-94 items-center"
         >
           <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
           <p class="text-justify">
@@ -200,7 +202,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
                 <span>2023</span>
               </div>
             </div>
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 hidden sm:block">
               <img src="/image/project.png" alt="project" />
               <div class="text-base">
                 <p>Abuja gas fleet expansion</p>
