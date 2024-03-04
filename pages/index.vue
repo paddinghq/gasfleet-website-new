@@ -1,21 +1,21 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const items = ref([
   {
-    image: "/image/hero-image.png",
-    title: "Gasfleet Engineering Limited - EPCM Company",
-    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+    image: '/image/hero-image.png',
+    title: 'Gasfleet Engineering Limited - EPCM Company',
+    text: 'We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.',
   },
   {
-    image: "/image/hero-image.png",
-    title: "Gasfleet Engineering Limited - EPCM Company",
-    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+    image: '/image/hero-image.png',
+    title: 'Gasfleet Engineering Limited - EPCM Company',
+    text: 'We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.',
   },
   {
-    image: "/image/hero-image.png",
-    title: "Gasfleet Engineering Limited - EPCM Company",
-    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+    image: '/image/hero-image.png',
+    title: 'Gasfleet Engineering Limited - EPCM Company',
+    text: 'We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.',
   },
 ]);
 const currentIndex = ref(0);
@@ -51,7 +51,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 }
 
 .dot {
-  content: "";
+  content: '';
   background: rgb(176, 176, 176);
 }
 
@@ -103,18 +103,30 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
       </div>
     </div>
 
-    <div class="flex bg-white flex-col-reverse gap-10  2xl:flex-row lg:flex-row md:flex-col ">
+    <div
+      class="flex bg-white flex-col-reverse gap-10 2xl:flex-row lg:flex-row md:flex-col"
+    >
       <img src="/image/services.png" alt="service" class="object-cover" />
 
-      <div class="mt-1 py-10 px-3 2xl:px-20 2xl:py-10 2xl:mt-5 lg:py-10 lg:px-20 lg:mt-5 md:px-10 md:py-10 md:mt-3 ">
-        <h1 class="text-[#205FAD] text-xl font-medium md:2xl lg:text-3xl 2xl:text-5xl  ">Our Services</h1>
+      <div
+        class="mt-1 py-10 px-3 2xl:px-20 2xl:py-10 2xl:mt-5 lg:py-10 lg:px-20 lg:mt-5 md:px-10 md:py-10 md:mt-3"
+      >
+        <h1
+          class="text-[#205FAD] text-xl font-medium md:2xl lg:text-3xl 2xl:text-5xl"
+        >
+          Our Services
+        </h1>
 
-        <p class="text-base mt-2 md:text-base md:mt-3 lg:text-lg lg:mt-5 2xl:text-lg 2xl:mt-5">
-          We deliver science, technology and engineering solutions to
-          government and companies around the world
+        <p
+          class="text-base mt-2 md:text-base md:mt-3 lg:text-lg lg:mt-5 2xl:text-lg 2xl:mt-5"
+        >
+          We deliver science, technology and engineering solutions to government
+          and companies around the world
         </p>
 
-        <div class="grid 2xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 gap-4 items-center mt-5 ">
+        <div
+          class="grid 2xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 gap-4 items-center mt-5"
+        >
           <div class="bg-gray-100 p-5 rounded-lg">
             <img src="/image/epm.png" alt="emp" />
             <h2 class="uppercase font-bold text-xl my-3">epcm</h2>
@@ -133,7 +145,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
               government and companies around the world.
             </p>
           </div>
-        
+
           <div class="bg-gray-100 p-5 rounded-lg">
             <img src="/image/power.png" alt="power" />
             <h2 class="capitalize font-bold text-xl my-3">
@@ -158,9 +170,13 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
       </div>
     </div>
 
-    <div class="bg-gray-100 px-5 2xl:px-0 lg:px-0 md:px-0 ">
-      <div class="2xl:px-[5rem] grid py-10 bg-gray-100 gap-10 2xl:grid-cols-2 lg:grid-cols-2 md:flex-col px-10">
-        <div class="bg-[#205FAD] rounded-lg flex gap-4 flex-col px-5 py-12 text-white w-94">
+    <div class="bg-gray-100 px-5 2xl:px-0 lg:px-0 md:px-0">
+      <div
+        class="2xl:px-[5rem] grid py-10 bg-gray-100 gap-10 2xl:grid-cols-2 lg:grid-cols-2 md:flex-col px-10"
+      >
+        <div
+          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col px-5 py-12 text-white w-94"
+        >
           <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
           <p class="text-justify">
             We pride ourseleves on our commitment to safety and quality. We have
@@ -212,28 +228,24 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
     </div>
 
     <div class="text-center bg-white my-16 mx-10 gap-10 p-5">
-      <h2 class="font-bold text-4xl text-[#205FAD] capitalize">Our Client</h2>
+      <h2
+        class="text-[#205FAD] text-xl font-medium md:2xl lg:text-3xl 2xl:text-5xl"
+      >
+        Our Client
+      </h2>
 
       <div
-        class="flex justify-between items-center mt-10"
+        class="grid grid-cols-3 place-items-center justify-items-center gap-y-10 gap-x-5 items-center sm:grid sm:grid-cols-4 mt-10"
       >
         <img src="/image/alexa.png" alt="" />
         <img src="/image/gaslink.png" alt="" />
         <img src="/image/gns.png" alt="" />
         <img src="/image/powergas.png" alt="" />
-        
-      </div>
-      <div
-        class="flex justify-between gap-10 items-center mt-10"
-      >
         <img src="/image/tgnl.png" alt="" />
         <img src="/image/ccetc.png" alt="" />
         <img src="/image/greenville.png" alt="" />
         <img src="/image/chcg.png" alt="" />
-        
       </div>
     </div>
   </div>
 </template>
-
-

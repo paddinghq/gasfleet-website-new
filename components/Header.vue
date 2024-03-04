@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 const upArrowBlue = `<svg width="14" height="16" viewBox="0 0 17 16" fill="#205FAD" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.7046 4.8C8.23794 4.8 7.77127 4.97994 7.41794 5.33338L3.07127 9.68005C2.87794 9.87338 2.87794 10.1934 3.07127 10.3867C3.2646 10.5801 3.5846 10.5801 3.77794 10.3867L8.1246 6.04005C8.4446 5.72005 8.9646 5.72005 9.2846 6.04005L13.6313 10.3867C13.8246 10.5801 14.1446 10.5801 14.3379 10.3867C14.5313 10.1934 14.5313 9.87338 14.3379 9.68005L9.99127 5.33338C9.63794 4.97994 9.17127 4.8 8.7046 4.8Z" fill="#205FAD"/>
     </svg>`;
@@ -23,15 +23,19 @@ const toggleDropdown1 = () => {
 
 const toggleDropdown2 = () => {
   isDropdownOpen2.value = !isDropdownOpen2.value;
-  console.log("try");
+  console.log('try');
   console.log(isDropdownOpen1.value);
   isDropdownOpen2.value = false;
 };
+
+function Menu(e) {
+  e.name === 'menu' ? e.name === 'close' : e.name === 'menu';
+}
 </script>
 
 <template>
   <div
-    class="bg-white z-10 sticky top-0 py-5 px-20 flex justify-between items-center"
+    class="bg-white py-2 px-5 z-10 sticky top-0 sm:py-5 sm:px-20 flex justify-between items-center"
   >
     <div>
       <NuxtLink to="/">
@@ -39,9 +43,11 @@ const toggleDropdown2 = () => {
       </NuxtLink>
     </div>
 
-    <header>
-      <nav class="flex gap-[2rem]">
-        <div class="relative">
+    <header class="">
+      <nav
+        class="z-[-1] absolute bg-white w-full sm:static left-0 sm:flex sm:z-auto gap-[2rem] sm:w-auto transition-all ease-in duration-500"
+      >
+        <div class="relative py-4 mt-10 mx-5 sm:py-0 sm:m-0">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
             :class="{ 'focus:text-[#205FAD]': isDropdownOpen1 }"
@@ -116,7 +122,7 @@ const toggleDropdown2 = () => {
             </div>
           </transition>
         </div>
-        <div class="relative">
+        <div class="relative py-2 mx-5 sm:py-0 sm:m-0">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
             :class="{ 'focus:text-[#205FAD]': isDropdownOpen2 }"
@@ -218,7 +224,7 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="projects"
-            class="sans text-base text-[#0A0A0A] active:text-[#205FAD] hover:text-[#205FAD] font-light"
+            class="sans text-base text-[#0A0A0A] active:text-[#205FAD] hover:text-[#205FAD] font-light relative py-2 mx-5 sm:py-0 sm:m-0"
             >Projects</NuxtLink
           >
         </button>
@@ -231,11 +237,12 @@ const toggleDropdown2 = () => {
         >
           <NuxtLink
             to="sustainability"
-            class="sans text-base text-[#0A0A0A] active:text-[#205FAD] hover:text-[#205FAD] font-light"
+            class="sans text-base text-[#0A0A0A] active:text-[#205FAD] hover:text-[#205FAD] font-light relative py-2 mx-5 sm:py-0 sm:m-0 mb-10"
             >Sustainability
           </NuxtLink>
         </button>
       </nav>
+      <span class="text-3xl cursor-pointer mx-2 sm:hidden"></span>
     </header>
 
     <div class="flex gap-[2rem]">
@@ -259,7 +266,7 @@ const toggleDropdown2 = () => {
           />
         </svg>
       </div>
-      <div class="flex gap-[2rem]">
+      <div class="flex flex-row gap-[2rem] hidden sm:inline-flex">
         <NuxtLink to="/"
           ><svg
             width="24"
