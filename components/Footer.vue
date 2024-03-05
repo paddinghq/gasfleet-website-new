@@ -57,38 +57,42 @@
           </div>
         </div>
         <div class="">
-          <h3 class="text-lg font-semibold">Quick Links</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <NuxtLink class="sans text-lg" to="/">Home</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/aboutus">About Us</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/projects">Projects</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/sustainability"
+          <h3 class="text-sm font-bold">Quick Links</h3>
+          <div class="flex flex-col gap-[1rem] mt-[2rem]">
+            <NuxtLink class="sans text-sm" to="/">Home</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/aboutus">About Us</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/projects">Projects</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/sustainability"
               >Sustainability</NuxtLink
             >
           </div>
         </div>
         <div class="">
-          <h3 class="text-lg font-black">Our Services</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <NuxtLink class="sans text-lg" to="/">Engineering</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/">Procurement</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/">Construction</NuxtLink>
-            <NuxtLink class="sans text-lg" to="/">Management</NuxtLink>
+          <h3 class="text-sm font-black">Our Services</h3>
+          <div class="flex flex-col gap-[1rem] mt-[2rem]">
+            <NuxtLink class="sans text-sm" to="/">Engineering</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/">Procurement</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/">Construction</NuxtLink>
+            <NuxtLink class="sans text-sm" to="/">Management</NuxtLink>
           </div>
         </div>
         <div class="">
-          <h3 class="text-lg font-black">Contact Us</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <p>17, M.A Oke Street, opposite Diamond Estate, Igando, Lagos</p>
-            <p>
-              Email:
-              <a href="mailto:info@gasfleeteng.com" class="hover:underline">info@gasfleeteng.com </a>
+          <h3 class="text-sm font-black">Contact Us</h3>
+          <div class="flex flex-col gap-[1rem] mt-[2rem]">
+            <p class="text-sm">17, M.A Oke Street, opposite Diamond Estate, Igando, Lagos</p>
+            <p class="text-sm">
+              <span class="font-bold">
+                Email:
+              </span>
+              <a href="mailto:info@gasfleeteng.com" class="hover:underline" >info@gasfleeteng.com </a>
             </p>
-            <p>
-              Tell:
+            <p class="text-sm">
+              <span class="font-bold">
+                Tell:
+              </span>
               <a href="tel:+2349089545886" class="hover:underline">+234(0) 908 954 5886 </a>
             </p>
-            <NuxtLink>Management</NuxtLink>
+            <NuxtLink class="text-sm">Management</NuxtLink>
           </div>
         </div>
       </div>
@@ -96,20 +100,16 @@
         class="bg-[#191919] py-[1.5rem] px-[5rem] text-[#FFFDFD] text-xs flex items-center justify-between"
       >
         <div>
-          <p>
+          <p class="text-xs">
             &copy; Copyright 2024 Gasfleet Engineering Limited. All Rights
             Reserved
           </p>
         </div>
         <div class="flex gap-[2rem]">
-          <NuxtLink>Privacy Policy</NuxtLink>
-          <NuxtLink>Terms and Conditions</NuxtLink>
+          <NuxtLink class="text-xs">Privacy Policy</NuxtLink>
+          <NuxtLink class="text-xs">Terms and Conditions</NuxtLink>
         </div>
       </div>
     </footer>
   </div>
 </template>
-
-<script setup></script>
-
-<style scoped></style>

@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 1,
-    NuxtImg: "/image/project-2.png",
+    NuxtImg: "/project.jpeg",
     status: 'COMPLETED',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -9,7 +9,7 @@ export const projects = [
   },
   {
     id: 2,
-    NuxtImg: "/image/project-1.png",
+    NuxtImg: "/project.jpeg",
     status: 'ONGOING',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     id: 3,
-    NuxtImg: "/image/project-1.png",
+    NuxtImg: "/project.jpeg",
     status: 'ONGOING',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -25,7 +25,7 @@ export const projects = [
   },
   {
     id: 4,
-    NuxtImg: "/image/project-1.png",
+    NuxtImg: "/project.jpeg",
     status: 'ONGOING',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -33,7 +33,7 @@ export const projects = [
   },
   {
     id: 5,
-    NuxtImg: "/image/project-2.png",
+    NuxtImg: "/project.jpeg",
     status: 'COMPLETED',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     id: 6,
-    NuxtImg: "/image/project-2.png",
+    NuxtImg: "/project.jpeg",
     status: 'COMPLETED',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -49,7 +49,7 @@ export const projects = [
   },
   {
     id: 7,
-    NuxtImg: "/image/project-1.png",
+    NuxtImg: "/project.jpeg",
     status: 'ONGOING',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -57,7 +57,7 @@ export const projects = [
   },
   {
     id: 8,
-    NuxtImg: "/image/project-1.png",
+    NuxtImg: "/project.jpeg",
     status: 'ONGOING',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -65,7 +65,7 @@ export const projects = [
   },
   {
     id: 9,
-    NuxtImg: "/image/project-2.png",
+    NuxtImg: "/project.jpeg",
     status: 'COMPLETED',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -73,7 +73,7 @@ export const projects = [
   },
   {
     id: 10,
-    NuxtImg: "/image/project-2.png",
+    NuxtImg: "/project.jpeg",
     status: 'COMPLETED',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -81,7 +81,7 @@ export const projects = [
   },
   {
     id: 11,
-    NuxtImg: "/image/project-2.png",
+    NuxtImg: "/project.jpeg",
     status: 'COMPLETED',
     name: "Abuja Gas Expansion",
     year: "2024",
@@ -89,7 +89,7 @@ export const projects = [
   },
   {
     id: 12,
-    NuxtImg: "/image/project-1.png",
+    NuxtImg: "/project.jpeg",
     status: 'ONGOING',
     name: "Abuja Gas Expansion",
     year: "2024",

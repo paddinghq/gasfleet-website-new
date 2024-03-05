@@ -48,7 +48,7 @@ h3 {
       mobile & tab design not ready yet
     </div>
 
-    <div class="hidden xl:block">
+    <div class="hidden xl:block scroll-smooth">
       <Header />
       <slot></slot>
       <Footer />

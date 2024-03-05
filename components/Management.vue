@@ -48,7 +48,7 @@ const mappedArray = computed(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-[3.5rem] p-[4rem]">
+  <div class="grid grid-cols-3 gap-[3.5rem]">
     <div
       v-for="(item, index) in mappedArray"
       :key="index"
