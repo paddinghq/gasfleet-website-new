@@ -53,17 +53,18 @@ const Heros = ref([
           alt="line"
         />
       </div>
-      <p class="text-center text-[#0A0A0A] text-lg mt-5">
+      <p class="text-center text-[#0A0A0A] text-lg mt-7">
         Providing sustainable Gas & Power solution with innovation and service
         excellence
       </p>
 
       <div class="flex gap-[10rem] mt-20">
+      <div class="flex gap-[10rem] mt-20">
         <div class="w-1/2 relative h-[28rem]">
           <NuxtImg src="/Rectangle6.png" class="w-[30rem]" />
           <NuxtImg
             src="/Frame2.png"
-            class="w-[42rem] h-[25rem] absolute top-4 left-4"
+            class="w-[41rem] h-[25rem] absolute top-4 left-4"
           />
         </div>
         <div class="self-center">
@@ -91,7 +92,7 @@ const Heros = ref([
           <NuxtImg src="/Rectangle5.png" class="w-[30rem] absolute right-0" />
           <NuxtImg
             src="/Frame4.png"
-            class="w-[42rem] h-[25rem] absolute top-4 right-4"
+            class="w-[41rem] h-[25rem] absolute top-4 right-4"
           />
         </div>
       </div>
@@ -101,7 +102,7 @@ const Heros = ref([
           <NuxtImg src="/Rectangle6.png" class="w-[30rem]" />
           <NuxtImg
             src="/Frame3.png"
-            class="w-[42rem] h-[25rem] absolute top-4 left-4"
+            class="w-[41rem] h-[25rem] absolute top-4 left-4"
           />
         </div>
         <div class="self-center">
@@ -115,16 +116,16 @@ const Heros = ref([
         </div>
       </div>
     </div>
-    <div class="bg-[#F1F1F1] py-14 px-6">
+    <div class="bg-[#F1F1F1] py-16 px-20">
       <h1 class="text-center text-[#205FAD] font-bold text-4xl">Our Clients</h1>
       <div class="">
-        <div class="flex justify-between px-14 mt-10">
+        <div class="flex justify-between mt-12">
           <NuxtImg class="w-24" src="/image/alexa.png" alt="alexa" />
           <NuxtImg class="w-24" src="/image/gaslink.png" alt="gaslink" />
           <NuxtImg class="w-24" src="/image/gns.png" alt="gns" />
           <NuxtImg class="w-24" src="/image/powergas.png" alt="powergas" />
         </div>
-        <div class="flex justify-between px-14 mt-10">
+        <div class="flex justify-between mt-12">
           <NuxtImg class="w-24" src="/image/tgnl.png" alt="tgnl" />
           <NuxtImg class="w-24" src="/image/ccetc.png" alt="ccetc" />
           <NuxtImg class="w-24" src="/image/greenville.png" alt="greenville" />
@@ -132,5 +133,6 @@ const Heros = ref([
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>

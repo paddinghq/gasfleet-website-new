@@ -5,15 +5,18 @@ const items = ref([
   {
     image: "/image/hero-image.png",
     title: "Gasfleet Engineering Limited - EPCM Company",
-    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
-  },
-  {
-    image: "/image/hero-image.png",
     title: "Gasfleet Engineering Limited - EPCM Company",
     text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
   },
   {
     image: "/image/hero-image.png",
+    title: "Gasfleet Engineering Limited - EPCM Company",
+    title: "Gasfleet Engineering Limited - EPCM Company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
+  },
+  {
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering Limited - EPCM Company",
     title: "Gasfleet Engineering Limited - EPCM Company",
     text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
   },
