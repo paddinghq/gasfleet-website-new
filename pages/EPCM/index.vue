@@ -4,8 +4,8 @@ import MultiPage from "../../components/MultiPage.vue";
 
 // const Heads = ref([
 // {
-//     name: "ECPM",
-//     link: "ECPM"
+//     name: "EPCM",
+//     link: "EPCM"
 //   },
 //   {
 //     name: "Natural Gas Distribution",
@@ -89,7 +89,7 @@ const Heros = ref([
     id: 1,
     img: ImgSrc8,
     rectangle: rectangleImg,
-    title: "ECPM",
+    title: "EPCM",
     text: "We utilize the latest technology & software to develop effective and cost effective solution from drilling platform to pipeline system & more.",
   },
 ]);

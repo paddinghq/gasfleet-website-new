@@ -4,8 +4,8 @@ import MultiPage from "../../components/MultiPage.vue";
 
 const Heads = ref([
   {
-    name: "ECPM",
-    link: "ECPM"
+    name: "EPCM",
+    link: "EPCM"
   },
   {
     name: "Natural Gas Distribution",
