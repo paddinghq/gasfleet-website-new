@@ -48,14 +48,14 @@ const mappedArray = computed(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-[3.5rem]">
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-16">
     <div
       v-for="(item, index) in mappedArray"
       :key="index"
       class="bg-[#f1f1f1] rounded-2xl"
     >
       <NuxtImg :src="item.NuxtImg" :alt="item.alt" class="w-full" />
-      <div class="text-center my-6">
+      <div class="text-center py-6">
         <h2 class="text-xl font-semibold">{{ item.name }}</h2>
         <p class="mt-2 sans text-base">{{ item.position }}</p>
       </div>

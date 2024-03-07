@@ -39,6 +39,62 @@ const activeComponent = computed(() => {
 const activateTab = (tab) => {
   activeTab.value = tab;
 };
+
+const openTab = ref('false');
+
+const toggleTab = () => {
+  openTab.value = !openTab.value
+}
+
+const Tabs = ref([
+  {
+    name: "Mananagement",
+    tab: "mananagement",
+  },
+  {
+    name: "Engineering",
+    tab: "engineering",
+  },
+  {
+    name: "Admin",
+    tab: "admin",
+  },
+  {
+    name: "Information Technology",
+    tab: "it",
+  },
+  {
+    name: "Contractors",
+    tab: "contractors",
+  },
+]);
+
+const selectedTab = ref("");
+const selectOpen = ref(false);
+
+const selectTab = (Tab) => {
+  selectedTab.value = Tab.name;
+  selectOpen.value = false;
+  if (process.client) {
+    localStorage.setItem('selectedTab', selectedTab.value);
+  }
+};
+  
+const tabChange = () => {
+  const selectedTabValue = selectedTab.value;
+  switch (selectedTabValue.value) {
+    case "engineering":
+      return Engineering;
+    case "admin":
+      return Admin;
+    case "it":
+      return InformationTechnology;
+    case "contractors":
+      return Contractors;
+    default:
+      return Management;
+  }
+};
 </script>
 
 <template>
@@ -46,19 +102,37 @@ const activateTab = (tab) => {
     <div class="relative bg-[#f1f1f1]">
       <Hero :Heros="Heros" />
 
-      <div class="flex gap-12 items-center justify-center pb-8 pt-6">
-        <button
-          class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
-          @click="activateTab('management')"
-          :class="{
-            active: activeTab === 'management',
-          }"
-          autofocus
-          style="outline: none"
+      <div class="relative inline-block w-full bg-gray-200 lg:hidden">
+        <select
+          v-model="selectedTab"
+          @change="tabChange"
+          class="block appearance-none w-full bg-gray-200 px-6 py-4 rounded shadow leading-tight font-medium text-xl oswald cursor-pointer text-sky-700 transition-all hover:text-sky-700 focus:outline-none focus:shadow-outline duration-300"
         >
-          Management
-        </button>
+          <option disabled :value="selectedTab">{{ selectedTab }}</option>
+          <option class="font-medium text-xl oswald text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700" :value="Tab.name" v-for="Tab in Tabs" :key="Tab">
+            {{ Tab.name }}
+          </option>
+        </select>
+        <img src="../../public/down.png" class="absolute w-8 top-3 right-6" alt="down">
+      </div>
+
+      <div class="hidden gap-12 flex-col items-center justify-center pb-8 pt-6 lg:flex lg:flex-row">
+        <span @click="toggleTab">
+          <button
+            class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+            @click="activateTab('management')"
+            :class="{
+              active: activeTab === 'management',
+            }"
+            autofocus
+            style="outline: none"
+          >
+            Management
+          </button>
+        </span>
+        
         <button
+          v-if="openTab"
           class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'engineering'"
           :class="{ active: activeTab === 'engineering' }"
@@ -66,6 +140,7 @@ const activateTab = (tab) => {
           Engineering
         </button>
         <button
+          v-if="openTab"
           class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'admin'"
           :class="{ active: activeTab === 'admin' }"
@@ -73,6 +148,7 @@ const activateTab = (tab) => {
           Admin
         </button>
         <button
+          v-if="openTab"
           class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'it'"
           :class="{ active: activeTab === 'it' }"
@@ -80,6 +156,7 @@ const activateTab = (tab) => {
           Information Technology
         </button>
         <button
+          v-if="openTab"
           class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
           @click="activeTab = 'contractors'"
           :class="{ active: activeTab === 'contractors' }"
@@ -89,27 +166,27 @@ const activateTab = (tab) => {
       </div>
     </div>
 
-    <div class="container mx-auto py-20">
+    <div class="container mx-auto px-6 py-10 lg:px-10 lg:py-20 xl:px-0">
       <component :is="activeComponent" />
     </div>
 
-    <div class="bg-[#eff6ff] text-center py-20">
-      <div class="container mx-auto">
-        <h2 class="text-[#333333] text-[32px] font-semibold tracking-tighter">
+    <div class="bg-blue-100">
+      <div class="container mx-auto py-10 px-6 text-center lg:py-16">
+        <h2 class="font-semibold text-xl lgtext-2xl xl:text-[32px]">
           Convinced yet? Check out projects we have done.
         </h2>
-        <div class="text-[#333333] mt-3 text-lg tracking-wide">
-          <p class="text-lg">
-            Unleash the potential of your projects with our pioneering oil and gas
-            engineering solutions<br />Let's shape the future together. Talk to us
-            about your next groundbreaking project
-          </p>
-        </div>
-        <button
-          class="bg-[#205FAD] p-[1rem] font-semibold text-sm rounded-xl border-none text-white mt-[1.3rem] hover:bg-[#66a1ea] transition-all"
-        >
-          Projects
-        </button>
+        <p class="w-full mx-auto my-6 lg:w-3/4 xl:text-lg">
+          Unleash the potential of your projects with our pioneering oil and gas
+          engineering solutions<br />Let's shape the future together. Talk to us
+          about your next groundbreaking project
+        </p>
+        <NuxtLink to="project">
+          <button
+            class="py-3 px-4 text-white bg-blue-800 font-semibold text-sm rounded-xl hover:bg-blue-500 transition-all"
+          >
+            Projects
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>

@@ -34,7 +34,7 @@ const Heads = ref([
   },
 ]);
 
-const selectedHead = ref("");
+const selectedHead = ref("ECPM");
 const selectOpen = ref(false);
 
 const selectHead = (Head) => {
@@ -76,7 +76,7 @@ const performRouting = () => {
     case "Infrastructure Development":
       router.push('/IDPM');
       break;
-      
+
     default:
       break;
   }
