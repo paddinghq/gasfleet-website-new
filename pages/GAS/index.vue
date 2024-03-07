@@ -2,21 +2,6 @@
 import { ref } from "vue";
 import MultiPage from "../../components/MultiPage.vue";
 
-const Heads = ref([
-  {
-    name: "EPCM",
-    link: "EPCM"
-  },
-  {
-    name: "Power Distribution",
-    link: "power"
-  },
-  {
-    name: "Infrastructure Development",
-    link: "IDPM"
-  }
-]);
-
 const ImgSrc1 = ref("/image/eng-img.png");
 const ImgSrc2 = ref("/image/procurement-img.png");
 const ImgSrc3 = ref("/image/construction-img.png");
@@ -95,7 +80,6 @@ const Heros = ref([
   <div>
     <MultiPage
       :Heros="Heros"
-      :Heads="Heads"
       About="We are currently pioneering the development of Nigeria's foremost private
         sector-led Natural Gas to Industrialbase mode. This we believe will set 
         us at the forefront of becoming one of the

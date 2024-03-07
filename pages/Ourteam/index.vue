@@ -11,11 +11,11 @@ const ImgSrc1 = ref("hero.jpg");
 
 const Heros = ref([
   {
-    id: 8,
+    id: 10,
     img: ImgSrc1,
     rectangle: rectangleImg,
     title: "Our team",
-    text: "Our team members have worked on projects across the nation and are committed to delivering the highest level of service and quality",
+    text: "Our team members have worked on projects across the nation and are committed to delivering the highest level of service and quality.",
   },
 ]);
 
@@ -107,12 +107,10 @@ onMounted(() => {
         />
       </div>
 
-      <div class="hidden gap-12 items-center justify-center py-6 lg:flex lg:flex-row">
-        <div
-          class=""
-          v-for="Tab in Tabs"
-          :key="Tab.tab"
-        >
+      <div
+        class="hidden gap-12 items-center justify-center py-6 lg:flex lg:flex-row"
+      >
+        <div class="" v-for="Tab in Tabs" :key="Tab.tab">
           <button
             class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
             @click="activateTab(Tab.name)"
@@ -153,3 +151,4 @@ onMounted(() => {
     </div>
   </div>
 </template>
+

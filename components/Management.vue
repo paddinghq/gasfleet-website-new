@@ -48,7 +48,9 @@ const mappedArray = computed(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-16">
+  <div
+    class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-16"
+  >
     <div
       v-for="(item, index) in mappedArray"
       :key="index"
