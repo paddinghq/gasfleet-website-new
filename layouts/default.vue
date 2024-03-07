@@ -45,9 +45,9 @@ h3 {
 <template>
   <div>
     <div class="scroll-smooth">
-      <!-- <Header /> -->
+      <Header />
       <slot></slot>
-      <!-- <Footer /> -->
+      <Footer />
     </div>
   </div>
 </template>
