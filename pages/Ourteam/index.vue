@@ -19,32 +19,11 @@ const Heros = ref([
   },
 ]);
 
-const activeTab = ref("management");
-
-const activeComponent = computed(() => {
-  switch (activeTab.value) {
-    case "engineering":
-      return Engineering;
-    case "admin":
-      return Admin;
-    case "it":
-      return InformationTechnology;
-    case "contractors":
-      return Contractors;
-    default:
-      return Management;
-  }
-});
+const activeTab = ref("Management");
 
 const activateTab = (tab) => {
   activeTab.value = tab;
 };
-
-const openTab = ref('false');
-
-const toggleTab = () => {
-  openTab.value = !openTab.value
-}
 
 const Tabs = ref([
   {
@@ -69,32 +48,33 @@ const Tabs = ref([
   },
 ]);
 
-const selectedTab = ref("");
-const selectOpen = ref(false);
-
-const selectTab = (Tab) => {
-  selectedTab.value = Tab.name;
-  selectOpen.value = false;
-  if (process.client) {
-    localStorage.setItem('selectedTab', selectedTab.value);
-  }
-};
-  
-const tabChange = () => {
-  const selectedTabValue = selectedTab.value;
-  switch (selectedTabValue.value) {
-    case "engineering":
+const activeComponent = computed(() => {
+  switch (activeTab.value) {
+    case "Engineering":
       return Engineering;
-    case "admin":
+    case "Admin":
       return Admin;
-    case "it":
+    case "Information Technology":
       return InformationTechnology;
-    case "contractors":
+    case "Contractors":
       return Contractors;
     default:
       return Management;
   }
+});
+
+const selectTab = (tab) => {
+  activeTab.value = tab;
+  if (process.client) {
+    localStorage.setItem("activeTab", activeTab.value);
+  }
 };
+
+onMounted(() => {
+  if (process.client) {
+    activeTab.value = localStorage.getItem("activeTab") || "";
+  }
+});
 </script>
 
 <template>
@@ -104,65 +84,47 @@ const tabChange = () => {
 
       <div class="relative inline-block w-full bg-gray-200 lg:hidden">
         <select
-          v-model="selectedTab"
-          @change="tabChange"
+          v-model="activeTab"
+          @change="selectTab($event.target.value)"
           class="block appearance-none w-full bg-gray-200 px-6 py-4 rounded shadow leading-tight font-medium text-xl oswald cursor-pointer text-sky-700 transition-all hover:text-sky-700 focus:outline-none focus:shadow-outline duration-300"
         >
-          <option disabled :value="selectedTab">{{ selectedTab }}</option>
-          <option class="font-medium text-xl oswald text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700" :value="Tab.name" v-for="Tab in Tabs" :key="Tab">
+          <option disabled :value="activeTab" class="capitalize">
+            {{ activeTab }}
+          </option>
+          <option
+            class="font-medium text-xl oswald capitalize text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700"
+            :value="Tab.name"
+            v-for="Tab in Tabs"
+            :key="Tab.tab"
+          >
             {{ Tab.name }}
           </option>
         </select>
-        <img src="../../public/down.png" class="absolute w-8 top-3 right-6" alt="down">
+        <img
+          src="../../public/down.png"
+          class="absolute w-8 top-3 right-6"
+          alt="down"
+        />
       </div>
 
-      <div class="hidden gap-12 flex-col items-center justify-center pb-8 pt-6 lg:flex lg:flex-row">
-        <span @click="toggleTab">
+      <div class="hidden gap-12 items-center justify-center py-6 lg:flex lg:flex-row">
+        <div
+          class=""
+          v-for="Tab in Tabs"
+          :key="Tab.tab"
+        >
           <button
             class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
-            @click="activateTab('management')"
+            @click="activateTab(Tab.name)"
             :class="{
-              active: activeTab === 'management',
+              active: activeTab === Tab.name,
             }"
             autofocus
             style="outline: none"
           >
-            Management
+            {{ Tab.name }}
           </button>
-        </span>
-        
-        <button
-          v-if="openTab"
-          class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
-          @click="activeTab = 'engineering'"
-          :class="{ active: activeTab === 'engineering' }"
-        >
-          Engineering
-        </button>
-        <button
-          v-if="openTab"
-          class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
-          @click="activeTab = 'admin'"
-          :class="{ active: activeTab === 'admin' }"
-        >
-          Admin
-        </button>
-        <button
-          v-if="openTab"
-          class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
-          @click="activeTab = 'it'"
-          :class="{ active: activeTab === 'it' }"
-        >
-          Information Technology
-        </button>
-        <button
-          v-if="openTab"
-          class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
-          @click="activeTab = 'contractors'"
-          :class="{ active: activeTab === 'contractors' }"
-        >
-          Contractors
-        </button>
+        </div>
       </div>
     </div>
 
@@ -191,5 +153,3 @@ const tabChange = () => {
     </div>
   </div>
 </template>
-
-<style scoped></style>

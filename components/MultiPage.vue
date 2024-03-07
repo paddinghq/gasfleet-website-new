@@ -1,7 +1,7 @@
 <script setup>
 import Hero from "./Hero.vue";
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 
 const props = defineProps({
   Heros: Array,
@@ -34,53 +34,45 @@ const Heads = ref([
   },
 ]);
 
-const selectedHead = ref("ECPM");
-const selectOpen = ref(false);
-
-const selectHead = (Head) => {
-  selectedHead.value = Head.name;
-  selectOpen.value = false;
-  if (process.client) {
-    localStorage.setItem('selectedHead', selectedHead.value);
-  }
-};
-
-const toggleDropdown = () => {
-  selectOpen.value = !selectOpen.value;
-};
-
-const closeDropdown = () => {
-  selectOpen.value = false;
-};
-
-onMounted(() => {
-  if (process.client) {
-    selectedHead.value = localStorage.getItem('selectedHead') || "";
-  }
-});
-
+const selectedHead = ref("");
 const router = useRouter();
 
 const performRouting = () => {
   const selectedHeadValue = selectedHead.value;
-  switch(selectedHeadValue) {
+  switch (selectedHeadValue) {
     case "EPCM":
-      router.push('/EPCM');
+      router.push("/EPCM");
       break;
     case "Natural Gas Distribution":
-      router.push('/GAS');
+      router.push("/GAS");
       break;
     case "Power Distribution":
-      router.push('/power');
+      router.push("/power");
       break;
     case "Infrastructure Development":
-      router.push('/IDPM');
+      router.push("/IDPM");
       break;
 
     default:
       break;
   }
 };
+
+const selectHead = (Head) => {
+  selectedHead.value = Head;
+  if (process.client) {
+    localStorage.setItem("selectedHead", selectedHead.value);
+    console.log(selectedHead.value);
+  }
+
+  performRouting();
+};
+
+onMounted(() => {
+  if (process.client) {
+    selectedHead.value = localStorage.getItem("selectedHead") || "";
+  }
+});
 </script>
 
 <template>
@@ -111,9 +103,7 @@ const performRouting = () => {
           >
             {{ Hero.title }}
           </h1>
-          <p
-            class="mt-2 font-semibold text-sm md:mt-4"
-          >
+          <p class="mt-2 font-semibold text-sm md:mt-4">
             {{ Hero.text }}
           </p>
         </div>
@@ -123,15 +113,24 @@ const performRouting = () => {
     <div class="relative inline-block w-full bg-gray-200 md:hidden">
       <select
         v-model="selectedHead"
-        @change="performRouting"
+        @change="selectHead($event.target.value)"
         class="block appearance-none w-full bg-gray-200 px-6 py-4 rounded shadow leading-tight font-medium text-xl oswald cursor-pointer text-sky-700 transition-all hover:text-sky-700 focus:outline-none focus:shadow-outline duration-300"
       >
         <option disabled :value="selectedHead">{{ selectedHead }}</option>
-        <option class="font-medium text-xl oswald text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700" :value="Head.name" v-for="Head in Heads" :key="Head">
+        <option
+          class="font-medium text-xl oswald text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700"
+          :value="Head.name"
+          v-for="Head in Heads"
+          :key="Head"
+        >
           {{ Head.name }}
         </option>
       </select>
-      <img src="../public/down.png" class="absolute w-8 top-3 right-6" alt="down">
+      <img
+        src="../public/down.png"
+        class="absolute w-8 top-3 right-6"
+        alt="down"
+      />
     </div>
 
     <div class="bg-gray-200 hidden md:block">
@@ -227,3 +226,4 @@ const performRouting = () => {
     </div>
   </div>
 </template>
+
