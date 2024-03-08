@@ -1,10 +1,15 @@
 <script setup>
-import { projects } from "../store/projects";
+import { projects } from '../store/projects';
 </script>
 
 <template>
   <div class="grid grid-cols-3 gap-10 p-10">
-    <div v-for="(project, id) in projects" :key="id" class="cursor-pointer"  :class="project.status === 'COMPLETED' ? 'block' : 'hidden'">
+    <div
+      v-for="(project, id) in projects"
+      :key="id"
+      class="cursor-pointer"
+      :class="project.status === 'COMPLETED' ? 'block' : 'hidden'"
+    >
       <NuxtLink :to="`/projects/${project.id}`">
         <NuxtImg :src="project.NuxtImg" :alt="project.alt" class="w-full" />
         <div class="my-6">

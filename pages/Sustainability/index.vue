@@ -47,7 +47,7 @@ const Heros = ref([
   <div>
     <MultiPage
       :Heros="Heros"
-      About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as a  value added services to our customers through the provision embedded and captive power solutions to “stranded” customers"
+      About="Gasfleet in this regards is taking on the challenge of advancing incremental Power supplies as a value added services to our customers through the provision embedded and captive power solutions to “stranded” customers"
       :MissionSection="missions"
       :showSection="shouldShowSection"
     />
