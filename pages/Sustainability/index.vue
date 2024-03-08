@@ -34,7 +34,7 @@ const rectangleImg = ref("/rectangle.png");
 
 const Heros = ref([
   {
-    id: 1,
+    id: 6,
     img: ImgSrc4,
     rectangle: rectangleImg,
     title: "Sustainability",

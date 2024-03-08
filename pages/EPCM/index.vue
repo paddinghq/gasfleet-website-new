@@ -2,21 +2,6 @@
 import { ref } from "vue";
 import MultiPage from "../../components/MultiPage.vue";
 
-const Heads = ref([
-  {
-    name: "Natural Gas Distribution",
-    link: "gas"
-  },
-  {
-    name: "Power Distribution",
-    link: "power"
-  },
-  {
-    name: "Infrastructure Development",
-    link: "IDPM"
-  }
-])
-
 const ImgSrc1 = ref("/image/eng-img.png");
 const ImgSrc2 = ref("/image/procurement-img.png");
 const ImgSrc3 = ref("/image/construction-img.png");
@@ -85,28 +70,23 @@ const Heros = ref([
     id: 1,
     img: ImgSrc8,
     rectangle: rectangleImg,
-    title: "ECPM",
+    title: "EPCM",
     text: "We utilize the latest technology & software to develop effective and cost effective solution from drilling platform to pipeline system & more.",
   },
 ]);
 </script>
 
 <template>
-<div>
-  <MultiPage
-    :Heros="Heros"
-    :Heads="Heads"
-    About="We are committed to providing innovative solutions and exceptional
-        service to our clients in the oil and gas industry. With decades of
-        experience, our team of experts has a deep understanding of the industry
-        and the challenges our clients face. We work closely with our clients to
-        develop customized solutions that meet their unique needs and goals."
-    :MissionSection="missions"
-    OtherServiceHeader="Other Services"
-    :OtherServices="OtherServices"
-    :ConvinceTitle="convince.title"
-    :ConvinceText="convince.text"
-    :ConvinceBtn="convince.btn"
-  />
-</div>
+  <div>
+    <MultiPage
+      :Heros="Heros"
+      About="We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face. We work closely with our clients to develop customized solutions that meet their unique needs and goals."
+      :MissionSection="missions"
+      OtherServiceHeader="Other Services"
+      :OtherServices="OtherServices"
+      :ConvinceTitle="convince.title"
+      :ConvinceText="convince.text"
+      :ConvinceBtn="convince.btn"
+    />
+  </div>
 </template>

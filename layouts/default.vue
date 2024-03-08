@@ -44,12 +44,11 @@ h3 {
 
 <template>
   <div>
-    <!-- <div class="xl:hidden">mobile & tab design not ready yet</div> -->
-
-    <div class="">
+    <div class="scroll-smooth">
       <Header />
       <slot></slot>
       <Footer />
     </div>
   </div>
 </template>
+

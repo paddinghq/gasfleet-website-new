@@ -69,18 +69,18 @@ const activateTab = (tab) => {
 
     <component class="container mx-auto" :is="activeComponent" />
 
-    <div class="bg-blue-100 mt-5 py-10">
+    <div class="bg-blue-100 mt-5 py-16">
       <div class="container mx-auto py-10 text-center">
-        <h2 class="font-bold text-4xl capitalize">
+        <h2 class="font-semibold text-[32px] capitalize">
           Ready to revolutionize your projects? get in touch with us
         </h2>
-        <p class="w-3/4 mx-auto my-6 text-xl">
+        <p class="w-3/4 mx-auto mt-2 mb-7 text-lg text-gray-400">
           Unleash the potential of your projects with our pioneering oil and gas
           engineering solutions. Let's shape the future together. Talk to us
           about your next groundbreaking project.
         </p>
         <button
-          class="py-2 px-4 text-white bg-blue-800 text-xl rounded-xl hover:bg-blue-300 transition-all"
+          class="py-2.5 px-4 text-white bg-blue-800 text-sm font-semibold rounded-xl hover:bg-blue-300 transition-all"
         >
           Contact us
         </button>
