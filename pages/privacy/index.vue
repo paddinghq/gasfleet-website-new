@@ -1,5 +1,5 @@
 <script setup>
-const rectangleImg = ref("rectangle.png");
+  const rectangleImg = ref("rectangle.png");
 const ImgSrc1 = ref("hero.jpg");
 const down = ref("down.png");
 const up = ref("up.png");
