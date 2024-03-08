@@ -8,7 +8,6 @@ const rectangleImg = ref("s.project-rectangle.png");
 const router = useRouter();
 const projectId = ref(router.currentRoute.value.params.id);
 
-<<<<<<< HEAD
 const project = computed(() => projects.find(project => project.id === parseInt(projectId.value)));
 
 const Heros = ref([
@@ -20,56 +19,20 @@ const Heros = ref([
     text: "We are committed to providing our clients with comprehensive and innovative solutions to the complex challenges facing the oil and gas industry.",
   },
 ]);
-=======
-const project = computed(() =>
-  projects.find((project) => project.id === parseInt(projectId.value))
-);
->>>>>>> 17c6d489e110e41649dbe9dc9658cd35130a0daf
 </script>
 
 <template>
   <div>
-<<<<<<< HEAD
     <Hero :Heros="Heros" />
 
     <div class="py-16">
       <div class="container mx-auto">
-=======
-    <div class="relative bg-[#f1f1f1]">
-      <NuxtImg
-        class="w-full filter brightness-[0.3] relative h-[467px]"
-        alt="ourteam-image"
-        src="/hero.jpg"
-      />
-      <NuxtImg
-        class="absolute top-[43%] h-[300px] w-[90px] left-20 sm:left-36 transform -translate-x-1/2 -translate-y-1/2 sm:w-[157px] sm:h-[247px]"
-        src="/rectangle.png"
-        alt="rectangle"
-      />
-      <div
-        class="text-white absolute top-[42%] left-[50%] sm:top-[44%] sm:left-[40%] transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <h1 class="font-semibold text-lg sm:font-bold mt-5 sm:text-5xl">
-          Spurline Gas Pipeline Construction to Apex Industries
-          <span>{{ project.id }}</span>
-        </h1>
-        <p class="text-sm sm:text-[1.2rem]">
-          We are committed to providing our clients with comprehensive and
-          innovative <br class="hidden sm:block" />
-          solutions to the complex challenges facing the oil and gas industry.
-        </p>
-      </div>
-    </div>
-    <div class="p-7 sm:p-20">
-      <div>
->>>>>>> 17c6d489e110e41649dbe9dc9658cd35130a0daf
         <div class="flex justify-between">
           <h1
             class="text-[#205FAD] font-2xl w-[200px] sm:w-[900px] font-oswald sm:text-4xl font-semibold leading-10 tracking-tighter"
           >
             Spurline Gas Pipeline Construction to Apex Industries
           </h1>
-<<<<<<< HEAD
           <p class="px-2 py-2.5 text-white rounded-md font-semibold text-xs tracking-[0.25em]" :class="project.status === 'ONGOING' ? 'bg-amber-600' : 'bg-green-600'">{{ project.status }}</p>
         </div>
 
@@ -95,36 +58,6 @@ const project = computed(() =>
           <div class="">
             <h1 class="text-[#333333] font-bold mb-2">Project Scope</h1>
             <p class="text-[#333333]">
-=======
-          <p
-            class="bg-[#005E24] w-[100px] text-sm text-white p-2 rounded-xl h-10 text-center"
-          >
-            COMPLETED
-          </p>
-        </div>
-        <div class="flex flex-col gap-8 sm:gap-0 sm:grid sm:grid-cols-5 my-5">
-          <div class="flex sm:flex-col justify-between sm:justify-normal">
-            <h1 class="text-[#333333] font-semibold mb-2">Client</h1>
-            <p class="text-[#333333] text-right sm:text-start">
-              Nigerian Nathional Petroleum Corporation (NNPC)
-            </p>
-          </div>
-          <div class="flex sm:flex-col justify-between sm:justify-normal">
-            <h1 class="text-[#333333] font-semibold mb-2">Service</h1>
-            <p class="text-[#333333]">Natural Gas Distribution</p>
-          </div>
-          <div class="flex sm:flex-col justify-between sm:justify-normal">
-            <h1 class="text-[#333333] font-semibold mb-2">Date Completed</h1>
-            <p class="text-[#333333]">2024</p>
-          </div>
-          <div class="flex sm:flex-col justify-between sm:justify-normal">
-            <h1 class="text-[#333333] font-semibold mb-2">Location</h1>
-            <p class="text-[#333333]">Lagos, Nigeria</p>
-          </div>
-          <div class="flex sm:flex-col justify-between">
-            <h1 class="text-[#333333] font-semibold mb-2">Project Scope</h1>
-            <p class="text-[#333333] text-right sm:text-start">
->>>>>>> 17c6d489e110e41649dbe9dc9658cd35130a0daf
               Engineering, Procurement, Construction, Testing and Commissioning,
               PMS Installation, Civil Work & CP
             </p>
@@ -133,17 +66,10 @@ const project = computed(() =>
         
         <hr class="border-2 my-10 border-[#b3b3b3]" />
 
-<<<<<<< HEAD
-        <div class="flex flex-row w-full gap-6 my-10">
-          <div class="w-[70%]">
-            <h1
-              class="text-[#205FAD] font-oswald text-[32px] font-semibold leading-10 tracking-tighter"
-=======
         <div class="flex flex-col-reverse sm:flex-row w-full gap-10 my-10">
           <div class="w-full sm:w-[70%]">
             <h1
               class="text-[#205FAD] font-oswald text-2xl sm:text-4xl font-semibold leading-10 tracking-tighter"
->>>>>>> 17c6d489e110e41649dbe9dc9658cd35130a0daf
             >
               Project Overview
             </h1>
@@ -226,11 +152,7 @@ const project = computed(() =>
 
         <div class="mt-10 mb-16">
           <h1
-<<<<<<< HEAD
-            class="text-[#205FAD] font-oswald text-[32px] font-semibold leading-10 tracking-tighter"
-=======
             class="text-[#205FAD] font-oswald text-2xl sm:text-4xl font-semibold leading-10 tracking-tighter"
->>>>>>> 17c6d489e110e41649dbe9dc9658cd35130a0daf
           >
             Project Highlights
           </h1>
@@ -304,7 +226,6 @@ const project = computed(() =>
           >
             See Other Projects
           </h1>
-<<<<<<< HEAD
           <div class="grid grid-cols-2 w-full gap-8 mt-8">
             <div class="rounded-xl relative">
               <NuxtImg
@@ -315,16 +236,6 @@ const project = computed(() =>
               <div class="w-289 h-34 absolute bottom-0 p-8 text-white">
                 <h4
                   class="font-oswald font-bold text-white text-[28px] leading-8 tracking-wider"
-=======
-          <div class="flex flex-col sm:grid sm:grid-cols-2 w-full gap-10">
-            <div
-              class="bg-cover bg-center h-[400px] relative"
-              style="background-image: url('/project.jpeg')"
-            >
-              <div class="w-289 h-34 absolute bottom-0 left-0 p-8 text-white">
-                <h4
-                  class="font-oswald font-semibold text-white text-3xl leading-8 tracking-wider"
->>>>>>> 17c6d489e110e41649dbe9dc9658cd35130a0daf
                 >
                   {{ project.name }} {{ project.id }}
                 </h4>
