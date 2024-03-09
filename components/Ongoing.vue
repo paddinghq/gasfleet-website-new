@@ -3,7 +3,7 @@ import { projects } from "../store/projects";
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-10 p-10">
+  <div class="grid grid-cols-1 gap-10 py-12 px-6 md:grid-cols-2 lg:grid-cols-3">
     <div v-for="(project, id) in projects" :key="id" class="cursor-pointer"  :class="project.status === 'COMPLETED' ? 'hidden' : 'block'">
       <NuxtLink :to="`/projects/${project.id}`">
         <div class="h-[320px] relative">

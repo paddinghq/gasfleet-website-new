@@ -26,7 +26,7 @@ const next = () => {
 };
 
 const startAutoSlide = () => {
-  autoSlideInterval = setInterval(next, 4000);
+  autoSlideInterval = setInterval(next, 40000);
 };
 
 const stopAutoSlide = () => {
@@ -64,7 +64,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 <template>
   <div>
     <div
-      class="overflow-hidden h-[455px] sm:h-[690px] relative"
+      class="overflow-hidden h-[376px] relative lg:h-[600px] xl:h-[684px]"
       @mouseenter="stopAutoSlide"
       @mouseleave="startAutoSlide"
     >
@@ -73,7 +73,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
       >
         <div v-for="(item, index) in items" :key="index">
-          <div class="carousel-item w-screen h-[684px]">
+          <div class="carousel-item w-screen h-[684px] lg:h-[600px] xl:h-[684px]">
             <img
               :src="item.image"
               alt="Carousel Item"
@@ -81,13 +81,13 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
             />
           </div>
           <div
-            class="relative h-[455px] sm:h-[690px] top-[-43rem] px-5 sm:pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+            class="relative h-[376px] top-[-45.5rem] px-5 sm:pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent lg:h-[600px] lg:top-[-40rem] xl:h-[684px] xl:top-[-45.5rem]"
           >
             <div class="text-white flex flex-col gap-5">
-              <h1 class="w-full text-3xl sm:w-[40%] sm:text-6xl">
+              <h1 class="w-full text-3xl md:text-4xl lg:w-[75%] lg:text-6xl xl:text-7xl">
                 {{ item.title }}
               </h1>
-              <p class="text-md sm:text-lg sm:w-[45%]">{{ item.text }}</p>
+              <p class="lg:text-lg lg:w-[45%]">{{ item.text }}</p>
             </div>
           </div>
         </div>

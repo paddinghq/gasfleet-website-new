@@ -14,8 +14,7 @@ const props = defineProps({
       />
       <div class="container mx-auto relative bottom-40 lg:bottom-64">
         <NuxtImg
-          class="absolute top-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[83px] h-[212px] md:w-[100px] md:left-28 lg:left-36 lg:w-[157px] lg:h-[247px]"
-          :class="Hero.id === 2 ? 'left-[8.5rem]' : 'left-[5.5rem]'"
+          class="absolute top-[50%] left-[5.5rem] transform -translate-x-1/2 -translate-y-1/2 w-[83px] h-[212px] md:w-[100px] md:left-28 lg:left-36 lg:w-[157px] lg:h-[247px]"
           :src="Hero.rectangle"
           alt="rectangle"
         />
