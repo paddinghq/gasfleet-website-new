@@ -12,7 +12,7 @@ const project = computed(() => projects.find(project => project.id === parseInt(
 
 const Heros = ref([
   {
-    id: 10,
+    id: 2,
     img: ImgSrc1,
     rectangle: rectangleImg,
     title: computed(() => `Spurline Gas Pipeline Construction to Apex Industries ${project.value ? project.value.id : ''}`),

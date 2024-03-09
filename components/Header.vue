@@ -35,15 +35,15 @@ const closeDropdowns = () => {
 </script>
 
 <template>
-  <div class="py-5 container mx-auto flex justify-between items-center" >
+  <div class="py-5 container mx-auto flex justify-between items-center md:px-10" >
     <div>
       <NuxtLink to="/">
-        <NuxtImg src="/colored.png" alt="logo" class="w-12" />
+        <NuxtImg src="/colored.png" alt="logo" class="md:w-10" />
       </NuxtLink>
     </div>
 
     <header>
-      <nav class="flex gap-[2rem]">
+      <nav class="flex gap-4">
         <div class="relative" @mouseenter="toggleDropdown1">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
@@ -222,9 +222,7 @@ const closeDropdowns = () => {
 
     <div class="flex gap-[2rem]">
       <div class="flex items-center">
-        <input
-          class="border-none outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
-        /><svg
+        <svg
           width="16"
           height="16"
           viewBox="0 0 16 16"
