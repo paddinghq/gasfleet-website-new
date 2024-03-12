@@ -12,9 +12,9 @@ const toggleMobileMenu = () => {
 <template>
   <nav class="lg:hidden">
     <div class="flex justify-between items-center py-2.5 px-6">
-      <div>
+      <div class="w-6 h-6 md:w-10">
         <NuxtLink to="/">
-          <NuxtImg src="/colored.png" alt="logo" class="md:w-10" />
+          <NuxtImg src="/colored.png" alt="logo" class="w-full h-full object-cover" />
         </NuxtLink>
       </div>
       <div class="flex justify-end items-center">
