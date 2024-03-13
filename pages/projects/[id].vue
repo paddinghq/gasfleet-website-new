@@ -1,21 +1,28 @@
 <script setup>
-import { projects } from "@/store/projects"
-import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { projects } from "@/store/projects";
+import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
 const ImgSrc1 = ref("hero.jpg");
 const rectangleImg = ref("s.project-rectangle.png");
 
 const router = useRouter();
 const projectId = ref(router.currentRoute.value.params.id);
 
-const project = computed(() => projects.find(project => project.id === parseInt(projectId.value)));
+const project = computed(() =>
+  projects.find((project) => project.id === parseInt(projectId.value))
+);
 
 const Heros = ref([
   {
     id: 2,
     img: ImgSrc1,
     rectangle: rectangleImg,
-    title: computed(() => `Spurline Gas Pipeline Construction to Apex Industries ${project.value ? project.value.id : ''}`),
+    title: computed(
+      () =>
+        `Spurline Gas Pipeline Construction to Apex Industries ${
+          project.value ? project.value.id : ""
+        }`
+    ),
     text: "We are committed to providing our clients with comprehensive and innovative solutions to the complex challenges facing the oil and gas industry.",
   },
 ]);
@@ -25,18 +32,58 @@ const Heros = ref([
   <div>
     <Hero :Heros="Heros" />
 
-    <div class="py-16">
+    <div class="py-5 px-6 lg:py-16 lg:px-10 xl:px-0">
       <div class="container mx-auto">
         <div class="flex justify-between">
           <h1
-            class="text-[#205FAD] font-oswald text-4xl font-semibold leading-10 tracking-tighter"
+            class="text-[#205FAD] text-xl font-oswald font-semibold leading-10 tracking-tighter md:text-2xl lg:text-4xl"
           >
             Spurline Gas Pipeline Construction to Apex Industries
           </h1>
-          <p class="px-2 py-2.5 text-white rounded-md font-semibold text-xs tracking-[0.25em]" :class="project.status === 'ONGOING' ? 'bg-amber-600' : 'bg-green-600'">{{ project.status }}</p>
+          <p
+            class="px-2 py-2.5 h-fit text-white rounded-md font-semibold text-xs tracking-[0.25em]"
+            :class="
+              project.status === 'ONGOING' ? 'bg-amber-6=700' : 'bg-green-800'
+            "
+          >
+            {{ project.status }}
+          </p>
         </div>
 
-        <div class="grid grid-cols-5 mt-8">
+        <div class="grid grid-cols-1 gap-6 mt-5 md:mt-8 lg:hidden">
+          <div class="flex justify-between">
+            <h1 class="text-[#333333] sans font-bold mb-2">Date Completed</h1>
+            <p class="text-[#333333] text-end">2024</p>
+          </div>
+          <div class="flex justify-between">
+            <h1 class="text-[#333333] sans font-bold mb-2">Client</h1>
+            <p class="text-[#333333] text-end">
+              Nigerian Nathional Petroleum <br />
+              Corporation (NNPC)
+            </p>
+          </div>
+          <div class="flex justify-between">
+            <h1 class="text-[#333333] sans font-bold mb-2">Location</h1>
+            <p class="text-[#333333] text-end">Lagos, Nigeria</p>
+          </div>
+          <div class="flex justify-between">
+            <h1 class="text-[#333333] sans font-bold mb-2">Service</h1>
+            <p class="text-[#333333] text-end">Natural Gas Distribution</p>
+          </div>
+          <div class="flex justify-between">
+            <h1 class="text-[#333333] sans font-bold mb-2">
+              Project <br />
+              Scope
+            </h1>
+            <p class="text-[#333333] text-end">
+              Engineering, Procurement, <br />
+              Construction, Testing and Commissioning, PMS <br />
+              Installation, Civil Work & CP
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden grid-cols-5 gap-6 mt-8 lg:grid">
           <div class="">
             <h1 class="text-[#333333] font-bold mb-2">Client</h1>
             <p class="text-[#333333]">
@@ -63,13 +110,13 @@ const Heros = ref([
             </p>
           </div>
         </div>
-        
-        <hr class="border-2 my-10 border-[#b3b3b3]" />
 
-        <div class="flex flex-row w-full gap-6 my-10">
-          <div class="w-[70%]">
+        <hr class="border my-5 border-[#b3b3b3] lg:my-10" />
+
+        <div class="flex flex-col-reverse lg:flex-row w-full gap-6 lg:gap-10">
+          <div class="w-full lg:w-[70%]">
             <h1
-              class="text-[#205FAD] font-oswald text-[32px] font-semibold leading-10 tracking-tighter"
+              class="text-[#205FAD] font-oswald text-xl font-semibold leading-10 tracking-tighter md:text-2xl lg:text-[32px]"
             >
               Project Overview
             </h1>
@@ -90,7 +137,7 @@ const Heros = ref([
               local companies, led by our company as the main contractor. The
               project was supported by the Nigerian government, the Nigerian
               National Petroleum Corporation (NNPC), and the local communities.
-              <br /> <br>
+              <br />
               The project objectives were to:
             </p>
             <ul class="list-disc ml-10">
@@ -112,7 +159,7 @@ const Heros = ref([
               </li>
             </ul>
           </div>
-          <div class="w-[30%]">
+          <div class="w-full lg:w-[349px] lg:h-[480.92px]">
             <NuxtImg
               class="w-full h-full object-cover"
               alt="single-project-image"
@@ -122,47 +169,47 @@ const Heros = ref([
         </div>
 
         <div>
-          <div>
+          <div class="my-5 lg:my-10">
             <h1
-              class="text-[#205FAD] font-oswald text-4xl font-semibold leading-10 tracking-tighter"
+              class="text-[#205FAD] font-oswald text-xl font-semibold leading-10 tracking-tighter md:text-2xl lg:text-[32px]"
             >
               Project Timeline
             </h1>
             <div></div>
           </div>
-          <div class="grid grid-cols-3 gap-5 my-10">
+          <div class="hidden sm:grid sm:grid-cols-3 gap-5 my-10">
             <NuxtImg
-              class="h-[300px] w-full"
+              class="h-[300px] w-full object-cover"
               alt="single-project-image"
               src="/singleProject1.jpeg"
             />
             <NuxtImg
-              class="h-[300px] w-full"
+              class="h-[300px] w-full object-cover"
               alt="single-project-image"
               src="/singleProject2.jpeg"
             />
             <NuxtImg
-              class="h-[300px] w-full"
+              class="h-[300px] w-full object-cover"
               alt="single-project-image"
               src="/singleProject3.jpeg"
             />
           </div>
         </div>
 
-        <div class="mt-10 mb-16">
+        <div class="mt-2 lg:mb-16">
           <h1
-            class="text-[#205FAD] font-oswald text-[32px] font-semibold leading-10 tracking-tighter"
+            class="text-[#205FAD] font-oswald text-xl font-semibold leading-10 tracking-tighter md:text-2xl lg:text-[32px]"
           >
             Project Highlights
           </h1>
-          <p class="text-[#333333] mt-10 text-lg">
+          <p class="text-[#333333] mt-2 text-lg md:mt-4 lg:mt-10">
             The Delta oil field development project was a complex and
             challenging project that required innovative solutions and best
             practices. Some of the project highlights are:
           </p>
-          <ul class="mt-4">
+          <ul class="lg:mt-4">
             <li class="text-[#333333]">
-              <div class="flex items-center gap-5">
+              <div class="flex items-center gap-2 lg:gap-3">
                 <img src="/checkmark.png" alt="" class="w-[20px] h-[20px]" />
                 <p>
                   The project was completed on time and on budget, despite the
@@ -171,8 +218,8 @@ const Heros = ref([
                 </p>
               </div>
             </li>
-            <li class="text-[#333333] mt-3">
-              <div class="flex items-center gap-5">
+            <li class="text-[#333333] ">
+              <div class="flex items-center gap-2 my-2 lg:gap-3">
                 <img src="/checkmark.png" alt="" class="w-[20px] h-[20px]" />
                 <p>
                   The project achieved a world-class safety record, with no
@@ -182,7 +229,7 @@ const Heros = ref([
               </div>
             </li>
             <li class="text-[#333333]">
-              <div class="flex items-center gap-5">
+              <div class="flex items-center gap-2 lg:gap-3">
                 <img src="/checkmark.png" alt="" class="w-[20px] h-[20px]" />
                 <p>
                   The project used cutting-edge technology and equipment, such
@@ -193,7 +240,7 @@ const Heros = ref([
               </div>
             </li>
             <li class="text-[#333333]">
-              <div class="flex items-center gap-5">
+              <div class="flex items-center gap-2 my-2 lg:gap-3">
                 <img src="/checkmark.png" alt="" class="w-[20px] h-[20px]" />
                 <p>
                   The project contributed to the local content and capacity
@@ -205,7 +252,7 @@ const Heros = ref([
               </div>
             </li>
             <li class="text-[#333333]">
-              <div class="flex items-center gap-5">
+              <div class="flex items-center gap-2 lg:gap-3">
                 <img src="/checkmark.png" alt="" class="w-[20px] h-[20px]" />
                 <p>
                   The project delivered social and economic benefits to the
@@ -219,20 +266,20 @@ const Heros = ref([
           </ul>
         </div>
 
-        <div class="pt-16">
+        <div class="pt-6 md:pt-10 lg:pt-16">
           <h1
-            class="text-[#205FAD] font-oswald text-[32px] font-semibold leading-10 tracking-tighter my-5"
+            class="text-[#205FAD] font-oswald text-xl font-semibold leading-10 tracking-tighter mb-5 md:text-2xl lg:mb-8 lg:text-[32px]"
           >
             See Other Projects
           </h1>
-          <div class="grid grid-cols-2 w-full gap-8 mt-8">
-            <div class="rounded-xl relative">
+          <div class="grid grid-cols-1 w-full gap-4 lg:grid-cols-2 lg:gap-8">
+            <div class="rounded-xl relative h-[320px] lg:w-[456px] xl:w-full">
               <NuxtImg
                 class="h-full w-full filter brightness-[0.6] relative object-cover rounded-xl"
                 src="project.jpeg"
                 alt="rectangle"
               />
-              <div class="w-289 h-34 absolute bottom-0 p-8 text-white">
+              <div class="w-289 h-34 absolute bottom-0 p-4 text-white">
                 <h4
                   class="font-oswald font-bold text-white text-[28px] leading-8 tracking-wider"
                 >
@@ -252,14 +299,20 @@ const Heros = ref([
                   </p>
                 </div>
               </div>
+              <p
+                class="absolute left-[20px] top-[20px] text-center text-white bg-[#005E24] w-[100px] p-1 rounded-lg"
+              >
+                COMPLETED
+              </p>
             </div>
-            <div class="rounded-xl relative">
+
+            <div class="rounded-xl relative h-[320px] lg:w-[456px] xl:w-full">
               <NuxtImg
                 class="h-full w-full filter brightness-[0.6] relative object-cover rounded-xl"
                 src="project.jpeg"
                 alt="rectangle"
               />
-              <div class="w-289 h-34 absolute bottom-0 p-8 text-white">
+              <div class="w-full text-end h-34 absolute bottom-0 p-4 text-white">
                 <h4
                   class="font-oswald font-bold text-white text-[28px] leading-8 tracking-wider"
                 >
@@ -269,16 +322,21 @@ const Heros = ref([
                   <p
                     class="sans text-white font-semibold leading-8 tracking-wider"
                   >
+                    View previous project
                     <Icon
-                      name="material-symbols:arrow-circle-left-outline"
+                      name="material-symbols:arrow-circle-right-outline"
                       color="white"
                       size="32"
                       class="cursor-pointer"
                     />
-                    View previous project
                   </p>
                 </div>
               </div>
+              <p
+                class="absolute left-[20px] top-[20px] text-white bg-[#005E24] w-[100px] p-1 rounded-lg"
+              >
+                COMPLETED
+              </p>
             </div>
           </div>
         </div>
