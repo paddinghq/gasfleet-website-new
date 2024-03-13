@@ -2,7 +2,7 @@
   <div>
     <footer class="bg-[#222222]">
       <div
-        class="flex flex-col sm:flex-row justify-between text-[#fffdfd] py-[1rem] px-[2rem] sm:py-[3rem] sm:px-[5rem]"
+        class="flex flex-col sm:flex-row justify-between text-[#fffdfd] py-[1rem] px-[2rem] lg:py-[3rem] lg:px-10"
       >
         <div class="left">
           <svg
@@ -113,7 +113,7 @@
             </NuxtLink>
           </div>
         </div>
-        <div class="flex justify-between mt-10 sm:gap-x-10 w-60">
+        <div class="flex justify-between mt-10 sm:gap-x-10 w-60 mx-4 lg:mx-0">
           <div class="">
             <h3 class="text-sm font-bold">Quick Links</h3>
             <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
