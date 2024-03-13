@@ -8,7 +8,7 @@ const rectangleImg = ref("rectangle.png");
 
 const Heros = ref([
   {
-    id: 2,
+    id: 9,
     img: ImgSrc1,
     rectangle: rectangleImg,
     title: "Projects",
@@ -16,13 +16,28 @@ const Heros = ref([
   },
 ]);
 
-const activeTab = ref('management');
+const Tabs = ref([
+  {
+    name: 'All',
+    tab: 'all'
+  },
+  {
+    name: 'Completed',
+    tab: 'completed'
+  },
+  {
+    name: 'Ongoing',
+    tab: 'ongoing'
+  },
+])
+
+const activeTab = ref('All');
 
 const activeComponent = computed(() => {
   switch (activeTab.value) {
-    case 'completed':
+    case 'Completed':
       return Completed;
-    case 'ongoing':
+    case 'Ongoing':
       return Ongoing;
     default:
       return All;
@@ -39,28 +54,53 @@ const activateTab = (tab) => {
     <div class="relative bg-[#f1f1f1]">
       <Hero :Heros="Heros" />
 
-      <div class="flex gap-12 items-center justify-center pb-8 pt-6">
+      <div class="relative inline-block w-full bg-gray-200 lg:hidden">
+        <select
+          v-model="activeTab"
+          @change="selectTab($event.target.value)"
+          class="block appearance-none w-full bg-gray-200 px-6 py-4 rounded shadow leading-tight font-medium text-xl oswald cursor-pointer text-sky-700 transition-all hover:text-sky-700 focus:outline-none focus:shadow-outline duration-300"
+        >
+          <option disabled :value="activeTab" class="capitalize">
+            {{ activeTab }}
+          </option>
+          <option
+            class="font-medium text-xl oswald capitalize text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700"
+            :value="Tab.name"
+            v-for="Tab in Tabs"
+            :key="Tab.tab"
+          >
+            {{ Tab.name }}
+          </option>
+        </select>
+        <img
+          src="../../public/down.png"
+          class="absolute w-8 top-3 right-6"
+          alt="down"
+        />
+      </div>
+
+      <div class="hidden gap-12 items-center justify-center pb-8 pt-6 lg:flex">
         <button
           class="button sans"
-          @click="activateTab('all')"
+          @click="activateTab('All')"
           :class="{
-            active: activeTab === 'all',
-            focus: activeTab === 'all',
+            active: activeTab === 'All',
+            focus: activeTab === 'All',
           }"
         >
           All Projects
         </button>
         <button
           class="button sans"
-          @click="activeTab = 'completed'"
-          :class="{ active: activeTab === 'completed' }"
+          @click="activeTab = 'Completed'"
+          :class="{ active: activeTab === 'Completed' }"
         >
           Completed
         </button>
         <button
           class="button sans"
-          @click="activeTab = 'ongoing'"
-          :class="{ active: activeTab === 'ongoing' }"
+          @click="activeTab = 'Ongoing'"
+          :class="{ active: activeTab === 'Ongoing' }"
         >
           Ongoing
         </button>

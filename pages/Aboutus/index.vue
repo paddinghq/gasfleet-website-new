@@ -17,20 +17,19 @@ const Heros = ref([
   <div class="">
     <Hero :Heros="Heros" />
 
-    <div class="py-16 container mx-auto flex gap-[88px]">
-      <div class="relative w-[424px]">
+    <div
+      class="py-8 px-6 container mx-auto flex flex-col-reverse gap-8 md:py-10 md:flex-row lg:gap-12 lg:py-16 xl:gap-[88px]"
+    >
+      <div class="relative md:w-1/2">
         <NuxtImg class="w-full h-full" alt="rectangle" src="/history.png" />
       </div>
-      <div class="w-1/2 self-center">
-        <h1 class="text-[#205FAD] font-semibold text-2xl">Our History</h1>
-        <p class="text-[#0A0A0A] mt-6">
-          Gasfleet is a premier Engineering, Procurement and Construction<br />
-          management company founded 2016. We provide detailed engineering and
-          <br />
-          technical service for our numerous customer across west Africa. We
-          boast our<br />
-          presence in the emerging markets and has successfully created a brand
-          while<br />winning the steadfast trust and accolades from clients.
+      <div class="w-full self-center md:w-1/2">
+        <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl">
+          Our History
+        </h1>
+        <p class="text-[#0A0A0A] font-normal mt-6">
+          Gasfleet Engineering Limited is an African Company established since
+          2016.
         </p>
       </div>
     </div>
@@ -39,106 +38,147 @@ const Heros = ref([
       <NuxtImg class="w-full" src="/aboutus.png" aria-multiline="aboutus" />
     </div>
 
-    <div class="py-16 container mx-auto">
-      <div class="flex justify-center gap-5">
+    <div class="container mx-auto pt-8 lg:pt-16">
+      <div class="flex justify-between gap-5">
         <NuxtImg
-          class="w-[30rem] h-[0.35rem] self-center"
+          class="w-24 h-[0.35rem] self-center md:w-[19rem] lg:w-96"
           src="/Rectangle3.png"
           alt="line"
         />
-        <h2 class="text-3xl text-[#205FAD] font-regular">
+        <h2 class="text-xl text-[#205FAD] font-medium lg:text-[32px]">
           Gasfleet Engineering
         </h2>
         <NuxtImg
-          class="w-[30rem] h-[0.35rem] self-center"
+          class="w-[6rem] h-[0.35rem] self-center md:w-[19rem] lg:w-96"
           src="/Rectangle4.png"
           alt="line"
         />
       </div>
-      <p class="text-center text-[#0A0A0A] text-lg mt-7">
+      <p class="text-center px-6 text-[#0A0A0A] text-xs my-2 md:text-lg">
         Providing sustainable Gas & Power solution with innovation and service
         excellence
       </p>
+    </div>
 
-      <div class="flex gap-[10rem] mt-20">
-        <div class="flex gap-[10rem] mt-20">
-          <div class="w-1/2 relative h-[28rem]">
-            <NuxtImg src="/Rectangle6.png" class="w-[30rem]" />
-            <NuxtImg
-              src="/Frame2.png"
-              class="w-[41rem] h-[25rem] absolute top-4 left-4"
-            />
-          </div>
-          <div class="self-center">
-            <h1 class="text-[#205FAD] font-bold text-[40px]">Our Mission</h1>
-            <p class="text-[#0A0A0A] mt-5 tracking-wide">
-              To provide world class EPCM services delivery to our<br />
-              valued client in a manner that is consistent with our core<br />
-              values and best safety practices.
-            </p>
-          </div>
+    <div class="container mx-auto py-12 px-6 lg:pt-20 lg:pb-16 lg:px-10 xl:px-0">
+      <div class="flex flex-col-reverse justify-between gap-8 md:items-center lg:flex-row lg:gap-10 xl:gap-28">
+        <div class="md:p-0 md:w-1/2 lg:h-[350px]">
+          <NuxtImg
+            class="w-full h-full lg:hidden"
+            src="/our-mission.png"
+            alt="line"
+          />
+          <NuxtImg
+            class="w-full h-full hidden lg:block"
+            src="/bg-mission.png"
+            alt="line"
+          />
         </div>
-
-        <div class="relative flex gap-[10rem] my-20">
-          <div class="self-center">
-            <h1 class="text-[#205FAD] font-bold text-4xl">Our Vision</h1>
-            <p class="text-[#0A0A0A] mt-5 tracking-wide">
-              To become a world-class oil and gas servicing firm known<br />
-              for its superior service delivery in engineering,<br />
-              procurement, construction, and management (EPCM) and<br />
-              its capabilities in both the upstream and downstream<br />
-              sectors of the industry.
-            </p>
-          </div>
-          <div class="w-1/2 h-[28rem]">
-            <NuxtImg src="/Rectangle5.png" class="w-[30rem] absolute right-0" />
-            <NuxtImg
-              src="/Frame4.png"
-              class="w-[41rem] h-[25rem] absolute top-4 right-4"
+        <div class="self-center">
+          <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold">Our Mission</h1>
+          <p class="text-[#0A0A0A] mt-4">
+            To provide world class EPCM services delivery to our<br
+              class="hidden md:block"
             />
-          </div>
-        </div>
-
-        <div class="flex gap-[10rem]">
-          <div class="w-1/2 relative h-[28rem]">
-            <NuxtImg src="/Rectangle6.png" class="w-[30rem]" />
-            <NuxtImg
-              src="/Frame3.png"
-              class="w-[41rem] h-[25rem] absolute top-4 left-4"
+            valued client in a manner that is consistent with our core<br
+              class="hidden md:block"
             />
-          </div>
-          <div class="self-center">
-            <h1 class="text-[#205FAD] font-bold text-4xl">Our Core Values</h1>
-            <p class="text-[#0A0A0A] mt-5 tracking-wide">
-              Making an effort to contribute by communicating openly<br />
-              and honestly with clients, finding innovative solutions for<br />
-              them, and ensuring that everyone on the team is on the<br />
-              same page.
-            </p>
-          </div>
+            values and best safety practices.
+          </p>
         </div>
       </div>
-      <div class="bg-[#F1F1F1] py-16 px-20">
-        <h1 class="text-center text-[#205FAD] font-bold text-4xl">
-          Our Clients
-        </h1>
-        <div class="">
-          <div class="flex justify-between mt-12">
-            <NuxtImg class="w-24" src="/image/alexa.png" alt="alexa" />
-            <NuxtImg class="w-24" src="/image/gaslink.png" alt="gaslink" />
-            <NuxtImg class="w-24" src="/image/gns.png" alt="gns" />
-            <NuxtImg class="w-24" src="/image/powergas.png" alt="powergas" />
-          </div>
-          <div class="flex justify-between mt-12">
-            <NuxtImg class="w-24" src="/image/tgnl.png" alt="tgnl" />
-            <NuxtImg class="w-24" src="/image/ccetc.png" alt="ccetc" />
-            <NuxtImg
-              class="w-24"
-              src="/image/greenville.png"
-              alt="greenville"
+
+      <div
+        class="flex flex-col justify-between gap-8 my-8 md:items-center md:my-12 lg:my-20 lg:gap-10 lg:flex-row xl:gap-28"
+      >
+        <div class="self-center">
+          <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold">
+            Our Vision
+          </h1>
+          <p class="text-[#0A0A0A] mt-5 text-md sm:text-sm">
+            To become a world-class oil and gas servicing firm known<br
+              class="hidden sm:block"
             />
-            <NuxtImg class="w-24" src="/image/chcg.png" alt="chcg" />
-          </div>
+            for its superior service delivery in engineering,<br
+              class="hidden sm:block"
+            />
+            procurement, construction, and management (EPCM) and<br
+              class="hidden sm:block"
+            />
+            its capabilities in both the upstream and downstream<br
+              class="hidden sm:block"
+            />
+            sectors of the industry.
+          </p>
+        </div>
+        <div class="md:p-0 md:w-1/2 lg:h-[350px]">
+          <NuxtImg
+            class="w-full h-full lg:hidden"
+            src="/our-vision.png"
+            alt="line"
+          />
+          <NuxtImg
+            class="w-full h-full hidden lg:block"
+            src="/bg-vision.png"
+            alt="line"
+          />
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col-reverse justify-between gap-8 md:items-center lg:flex-row lg:gap-10 xl:gap-28"
+      >
+        <div class="md:p-0 md:w-1/2 lg:h-[350px]">
+          <NuxtImg
+            class="w-full h-full lg:hidden"
+            src="/our-corevalues.png"
+            alt="line"
+          />
+          <NuxtImg
+            class="w-full h-full hidden lg:block"
+            src="/bg-corevalues.png"
+            alt="line"
+          />
+        </div>
+        <div class="self-center">
+          <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold">
+            Our Core Values
+          </h1>
+          <p class="text-[#0A0A0A] mt-5 text-md sm:text-sm">
+            Making an effort to contribute by communicating openly<br
+              class="hidden sm:block"
+            />
+            and honestly with clients, finding innovative solutions for<br
+              class="hidden sm:block"
+            />
+            them, and ensuring that everyone on the team is on the<br
+              class="hidden sm:block"
+            />
+            same page.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center bg-gray-200 py-12 px-6 lg:px-10 xl:py-16 xl:px-0">
+      <div class="container mx-auto">
+        <h2
+          class="text-[#205FAD] text-2xl font-semibold lg:text-4xl"
+        >
+          Our Client
+        </h2>
+
+        <div
+          class="grid grid-cols-3 place-items-center justify-items-center gap-y-10 gap-x-5 items-center mt-12 lg:grid-cols-4"
+        >
+          <img src="/image/alexa.png" alt="" />
+          <img src="/image/gaslink.png" alt="" />
+          <img src="/image/gns.png" alt="" />
+          <img src="/image/powergas.png" alt="" />
+          <img src="/image/tgnl.png" alt="" />
+          <img src="/image/ccetc.png" alt="" />
+          <img src="/image/greenville.png" alt="" />
+          <img src="/image/chcg.png" alt="" />
         </div>
       </div>
     </div>

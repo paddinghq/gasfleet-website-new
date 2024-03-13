@@ -1,7 +1,9 @@
 <template>
   <div>
     <footer class="bg-[#222222]">
-      <div class="flex justify-between text-[#fffdfd] py-[3rem] px-[5rem]">
+      <div
+        class="flex flex-col sm:flex-row justify-between text-[#fffdfd] py-[1rem] px-[2rem] lg:py-[3rem] lg:px-10"
+      >
         <div class="left">
           <svg
             width="60"
@@ -111,39 +113,41 @@
             </NuxtLink>
           </div>
         </div>
-        <div class="">
-          <h3 class="text-sm font-bold">Quick Links</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <NuxtLink class="sans text-sm font-normal" to="/">Home</NuxtLink>
-            <NuxtLink class="sans text-sm font-normal" to="/aboutus"
-              >About Us</NuxtLink
-            >
-            <NuxtLink class="sans text-sm font-normal" to="/projects"
-              >Projects</NuxtLink
-            >
-            <NuxtLink class="sans text-sm font-normal" to="/sustainability"
-              >Sustainability</NuxtLink
-            >
+        <div class="flex justify-between mt-10 sm:gap-x-10 w-60 mx-4 lg:mx-0">
+          <div class="">
+            <h3 class="text-sm font-bold">Quick Links</h3>
+            <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+              <NuxtLink class="sans text-sm font-normal" to="/">Home</NuxtLink>
+              <NuxtLink class="sans text-sm font-normal" to="/aboutus"
+                >About Us</NuxtLink
+              >
+              <NuxtLink class="sans text-sm font-normal" to="/projects"
+                >Projects</NuxtLink
+              >
+              <NuxtLink class="sans text-sm font-normal" to="/sustainability"
+                >Sustainability</NuxtLink
+              >
+            </div>
+          </div>
+          <div class="">
+            <h3 class="text-sm font-bold">Our Services</h3>
+            <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+              <NuxtLink class="sans text-sm font-normal" to="/"
+                >Engineering</NuxtLink
+              >
+              <NuxtLink class="sans text-sm font-normal" to="/"
+                >Procurement</NuxtLink
+              >
+              <NuxtLink class="sans text-sm font-normal" to="/"
+                >Construction</NuxtLink
+              >
+              <NuxtLink class="sans text-sm font-normal" to="/"
+                >Management</NuxtLink
+              >
+            </div>
           </div>
         </div>
-        <div class="">
-          <h3 class="text-sm font-bold">Our Services</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
-            <NuxtLink class="sans text-sm font-normal" to="/"
-              >Engineering</NuxtLink
-            >
-            <NuxtLink class="sans text-sm font-normal" to="/"
-              >Procurement</NuxtLink
-            >
-            <NuxtLink class="sans text-sm font-normal" to="/"
-              >Construction</NuxtLink
-            >
-            <NuxtLink class="sans text-sm font-normal" to="/"
-              >Management</NuxtLink
-            >
-          </div>
-        </div>
-        <div class="">
+        <div class="mt-10">
           <h3 class="text-sm font-bold">Contact Us</h3>
           <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
             <p class="sans text-sm font-normal">
@@ -166,15 +170,15 @@
         </div>
       </div>
       <div
-        class="bg-[#191919] py-[1.5rem] px-[5rem] text-[#FFFDFD] text-xs flex items-center justify-between"
+        class="bg-[#191919] py-5 px-10 sm:py-[1.5rem] sm:px-[5rem] gap-3 sm:gap-0 text-[#FFFDFD] text-xs flex flex-col sm:flex-row w-full items-center justify-between"
       >
         <div>
-          <p>
+          <p class="text-center">
             &copy; Copyright 2024 Gasfleet Engineering Limited. All Rights
             Reserved
           </p>
         </div>
-        <div class="flex justify-between">
+        <div class="flex justify-between gap-x-5">
           <NuxtLink class="sans font-normal text-xs">Privacy Policy</NuxtLink>
           <NuxtLink class="sans font-normal text-xs"
             >Terms and Conditions</NuxtLink
