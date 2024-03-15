@@ -251,7 +251,7 @@ const closeDropdowns = () => {
             />
           </svg>
         </div>
-        <div class="flex flex-row gap-[2rem] hidden sm:inline-flex">
+        <div class="flex flex-row gap-[2rem]">
           <NuxtLink to="/"
             ><svg
               width="24"
