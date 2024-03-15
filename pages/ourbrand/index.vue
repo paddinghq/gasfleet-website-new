@@ -123,7 +123,7 @@ const Heros = ref([
                     <img
                       src="../../public/image/colored.png"
                       alt="colored-logo"
-                      class=";g:h-full"
+                      class="lg:h-full"
                     />
                   </div>
                   <div>
