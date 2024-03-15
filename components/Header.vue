@@ -98,7 +98,7 @@ const closeDropdowns = () => {
                 </li>
                 <li @click="closeDropdowns">
                   <NuxtLink
-                    to="/"
+                    to="/ourbrand"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown1"
@@ -114,7 +114,7 @@ const closeDropdowns = () => {
                 </li>
                 <li @click="closeDropdowns">
                   <NuxtLink
-                    to="/"
+                    to="/aboutus"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown1"
@@ -123,7 +123,7 @@ const closeDropdowns = () => {
                 </li>
                 <li @click="closeDropdowns">
                   <NuxtLink
-                    to="/"
+                    to="/aboutus"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown1"
@@ -163,7 +163,7 @@ const closeDropdowns = () => {
               <ul class="pl-4 py-8 flex flex-col gap-2 justify-between">
                 <li @click="closeDropdowns">
                   <NuxtLink
-                    to=""
+                    to="/ecpm"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown2"
@@ -181,7 +181,7 @@ const closeDropdowns = () => {
                 </li>
                 <li @click="closeDropdowns">
                   <NuxtLink
-                    to="/"
+                    to="/ecpm"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown2"
@@ -190,7 +190,7 @@ const closeDropdowns = () => {
                 </li>
                 <li @click="closeDropdowns">
                   <NuxtLink
-                    to="ourteam"
+                    to="/ecpm"
                     class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-[#205FAD]"
                     @click.stop
                     @click="toggleDropdown2"

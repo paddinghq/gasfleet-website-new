@@ -23,6 +23,7 @@ const activeTab = ref("Management");
 
 const activateTab = (tab) => {
   activeTab.value = tab;
+  console.log('Activating tab:', tab);
 };
 
 const Tabs = ref([
@@ -112,10 +113,14 @@ onMounted(() => {
       >
         <div class="" v-for="Tab in Tabs" :key="Tab.tab">
           <button
-            class="text-[#777777] border-none font-semibold text-xl oswald focus:text-[#205FAD] focus:underline focus:underline-offset-8 focus:decoration-4"
+            class="text-[#777777] border-none font-semibold text-xl oswald"
             @click="activateTab(Tab.name)"
-            :class="{
-              active: activeTab === Tab.name,
+            :class="{ active: activeTab === Tab.name }"
+            :style="{
+              color: activeTab === Tab.name ? '#205FAD' : '#777777',
+              'text-decoration': activeTab === Tab.name ? 'underline' : 'none',
+              'text-underline-offset': activeTab === Tab.name ? '8px' : '0px',
+              'text-decoration-thickness': activeTab === Tab.name ? '4px' : '0px'
             }"
             autofocus
             style="outline: none"

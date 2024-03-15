@@ -134,16 +134,16 @@
           <div class="">
             <h3 class="text-sm font-bold">Our Services</h3>
             <div class="flex flex-col gap-2 font-thin mt-6">
-              <NuxtLink class="sans text-sm font-normal" to="/"
+              <NuxtLink class="sans text-sm font-normal" to="/ecpm"
                 >Engineering</NuxtLink
               >
-              <NuxtLink class="sans text-sm font-normal" to="/"
+              <NuxtLink class="sans text-sm font-normal" to="/ecpm"
                 >Procurement</NuxtLink
               >
-              <NuxtLink class="sans text-sm font-normal" to="/"
+              <NuxtLink class="sans text-sm font-normal" to="/ecpm"
                 >Construction</NuxtLink
               >
-              <NuxtLink class="sans text-sm font-normal" to="/"
+              <NuxtLink class="sans text-sm font-normal" to="/ecpm"
                 >Management</NuxtLink
               >
             </div>
@@ -183,7 +183,7 @@
             </p>
           </div>
           <div class="flex justify-between gap-x-5">
-            <NuxtLink class="sans font-normal text-xs">Privacy Policy</NuxtLink>
+            <NuxtLink class="sans font-normal text-xs" to="/privacy">Privacy Policy</NuxtLink>
             <NuxtLink class="sans font-normal text-xs"
               >Terms and Conditions</NuxtLink
             >
