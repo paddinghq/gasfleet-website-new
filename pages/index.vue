@@ -1,21 +1,21 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const items = ref([
   {
-    image: '/image/hero-image.png',
-    title: 'Gasfleet Engineering Limited - EPCM Company',
-    text: 'We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.',
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering <br /> Limited - EPCM Company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
   },
   {
-    image: '/image/hero-image.png',
-    title: 'Gasfleet Engineering Limited - EPCM Company',
-    text: 'We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.',
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering <br /> Limited - EPCM Company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
   },
   {
-    image: '/image/hero-image.png',
-    title: 'Gasfleet Engineering Limited - EPCM Company',
-    text: 'We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.',
+    image: "/image/hero-image.png",
+    title: "Gasfleet Engineering <br /> Limited - EPCM Company",
+    text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
   },
 ]);
 const currentIndex = ref(0);
@@ -51,7 +51,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 }
 
 .dot {
-  content: '';
+  content: "";
   background: rgb(176, 176, 176);
 }
 
@@ -73,7 +73,9 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
       >
         <div v-for="(item, index) in items" :key="index">
-          <div class="carousel-item w-screen h-[684px] lg:h-[600px] xl:h-[684px]">
+          <div
+            class="carousel-item w-screen h-[684px] lg:h-[600px] xl:h-[684px]"
+          >
             <img
               :src="item.image"
               alt="Carousel Item"
@@ -83,10 +85,11 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
           <div
             class="relative h-[376px] top-[-45.5rem] px-5 sm:pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent lg:h-[600px] lg:top-[-40rem] xl:h-[684px] xl:top-[-45.5rem]"
           >
-            <div class="text-white flex flex-col gap-5">
-              <h1 class="w-full text-3xl md:text-4xl lg:w-[75%] lg:text-6xl xl:text-7xl">
-                {{ item.title }}
-              </h1>
+            <div class="text-white flex flex-col container mx-auto gap-5">
+              <h1
+                class="w-full text-3xl md:text-4xl lg:text-6xl xl:text-7xl"
+                v-html="item.title"
+              ></h1>
               <p class="lg:text-lg lg:w-[45%]">{{ item.text }}</p>
             </div>
           </div>
@@ -106,38 +109,42 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
     </div>
 
     <div
-      class="flex bg-white flex-col-reverse gap-10 2xl:flex-row lg:flex-row md:flex-col"
+      class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
     >
-      <img src="/image/services.png" alt="service" class="object-cover" />
+      <div class="xl:w-[533px]">
+        <img
+          src="/ourservice.png"
+          alt="service"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
-      <div
-        class="mt-1 py-10 px-3 2xl:px-20 2xl:py-10 2xl:mt-5 lg:py-10 lg:px-20 lg:mt-5 md:px-10 md:py-10 md:mt-3"
-      >
-        <h1
-          class="text-[#205FAD] text-xl font-medium md:2xl lg:text-3xl 2xl:text-5xl"
-        >
+      <div class="py-12 px-6 lg:px-10 xl:p-20">
+        <h1 class="text-[#205FAD] text-xl font-semibold md:2xl lg:text-4xl">
           Our Services
         </h1>
 
-        <p
-          class="text-base mt-2 md:text-base md:mt-3 lg:text-lg lg:mt-5 2xl:text-lg 2xl:mt-5"
-        >
+        <p class="my-6 lg:text-lg">
           We deliver science, technology and engineering solutions to government
           and companies around the world
         </p>
 
-        <div
-          class="grid 2xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 gap-4 items-center mt-5"
-        >
-          <div class="bg-gray-100 p-5 rounded-lg">
+        <div class="grid gap-6 items-center md:grid-cols-1 lg:grid-cols-2">
+          <NuxtLink
+            to="/ecpm"
+            class="bg-gray-100 p-5 rounded-lg hover:bg-gray-200 transition-all"
+          >
             <img src="/image/epm.png" alt="emp" />
-            <h2 class="uppercase font-bold text-xl my-3">epcm</h2>
+            <h2 class="uppercase font-semibold text-xl my-2">epcm</h2>
             <p class="">
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
-          </div>
-          <div class="bg-gray-100 p-5 rounded-lg">
+          </NuxtLink>
+          <NuxtLink
+            to="/gas"
+            class="bg-gray-100 p-5 rounded-lg hover:bg-gray-200 transition-all"
+          >
             <img src="/image/gas.png" alt="gas" />
             <h2 class="capitalize font-bold text-xl my-3">
               natural gas distribution
@@ -146,9 +153,12 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
-          </div>
+          </NuxtLink>
 
-          <div class="bg-gray-100 p-5 rounded-lg">
+          <NuxtLink
+            to="power"
+            class="bg-gray-100 p-5 rounded-lg hover:bg-gray-200 transition-all"
+          >
             <img src="/image/power.png" alt="power" />
             <h2 class="capitalize font-bold text-xl my-3">
               Power distribution
@@ -157,8 +167,11 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
-          </div>
-          <div class="bg-gray-100 p-5 rounded-lg">
+          </NuxtLink>
+          <NuxtLink
+            to="/IDOM"
+            class="bg-gray-100 p-5 rounded-lg hover:bg-gray-200 transition-all"
+          >
             <img src="/image/development.png" alt="development" />
             <h2 class="capitalize font-bold text-xl my-3">
               infrastructure development
@@ -167,20 +180,22 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
               We deliver scrience, technology and engineering solutions to
               government and companies around the world.
             </p>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
 
-    <div class="bg-gray-100 px-5 2xl:px-0 lg:px-0 md:px-0">
-      <div
-        class="2xl:px-[5rem] grid py-10 bg-gray-100 gap-10 2xl:grid-cols-2 lg:grid-cols-2 md:flex-col px-3"
-      >
+    <div
+      class="bg-gray-100 px-6 py-12 lg:px-10 lg:py-12 xl:py-20"
+    >
+      <div class="container mx-auto flex flex-col justify-center gap-6 lg:flex-row">
         <div
-          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col px-5 py-12 text-white sm:w-94 items-center"
+          class="bg-[#205FAD] rounded-lg flex gap-4 flex-col py-6 px-3 text-white items-center lg:w-[30%] lg:gap-6 lg:py-12 lg:px-6 lg:items-start"
         >
-          <h3 class="capitalize text-xl font-bold">Our Executed Projects</h3>
-          <p class="text-justify">
+          <h3 class="capitalize text-2xl font-semibold">
+            Our Executed Projects
+          </h3>
+          <p class="text-justify text-sm lg:text-base">
             We pride ourseleves on our commitment to safety and quality. We have
             a proven track record of delivering projects that meet or exceed
             industry standard, while also minimizing environmental impact and
@@ -188,30 +203,52 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
             which we operate
           </p>
           <button
-            class="bg-white text-[#205FAD] text-center rounded-lg p-2 w-36 cursor-pointer transition-all hover:bg-gray-200"
+            class="bg-white text-[#205FAD] text-center rounded-lg py-3 px-4 cursor-pointer transition-all hover:bg-gray-200"
           >
             <NuxtLink to="projects">See all Projects</NuxtLink>
           </button>
         </div>
-        <div class="flex flex-col">
-          <div class="flex justify-between gap-10">
+        <div class="flex flex-col lg:w-[60%]">
+          <div class="flex justify-between gap-6">
             <div class="flex flex-col gap-3">
-              <img src="/image/project.png" alt="project" />
-              <div class="">
-                <p>Abuja gas fleet expansion</p>
+              <div class="rounded-xl relative h-[270px] xl:w-[358px]">
+                <NuxtImg
+                  class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
+                  src="project.jpeg"
+                  alt="rectangle"
+                />
+                <p
+                  class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
+                >
+                  ONGOING
+                </p>
+              </div>
+              <div class="flex justify-between font-semibold lg:flex-col">
+                <p>Abuja Gas Plant Expansion</p>
                 <span>2023</span>
               </div>
             </div>
-            <div class="flex flex-col gap-3 hidden sm:block">
-              <img src="/image/project.png" alt="project" />
-              <div class="text-base">
-                <p>Abuja gas fleet expansion</p>
+            <div class="hidden flex-col gap-3 md:flex">
+              <div class="rounded-xl relative h-[270px] xl:w-[358px]">
+                <NuxtImg
+                  class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
+                  src="project.jpeg"
+                  alt="rectangle"
+                />
+                <p
+                  class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
+                >
+                  ONGOING
+                </p>
+              </div>
+              <div class="flex justify-between font-semibold lg:flex-col">
+                <p>Abuja Gas Plant Expansion</p>
                 <span>2023</span>
               </div>
             </div>
           </div>
 
-          <div class="flex justify-between mt-5 items-center">
+          <div class="flex justify-between mt-2 items-center">
             <Icon
               name="material-symbols:arrow-circle-left-outline"
               color="black"

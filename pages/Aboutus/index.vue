@@ -60,8 +60,12 @@ const Heros = ref([
       </p>
     </div>
 
-    <div class="container mx-auto py-12 px-6 lg:pt-20 lg:pb-16 lg:px-10 xl:px-0">
-      <div class="flex flex-col-reverse justify-between gap-8 md:items-center lg:flex-row lg:gap-10 xl:gap-28">
+    <div
+      class="container mx-auto py-12 px-6 lg:pt-20 lg:pb-16 lg:px-10 xl:px-0"
+    >
+      <div
+        class="flex flex-col-reverse justify-between gap-8 md:items-center lg:flex-row lg:gap-10 xl:gap-28"
+      >
         <div class="md:p-0 md:w-1/2 lg:h-[350px]">
           <NuxtImg
             class="w-full h-full lg:hidden"
@@ -75,15 +79,23 @@ const Heros = ref([
           />
         </div>
         <div class="self-center">
-          <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold">Our Mission</h1>
+          <h1
+            class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold"
+          >
+            Our Mission
+          </h1>
           <p class="text-[#0A0A0A] mt-4">
-            To provide world class EPCM services delivery to our<br
+            We are committed to delivering services of <br />
+            the highest calibre, driven by excellence <br />
+            and in perfect harmony with our core <br />
+            values and stringent safety protocols
+            <!-- To provide world class EPCM services delivery to our<br
               class="hidden md:block"
             />
             valued client in a manner that is consistent with our core<br
               class="hidden md:block"
             />
-            values and best safety practices.
+            values and best safety practices. -->
           </p>
         </div>
       </div>
@@ -92,23 +104,16 @@ const Heros = ref([
         class="flex flex-col justify-between gap-8 my-8 md:items-center md:my-12 lg:my-20 lg:gap-10 lg:flex-row xl:gap-28"
       >
         <div class="self-center">
-          <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold">
+          <h1
+            class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold"
+          >
             Our Vision
           </h1>
           <p class="text-[#0A0A0A] mt-5 text-md sm:text-sm">
-            To become a world-class oil and gas servicing firm known<br
-              class="hidden sm:block"
-            />
-            for its superior service delivery in engineering,<br
-              class="hidden sm:block"
-            />
-            procurement, construction, and management (EPCM) and<br
-              class="hidden sm:block"
-            />
-            its capabilities in both the upstream and downstream<br
-              class="hidden sm:block"
-            />
-            sectors of the industry.
+            To become a global oil and gas servicing <br class="xl:hidden" />
+            company with a <br class="hidden xl:block" />
+            diversified portfolio <br class="xl:hidden" />
+            through excellent service delivery.
           </p>
         </div>
         <div class="md:p-0 md:w-1/2 lg:h-[350px]">
@@ -141,19 +146,19 @@ const Heros = ref([
           />
         </div>
         <div class="self-center">
-          <h1 class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold">
+          <h1
+            class="text-[#205FAD] font-semibold text-2xl lg:text-4xl xl:font-bold"
+          >
             Our Core Values
           </h1>
-          <p class="text-[#0A0A0A] mt-5 text-md sm:text-sm">
-            Making an effort to contribute by communicating openly<br
-              class="hidden sm:block"
-            />
-            and honestly with clients, finding innovative solutions for<br
-              class="hidden sm:block"
-            />
-            them, and ensuring that everyone on the team is on the<br
-              class="hidden sm:block"
-            />
+          <p class="text-[#0A0A0A] mt-5 sm:text-sm">
+            Making an effort to contribute by
+            <br class="xl:hidden" />communicating openly
+            <br class="hidden xl:block" />
+            and honestly with <br class="xl:hidden" />
+            clients, finding innovative solutions for<br />
+            them, and ensuring that everyone on the <br class="xl:hidden" />
+            team is on the <br class="hidden xl:block" />
             same page.
           </p>
         </div>
@@ -162,9 +167,7 @@ const Heros = ref([
 
     <div class="text-center bg-gray-200 py-12 px-6 lg:px-10 xl:py-16 xl:px-0">
       <div class="container mx-auto">
-        <h2
-          class="text-[#205FAD] text-2xl font-semibold lg:text-4xl"
-        >
+        <h2 class="text-[#205FAD] text-2xl font-semibold lg:text-4xl">
           Our Client
         </h2>
 

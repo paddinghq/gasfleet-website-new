@@ -2,7 +2,7 @@
   <div>
     <footer class="bg-[#222222]">
       <div
-        class="flex flex-col sm:flex-row justify-between text-[#fffdfd] py-[1rem] px-[2rem] lg:py-[3rem] lg:px-10"
+        class="container mx-auto flex flex-col gap-6 justify-between text-[#fffdfd] py-12 px-6 lg:flex-row lg:px-10 xl:px-0"
       >
         <div class="left">
           <svg
@@ -61,14 +61,15 @@
             </defs>
           </svg>
 
-          <p class="text-base mt-8 font-normal">
+          <p class="text-base my-4 font-normal">
             We are committed to providing innovative<br />
-            solutions and exceptional service to our clients<br />
+            solutions and exceptional service to our clients <br />
             in the oil and gas industry
           </p>
-          <div class="flex gap-4 mt-8">
-            <NuxtLink
-              ><svg
+
+          <div class="flex gap-6">
+            <NuxtLink>
+              <svg
                 width="32"
                 height="32"
                 viewBox="0 0 32 32"
@@ -113,10 +114,11 @@
             </NuxtLink>
           </div>
         </div>
-        <div class="flex justify-between mt-10 sm:gap-x-10 w-60 mx-4 lg:mx-0">
+
+        <div class="flex justify-between w-60 lg:mx-0">
           <div class="">
             <h3 class="text-sm font-bold">Quick Links</h3>
-            <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+            <div class="flex flex-col gap-2 font-thin mt-6">
               <NuxtLink class="sans text-sm font-normal" to="/">Home</NuxtLink>
               <NuxtLink class="sans text-sm font-normal" to="/aboutus"
                 >About Us</NuxtLink
@@ -131,7 +133,7 @@
           </div>
           <div class="">
             <h3 class="text-sm font-bold">Our Services</h3>
-            <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+            <div class="flex flex-col gap-2 font-thin mt-6">
               <NuxtLink class="sans text-sm font-normal" to="/"
                 >Engineering</NuxtLink
               >
@@ -147,11 +149,12 @@
             </div>
           </div>
         </div>
-        <div class="mt-10">
+
+        <div class="">
           <h3 class="text-sm font-bold">Contact Us</h3>
-          <div class="flex flex-col gap-[1rem] font-thin mt-[2rem]">
+          <div class="flex flex-col gap-2 mt-6">
             <p class="sans text-sm font-normal">
-              17, M.A Oke Street, opposite Diamond Estate, Igando, Lagos
+              17, M.A Oke Street, opposite Diamond Estate, <br /> Igando, Lagos
             </p>
             <p class="sans text-sm font-normal">
               Email:
@@ -165,30 +168,28 @@
                 >+234(0) 908 954 5886
               </a>
             </p>
-            <NuxtLink class="sans text-sm font-normal">Management</NuxtLink>
           </div>
         </div>
       </div>
+      
       <div
-        class="bg-[#191919] py-5 px-10 sm:py-[1.5rem] sm:px-[5rem] gap-3 sm:gap-0 text-[#FFFDFD] text-xs flex flex-col sm:flex-row w-full items-center justify-between"
+        class="bg-[#191919] py-6 w-full lg:px-10 xl:px-0"
       >
-        <div>
-          <p class="text-center">
-            &copy; Copyright 2024 Gasfleet Engineering Limited. All Rights
-            Reserved
-          </p>
-        </div>
-        <div class="flex justify-between gap-x-5">
-          <NuxtLink class="sans font-normal text-xs">Privacy Policy</NuxtLink>
-          <NuxtLink class="sans font-normal text-xs"
-            >Terms and Conditions</NuxtLink
-          >
+        <div class="container mx-auto gap-6 text-[#FFFDFD] text-xs flex flex-col items-center justify-between lg:flex-row">
+          <div>
+            <p class="text-center">
+              &copy; Copyright 2024 Gasfleet Engineering Limited. All Rights
+              Reserved
+            </p>
+          </div>
+          <div class="flex justify-between gap-x-5">
+            <NuxtLink class="sans font-normal text-xs">Privacy Policy</NuxtLink>
+            <NuxtLink class="sans font-normal text-xs"
+              >Terms and Conditions</NuxtLink
+            >
+          </div>
         </div>
       </div>
     </footer>
   </div>
 </template>
-
-<script setup></script>
-
-<style scoped></style>

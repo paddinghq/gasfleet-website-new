@@ -42,10 +42,27 @@ const closeDropdowns = () => {
       class="py-5 container mx-auto hidden justify-between items-center md:px-10 lg:flex"
     >
       <NuxtLink to="/">
-        <NuxtImg src="/colored.png" alt="logo" class="md:w-10" />
+        <div class="flex">
+          <div
+            class="flex items-center border-r-2 border-black w-12 h-10 pr-[6.98px] mr-[6.98px]"
+          >
+            <img
+              src="../public/image/colored.png"
+              alt="colored-logo"
+              class="w-full h-full"
+            />
+          </div>
+          <div class="h-10 w-[59.18px]">
+            <img
+              src="../public/image/Gasfleet-LTD.png"
+              alt="Gasfleet-limited"
+              class="w-full h-full"
+            />
+          </div>
+        </div>
       </NuxtLink>
 
-      <nav class="gap-4 hidden lg:flex">
+      <nav class="gap-6 hidden lg:flex">
         <div class="relative">
           <button
             class="text-base font-semibold bg-white border-none flex gap-[0.3rem] items-center"
@@ -56,7 +73,7 @@ const closeDropdowns = () => {
             "
           >
             <span
-              class="sans text-sm"
+              class="sans text-sm font-regular"
               :class="{ 'text-[#205FAD]': isDropdownOpen1 }"
               >Who we are</span
             >
@@ -128,7 +145,7 @@ const closeDropdowns = () => {
             "
           >
             <span
-              class="sans text-sm"
+              class="sans text-sm font-regular"
               :class="{ 'text-[#205FAD]': isDropdownOpen2 }"
               >What we do</span
             >
@@ -212,7 +229,7 @@ const closeDropdowns = () => {
             isDropdownOpen1 = false;
           "
         >
-          <NuxtLink to="/projects" class="sans text-sm" @click="closeDropdowns"
+          <NuxtLink to="/projects" class="sans text-sm font-regular" @click="closeDropdowns"
             >Projects</NuxtLink
           >
         </button>
@@ -225,14 +242,14 @@ const closeDropdowns = () => {
         >
           <NuxtLink
             to="/sustainability"
-            class="sans text-sm"
+            class="sans text-sm font-regular"
             @click="closeDropdowns"
             >Sustainability</NuxtLink
           >
         </button>
       </nav>
 
-      <div class="hidden gap-[2rem] lg:flex">
+      <div class="hidden gap-6 lg:flex">
         <div class="flex items-center">
           <svg
             width="16"
