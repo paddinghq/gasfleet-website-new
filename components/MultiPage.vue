@@ -118,7 +118,7 @@ onMounted(() => {
       >
         <option disabled :value="selectedHead">{{ selectedHead }}</option>
         <option
-          class="font-medium text-xl oswald text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700"
+          class="font-med ium text-xl oswald text-white cursor-pointer transition-all hover:text-sky-700 active:text-sky-700 focus:text-sky-700"
           :value="Head.name"
           v-for="Head in Heads"
           :key="Head"
