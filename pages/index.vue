@@ -131,7 +131,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 
         <div class="grid gap-6 items-center md:grid-cols-1 lg:grid-cols-2">
           <NuxtLink
-            to="/ecpm"
+            to="/epcm"
             class="bg-gray-100 p-5 rounded-lg hover:bg-gray-200 transition-all"
           >
             <img src="/image/epm.png" alt="emp" />
