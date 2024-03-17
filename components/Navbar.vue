@@ -2,18 +2,35 @@
 import { ref } from "vue";
 const menu = ref("menu-bar.png");
 
-const isMobileMenuOpen = ref(true);
+const isMobileMenuOpen = ref(false);
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
+
+const dropdown = ref(false);
+const dropdown2 = ref(false);
+
+const toggleDropdown = () => {
+  dropdown.value = !dropdown.value;
+};
+
+const toggleDropdown2 = () => {
+  dropdown2.value = !dropdown2.value;
+};
 </script>
 
 <template>
-  <nav class="lg:hidden">
-    <div class="flex justify-between items-center py-2.5 px-6">
+  <nav
+    class="lg:hidden"
+    :class="isMobileMenuOpen ? 'fixed z-[100] h-screen w-screen' : ''"
+  >
+    <div
+      class="bg-white flex justify-between items-center py-2.5 px-6 w-full"
+      :class="isMobileMenuOpen ? 'fixed z-[100] top-0' : ''"
+    >
       <div class="w-6 h-6 md:w-10">
-        <NuxtLink to="/">
+        <NuxtLink to="/" @click="isMobileMenuOpen = false">
           <NuxtImg
             src="/colored.png"
             alt="logo"
@@ -23,7 +40,7 @@ const toggleMobileMenu = () => {
       </div>
       <div class="flex justify-end items-center">
         <div class="flex justify-between gap-2">
-          <div class="flex items-center">
+          <div class="flex items-center" @click="isMobileMenuOpen = false">
             <svg
               width="20"
               height="20"
@@ -52,7 +69,7 @@ const toggleMobileMenu = () => {
     </div>
 
     <div
-      class="bg-white"
+      class="bg-white mt-12"
       :class="
         isMobileMenuOpen
           ? 'absolute w-screen h-screen z-10 opacity-100 px-[1.6rem] py-4 transition-all duration-500'
@@ -60,21 +77,119 @@ const toggleMobileMenu = () => {
       "
     >
       <ul class="flex flex-col space-y-4">
-        <NuxtLink class="border-b pb-2 font-semibold" to=""
-          >Who we are</NuxtLink
-        >
-        <NuxtLink
-          @click="toggleMobileMenu"
-          class="border-b pb-2 font-semibold"
-          to=""
-          >What we do</NuxtLink
-        >
+        <li class="border-b">
+          <NuxtLink
+            @click="toggleDropdown"
+            class="flex cursor-pointer font-semibold"
+            >Who we are</NuxtLink
+          >
+          <div
+            class="flex flex-col overflow-hidden gap-2 mt-4"
+            :class="
+              dropdown
+                ? 'h-40 transition-all duration-300'
+                : 'h-0 transition-all duration-300'
+            "
+          >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/aboutus"
+              >About Us</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/ourbrand"
+              >Brand</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/ourteam"
+              >Our Team</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/aboutus"
+              >Our Mission</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/aboutus"
+              >Our Vision</NuxtLink
+            >
+          </div>
+        </li>
+
+        <li class="border-b">
+          <NuxtLink
+            @click="toggleDropdown2"
+            class="flex cursor-pointer font-semibold"
+            >What we do</NuxtLink
+          >
+          <div
+            class="flex flex-col overflow-hidden gap-2 mt-4"
+            :class="
+              dropdown2
+                ? 'h-72 transition-all duration-300'
+                : 'h-0 transition-all duration-300'
+            "
+          >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/epcm"
+              >Engineering</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/epcm"
+              >Procurement</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/epcm"
+              >Construction</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/epcm"
+              >Managemen</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/power"
+              >Power Distrbution</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/GAS"
+              >Natural Gas Distribution</NuxtLink
+            >
+            <NuxtLink
+              @click="toggleMobileMenu"
+              class="rounded-md p-1 hover:bg-gray-100 transition-all"
+              to="/IDPM"
+              >Infrastructure Development</NuxtLink
+            >
+          </div>
+        </li>
+
         <NuxtLink
           @click="toggleMobileMenu"
           class="border-b pb-2 font-semibold"
           to="/projects"
           >Projects</NuxtLink
         >
+
         <NuxtLink
           @click="toggleMobileMenu"
           class="border-b pb-2 font-semibold"
@@ -84,8 +199,8 @@ const toggleMobileMenu = () => {
       </ul>
 
       <div class="flex flex-row gap-6 mt-40">
-        <NuxtLink to="/"
-          ><svg
+        <NuxtLink to="/" @click="isMobileMenuOpen = false">
+          <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -106,8 +221,8 @@ const toggleMobileMenu = () => {
             />
           </svg>
         </NuxtLink>
-        <NuxtLink to="/"
-          ><svg
+        <NuxtLink to="/" @click="isMobileMenuOpen = false">
+          <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
