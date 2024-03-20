@@ -18,7 +18,9 @@ const items = ref([
     text: "We are committed to providing innovative solutions and exceptional service to our clients in the oil and gas industry. With decades of experience, our team of experts has a deep understanding of the industry and the challenges our clients face.",
   },
 ]);
+
 const currentIndex = ref(0);
+
 let autoSlideInterval = null;
 
 const next = () => {
@@ -26,7 +28,7 @@ const next = () => {
 };
 
 const startAutoSlide = () => {
-  autoSlideInterval = setInterval(next, 40000);
+  autoSlideInterval = setInterval(next, 400000);
 };
 
 const stopAutoSlide = () => {
@@ -39,6 +41,26 @@ const goTo = (index) => {
 
 onMounted(startAutoSlide);
 onBeforeUnmount(() => clearInterval(autoSlideInterval));
+
+const projects = ref([
+  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 1', year: '2023' },
+  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 2', year: '2023' },
+  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 3', year: '2023' },
+  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 4', year: '2023' },
+  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 5', year: '2023' },
+  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 6', year: '2023' }, 
+]);
+
+const projectIndex = ref(0);
+const transformStyle = ref({});
+
+const nextProject = () => {
+  projectIndex.value = (projectIndex.value + 1) % projects.value.length;
+};
+
+const prevProject = () => {
+  projectIndex.value = (projectIndex.value - 1 + projects.value.length) % projects.value.length;
+};
 </script>
 
 <style scoped>
@@ -47,7 +69,23 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 }
 
 .carousel-item {
-  flex: 0 0 auto;
+  flex: 0 0 100%;
+}
+
+.carousel-item:last-child {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-item {
+    margin-right: 1rem;
+    flex: 0 0 calc(50% - 1rem); /* Display two items on tablets */
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
 }
 
 .dot {
@@ -74,7 +112,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
       >
         <div v-for="(item, index) in items" :key="index">
           <div
-            class="carousel-item w-screen h-[684px] lg:h-[600px] xl:h-[684px]"
+            class="carousel-item !mr-0 w-screen h-[684px] lg:h-[600px] xl:h-[684px]"
           >
             <img
               :src="item.image"
@@ -83,7 +121,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
             />
           </div>
           <div
-            class="relative h-[376px] top-[-45.5rem] px-5 sm:pl-16 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent lg:h-[600px] lg:top-[-40rem] xl:h-[684px] xl:top-[-45.5rem]"
+            class="relative h-[376px] top-[-45.5rem] px-6 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent md:px-10 lg:h-[600px] lg:top-[-40rem] xl:h-[684px] xl:top-[-45.5rem]"
           >
             <div class="text-white flex flex-col container mx-auto gap-5">
               <h1
@@ -108,9 +146,9 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
       </div>
     </div>
 
-    <div
-      class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
-    >
+      <div
+        class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
+      >
       <div class="xl:w-[533px]">
         <img
           src="/ourservice.png"
@@ -209,7 +247,71 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
           </button>
         </div>
         <div class="flex flex-col lg:w-[60%]">
-          <div class="flex justify-between gap-6">
+          <div class="carousel-container">
+            <div class="carousel-wrapper flex md:hidden"  :style="{ transform: `translateX(-${projectIndex * 100}%)` }">
+              <div v-for="(project, index) in projects" :key="index" class="carousel-item">
+                <div class="w-full flex flex-col gap-3">
+                  <div class="rounded-xl relative h-[270px] xl:w-[358px]">
+                    <NuxtImg
+                      class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
+                      :src="project.image"
+                      alt="rectangle"
+                    />
+                    <p
+                      class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
+                    >
+                      {{ project.stat }}
+                    </p>
+                  </div>
+                  <div class="flex justify-between font-semibold lg:flex-col">
+                    <p>{{ project.name }}</p>
+                    <span>{{ project.year }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-wrapper hidden md:flex"  :style="{ transform: `translateX(-${projectIndex/2 * 100}%)` }">
+              <div v-for="(project, index) in projects" :key="index" class="carousel-item">
+                <div class="w-full flex flex-col gap-3">
+                  <div class="rounded-xl relative h-[270px] xl:w-[358px]">
+                    <NuxtImg
+                      class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
+                      :src="project.image"
+                      alt="rectangle"
+                    />
+                    <p
+                      class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
+                    >
+                      {{ project.stat }}
+                    </p>
+                  </div>
+                  <div class="flex justify-between font-semibold lg:flex-col">
+                    <p>{{ project.name }}</p>
+                    <span>{{ project.year }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+            <div class="flex justify-between mt-2 items-center">
+              <Icon
+                name="material-symbols:arrow-circle-left-outline"
+                color="black"
+                size="32"
+                class="cursor-pointer"
+                @click="prevProject"
+              />
+              <Icon
+                name="material-symbols:arrow-circle-right-outline"
+                color="black"
+                size="32"
+                class="cursor-pointer"
+                @click="nextProject"
+              />
+            </div>
+          </div>
+          <!-- <div class="flex justify-between gap-6">
             <div class="flex flex-col gap-3">
               <div class="rounded-xl relative h-[270px] xl:w-[358px]">
                 <NuxtImg
@@ -261,7 +363,7 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
               size="32"
               class="cursor-pointer"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

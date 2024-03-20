@@ -39,7 +39,7 @@ const closeDropdowns = () => {
     <Navbar />
 
     <div
-      class="py-5 container mx-auto hidden justify-between items-center md:px-10 lg:flex"
+      class="py-5 container mx-auto hidden justify-between items-center md:px-10 lg:flex xl:px-0"
     >
       <NuxtLink to="/">
         <div class="flex">
