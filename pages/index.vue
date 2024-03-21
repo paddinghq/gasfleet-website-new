@@ -29,7 +29,7 @@ const next = () => {
 };
 
 const startAutoSlide = () => {
-  autoSlideInterval = setInterval(next, 4000);
+  autoSlideInterval = setInterval(next, 400000);
 };
 
 const stopAutoSlide = () => {
@@ -45,12 +45,17 @@ onBeforeUnmount(() => clearInterval(autoSlideInterval));
 
 const projectIndex = ref(0);
 
+const goToProject = (index) => {
+  projectIndex.value = index;
+};
+
 const nextProject = () => {
   projectIndex.value = (projectIndex.value + 1) % projects.length;
 };
 
 const prevProject = () => {
-  projectIndex.value = (projectIndex.value - 1 + projects.length) % projects.length;
+  projectIndex.value =
+    (projectIndex.value - 1 + projects.length) % projects.length;
 };
 </script>
 
@@ -74,19 +79,22 @@ const prevProject = () => {
   }
 }
 
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-}
-
 .dot {
   content: "";
   background: rgb(176, 176, 176);
 }
 
+.project-dot {
+  content: "";
+}
+
 .active {
   background: white;
   width: 2rem;
+}
+
+.activeProject {
+  background: rgb(37 99 235);
 }
 </style>
 
@@ -112,7 +120,7 @@ const prevProject = () => {
             />
           </div>
           <div
-            class="relative h-screen top-[-37rem] px-6 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent md:px-10 lg:h-screen lg:top-[-49rem] xl:h-screen xl:top-[-61.5rem]"
+            class="relative h-screen top-[-44.5rem] px-6 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent md:px-10 lg:h-screen lg:top-[-49rem] xl:h-screen xl:top-[-61.5rem]"
           >
             <div class="text-white flex flex-col container mx-auto gap-5">
               <h1
@@ -137,9 +145,9 @@ const prevProject = () => {
       </div>
     </div>
 
-      <div
-        class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
-      >
+    <div
+      class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
+    >
       <div class="object-cover md:h-[400px] xl:w-[733px] xl:h-full">
         <img
           src="/ourservice.png"
@@ -214,10 +222,10 @@ const prevProject = () => {
       </div>
     </div>
 
-    <div
-      class="bg-gray-100 py-12 px-6 lg:pr-0 xl:px-0"
-    >
-      <div class="container mx-auto flex flex-col justify-center gap-6 lg:flex-row xl:justify-between">
+    <div class="bg-gray-100 py-12 px-6 lg:pr-0 xl:px-0">
+      <div
+        class="container mx-auto flex flex-col justify-center gap-6 lg:flex-row xl:justify-between"
+      >
         <div
           class="bg-[#205FAD] rounded-lg flex gap-4 flex-col py-6 px-3 text-white items-center lg:w-[30%] lg:gap-6 lg:py-12 lg:px-6 lg:items-start"
         >
@@ -238,10 +246,20 @@ const prevProject = () => {
           </button>
         </div>
         <div class="flex flex-col lg:w-[65%]">
-          <div class="carousel-container">
-            <div class="carousel-wrapper flex md:hidden"  :style="{ transform: `translateX(-${projectIndex * 100}%)` }">
-              <div v-for="(project) in projects" :key="project.id" class="carousel-item">
-                <NuxtLink :to="`/projects/${project.id}`" class="w-full flex flex-col gap-3">
+          <div class="relative overflow-hidden">
+            <div
+              class="carousel-wrapper flex md:hidden"
+              :style="{ transform: `translateX(-${projectIndex * 100}%)` }"
+            >
+              <div
+                v-for="project in projects"
+                :key="project.id"
+                class="carousel-item"
+              >
+                <NuxtLink
+                  :to="`/projects/${project.id}`"
+                  class="w-full flex flex-col gap-3"
+                >
                   <div class="rounded-xl relative h-[270px]">
                     <NuxtImg
                       class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
@@ -251,23 +269,39 @@ const prevProject = () => {
                     <p
                       class="absolute left-[20px] top-[20px] text-white p-1 rounded-lg"
                       :class="
-                        project.status === 'ONGOING' ? 'bg-yellow-700' : 'bg-green-800'
+                        project.status === 'ONGOING'
+                          ? 'bg-yellow-700'
+                          : 'bg-green-800'
                       "
                     >
                       {{ project.status }}
                     </p>
                   </div>
                   <div class="flex justify-between font-semibold lg:flex-col">
-                    <p>{{ project.name }} <span>{{ project.id }}</span></p> 
+                    <p>
+                      {{ project.name }} <span>{{ project.id }}</span>
+                    </p>
                     <span>{{ project.year }}</span>
                   </div>
                 </NuxtLink>
               </div>
             </div>
 
-            <div class="carousel-wrapper hidden md:flex"  :style="{ transform: `translateX(-${projectIndex/2 * 100}%)` }">
-              <div v-for="(project) in projects" :key="project.id" class="carousel-item">
-                <NuxtLink :to="`/projects/${project.id}`" class="w-full flex flex-col gap-3">
+            <div
+              class="carousel-wrapper hidden md:flex"
+              :style="{
+                transform: `translateX(-${(projectIndex / 2) * 100}%)`,
+              }"
+            >
+              <div
+                v-for="project in projects"
+                :key="project.id"
+                class="carousel-item"
+              >
+                <NuxtLink
+                  :to="`/projects/${project.id}`"
+                  class="w-full flex flex-col gap-3"
+                >
                   <div class="rounded-xl relative h-[270px] xl:w-[400px]">
                     <NuxtImg
                       class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
@@ -277,20 +311,24 @@ const prevProject = () => {
                     <p
                       class="absolute left-[20px] top-[20px] text-white p-1 rounded-lg"
                       :class="
-                        project.status === 'ONGOING' ? 'bg-yellow-700' : 'bg-green-800'
+                        project.status === 'ONGOING'
+                          ? 'bg-yellow-700'
+                          : 'bg-green-800'
                       "
                     >
                       {{ project.status }}
                     </p>
                   </div>
                   <div class="flex justify-between font-semibold lg:flex-col">
-                    <p>{{ project.name }} <span>{{ project.id }}</span></p> 
+                    <p>
+                      {{ project.name }} <span>{{ project.id }}</span>
+                    </p>
                     <span>{{ project.year }}</span>
                   </div>
                 </NuxtLink>
               </div>
             </div>
-              
+
             <div class="flex justify-between mt-2 items-center">
               <Icon
                 name="material-symbols:arrow-circle-left-outline"
@@ -299,6 +337,19 @@ const prevProject = () => {
                 class="cursor-pointer"
                 @click="prevProject"
               />
+              
+              <div class="flex justify-between w-48">
+                <div class="w-full flex justify-between">
+                  <span
+                    v-for="(project, index) in projects"
+                    :key="index"
+                    @click="goToProject(index)"
+                    :class="{ activeProject: projectIndex === index }"
+                    class="project-dot cursor-pointer h-2 w-2 rounded-full bg-blue-200"
+                  ></span>
+                </div>
+              </div>
+
               <Icon
                 name="material-symbols:arrow-circle-right-outline"
                 color="black"
@@ -308,66 +359,15 @@ const prevProject = () => {
               />
             </div>
           </div>
-          <!-- <div class="flex justify-between gap-6">
-            <div class="flex flex-col gap-3">
-              <div class="rounded-xl relative h-[270px] xl:w-[358px]">
-                <NuxtImg
-                  class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
-                  src="project.jpeg"
-                  alt="rectangle"
-                />
-                <p
-                  class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
-                >
-                  ONGOING
-                </p>
-              </div>
-              <div class="flex justify-between font-semibold lg:flex-col">
-                <p>Abuja Gas Plant Expansion</p>
-                <span>2023</span>
-              </div>
-            </div>
-            <div class="hidden flex-col gap-3 md:flex">
-              <div class="rounded-xl relative h-[270px] xl:w-[358px]">
-                <NuxtImg
-                  class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
-                  src="project.jpeg"
-                  alt="rectangle"
-                />
-                <p
-                  class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
-                >
-                  ONGOING
-                </p>
-              </div>
-              <div class="flex justify-between font-semibold lg:flex-col">
-                <p>Abuja Gas Plant Expansion</p>
-                <span>2023</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex justify-between mt-2 items-center">
-            <Icon
-              name="material-symbols:arrow-circle-left-outline"
-              color="black"
-              size="32"
-              class="cursor-pointer"
-            />
-            <Icon
-              name="material-symbols:arrow-circle-right-outline"
-              color="black"
-              size="32"
-              class="cursor-pointer"
-            />
-          </div> -->
         </div>
       </div>
     </div>
 
-    <div class="text-center bg-white my-16 mx-10 gap-10 p-5">
+    <div
+      class="text-center bg-white my-12 mx-6 gap-12 md:mx-10 lg:my-16 xl:mx-0"
+    >
       <h2
-        class="text-[#205FAD] text-xl font-medium md:2xl lg:text-3xl 2xl:text-5xl"
+        class="text-[#205FAD] text-2xl font-semibold lg:text-4xl xl:text-[40px] xl:font-bold"
       >
         Our Client
       </h2>
