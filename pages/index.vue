@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { projects } from "../store/projects";
 
 const items = ref([
   {
@@ -28,7 +29,7 @@ const next = () => {
 };
 
 const startAutoSlide = () => {
-  autoSlideInterval = setInterval(next, 400000);
+  autoSlideInterval = setInterval(next, 4000);
 };
 
 const stopAutoSlide = () => {
@@ -42,24 +43,14 @@ const goTo = (index) => {
 onMounted(startAutoSlide);
 onBeforeUnmount(() => clearInterval(autoSlideInterval));
 
-const projects = ref([
-  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 1', year: '2023' },
-  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 2', year: '2023' },
-  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 3', year: '2023' },
-  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 4', year: '2023' },
-  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 5', year: '2023' },
-  { image: "project.jpeg", stat: 'ONGOING', name: 'Abuja Gas Plant Expansion 6', year: '2023' }, 
-]);
-
 const projectIndex = ref(0);
-const transformStyle = ref({});
 
 const nextProject = () => {
-  projectIndex.value = (projectIndex.value + 1) % projects.value.length;
+  projectIndex.value = (projectIndex.value + 1) % projects.length;
 };
 
 const prevProject = () => {
-  projectIndex.value = (projectIndex.value - 1 + projects.value.length) % projects.value.length;
+  projectIndex.value = (projectIndex.value - 1 + projects.length) % projects.length;
 };
 </script>
 
@@ -102,7 +93,7 @@ const prevProject = () => {
 <template>
   <div>
     <div
-      class="overflow-hidden h-[376px] relative lg:h-[600px] xl:h-[684px]"
+      class="overflow-hidden h-screen relative lg:h-screen xl:h-screen"
       @mouseenter="stopAutoSlide"
       @mouseleave="startAutoSlide"
     >
@@ -112,7 +103,7 @@ const prevProject = () => {
       >
         <div v-for="(item, index) in items" :key="index">
           <div
-            class="carousel-item !mr-0 w-screen h-[684px] lg:h-[600px] xl:h-[684px]"
+            class="carousel-item !mr-0 w-screen h-screen lg:h-screen xl:h-screen"
           >
             <img
               :src="item.image"
@@ -121,7 +112,7 @@ const prevProject = () => {
             />
           </div>
           <div
-            class="relative h-[376px] top-[-45.5rem] px-6 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent md:px-10 lg:h-[600px] lg:top-[-40rem] xl:h-[684px] xl:top-[-45.5rem]"
+            class="relative h-screen top-[-37rem] px-6 flex items-center bg-gradient-to-r from-black/80 via-black/60 to-transparent md:px-10 lg:h-screen lg:top-[-49rem] xl:h-screen xl:top-[-61.5rem]"
           >
             <div class="text-white flex flex-col container mx-auto gap-5">
               <h1
@@ -149,7 +140,7 @@ const prevProject = () => {
       <div
         class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
       >
-      <div class="xl:w-[533px]">
+      <div class="object-cover md:h-[400px] xl:w-[733px] xl:h-full">
         <img
           src="/ourservice.png"
           alt="service"
@@ -224,9 +215,9 @@ const prevProject = () => {
     </div>
 
     <div
-      class="bg-gray-100 px-6 py-12 lg:px-10 lg:py-12 xl:py-20"
+      class="bg-gray-100 py-12 px-6 lg:pr-0 xl:px-0"
     >
-      <div class="container mx-auto flex flex-col justify-center gap-6 lg:flex-row">
+      <div class="container mx-auto flex flex-col justify-center gap-6 lg:flex-row xl:justify-between">
         <div
           class="bg-[#205FAD] rounded-lg flex gap-4 flex-col py-6 px-3 text-white items-center lg:w-[30%] lg:gap-6 lg:py-12 lg:px-6 lg:items-start"
         >
@@ -246,51 +237,57 @@ const prevProject = () => {
             <NuxtLink to="projects">See all Projects</NuxtLink>
           </button>
         </div>
-        <div class="flex flex-col lg:w-[60%]">
+        <div class="flex flex-col lg:w-[65%]">
           <div class="carousel-container">
             <div class="carousel-wrapper flex md:hidden"  :style="{ transform: `translateX(-${projectIndex * 100}%)` }">
-              <div v-for="(project, index) in projects" :key="index" class="carousel-item">
-                <div class="w-full flex flex-col gap-3">
-                  <div class="rounded-xl relative h-[270px] xl:w-[358px]">
+              <div v-for="(project) in projects" :key="project.id" class="carousel-item">
+                <NuxtLink :to="`/projects/${project.id}`" class="w-full flex flex-col gap-3">
+                  <div class="rounded-xl relative h-[270px]">
                     <NuxtImg
                       class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
-                      :src="project.image"
-                      alt="rectangle"
+                      :src="project.NuxtImg"
+                      :alt="project.alt"
                     />
                     <p
-                      class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
+                      class="absolute left-[20px] top-[20px] text-white p-1 rounded-lg"
+                      :class="
+                        project.status === 'ONGOING' ? 'bg-yellow-700' : 'bg-green-800'
+                      "
                     >
-                      {{ project.stat }}
+                      {{ project.status }}
                     </p>
                   </div>
                   <div class="flex justify-between font-semibold lg:flex-col">
-                    <p>{{ project.name }}</p>
+                    <p>{{ project.name }} <span>{{ project.id }}</span></p> 
                     <span>{{ project.year }}</span>
                   </div>
-                </div>
+                </NuxtLink>
               </div>
             </div>
 
             <div class="carousel-wrapper hidden md:flex"  :style="{ transform: `translateX(-${projectIndex/2 * 100}%)` }">
-              <div v-for="(project, index) in projects" :key="index" class="carousel-item">
-                <div class="w-full flex flex-col gap-3">
-                  <div class="rounded-xl relative h-[270px] xl:w-[358px]">
+              <div v-for="(project) in projects" :key="project.id" class="carousel-item">
+                <NuxtLink :to="`/projects/${project.id}`" class="w-full flex flex-col gap-3">
+                  <div class="rounded-xl relative h-[270px] xl:w-[400px]">
                     <NuxtImg
                       class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
-                      :src="project.image"
-                      alt="rectangle"
+                      :src="project.NuxtImg"
+                      :alt="project.alt"
                     />
                     <p
-                      class="absolute left-[20px] top-[20px] text-white bg-yellow-700 p-1 rounded-lg"
+                      class="absolute left-[20px] top-[20px] text-white p-1 rounded-lg"
+                      :class="
+                        project.status === 'ONGOING' ? 'bg-yellow-700' : 'bg-green-800'
+                      "
                     >
-                      {{ project.stat }}
+                      {{ project.status }}
                     </p>
                   </div>
                   <div class="flex justify-between font-semibold lg:flex-col">
-                    <p>{{ project.name }}</p>
+                    <p>{{ project.name }} <span>{{ project.id }}</span></p> 
                     <span>{{ project.year }}</span>
                   </div>
-                </div>
+                </NuxtLink>
               </div>
             </div>
               
