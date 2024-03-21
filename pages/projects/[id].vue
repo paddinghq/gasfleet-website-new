@@ -26,7 +26,47 @@ const Heros = ref([
     text: "We are committed to providing our clients with comprehensive and innovative solutions to the complex challenges facing the oil and gas industry.",
   },
 ]);
+
+const projectIndex = ref(0);
+
+const nextProjectIndex = ref(0);
+
+const nextProject = () => {
+  nextProjectIndex.value = (nextProjectIndex.value + 1) % projects.length;
+};
+
+const prevProject = () => {
+  projectIndex.value =
+    (projectIndex.value - 1 + projects.length) % projects.length;
+};
 </script>
+
+<style scoped>
+.carousel-wrapper {
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+/* @media screen and (min-width: 1024px) {
+  .carousel-item {
+    margin-right: 1rem;
+    flex: 0 0 calc(50% - 1rem);
+  }
+} */
+
+/* @media screen and (min-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 50%;
+  }
+} */
+
+.carousel-item:last-child {
+  margin-right: 0;
+}
+</style>
 
 <template>
   <div>
@@ -218,7 +258,7 @@ const Heros = ref([
                 </p>
               </div>
             </li>
-            <li class="text-[#333333] ">
+            <li class="text-[#333333]">
               <div class="flex items-center gap-2 my-2 lg:gap-3">
                 <img src="/checkmark.png" alt="" class="w-[20px] h-[20px]" />
                 <p>
@@ -272,71 +312,129 @@ const Heros = ref([
           >
             See Other Projects
           </h1>
-          <div class="grid grid-cols-1 w-full gap-4 lg:grid-cols-2 lg:gap-8">
-            <div class="rounded-xl relative h-[320px] lg:w-[456px] xl:w-full">
-              <NuxtImg
-                class="h-full w-full filter brightness-[0.6] relative object-cover rounded-xl"
-                src="project.jpeg"
-                alt="rectangle"
-              />
-              <div class="w-289 h-34 absolute bottom-0 p-4 text-white">
-                <h4
-                  class="font-oswald font-bold text-white text-[28px] leading-8 tracking-wider"
+
+          <div class="flex">
+            <div class="relative overflow-hidden">
+              <div
+                class="carousel-wrapper flex"
+                :style="{
+                  transform: `translateX(-${projectIndex * 100}%)`,
+                }"
+              >
+                <div
+                  v-for="project in projects"
+                  :key="project.id"
+                  class="carousel-item"
                 >
-                  {{ project.name }} {{ project.id }}
-                </h4>
-                <div class="mt-4">
-                  <p
-                    class="sans text-white font-semibold leading-8 tracking-wider"
+                  <NuxtLink
+                    :to="`/projects/${project.id}`"
+                    class="w-full flex flex-col gap-3"
                   >
-                    <Icon
-                      name="material-symbols:arrow-circle-left-outline"
-                      color="white"
-                      size="32"
-                      class="cursor-pointer"
-                    />
-                    View previous project
-                  </p>
+                    <div
+                      class="rounded-xl relative h-[320px] lg:w-[456px] xl:w-full"
+                    >
+                      <NuxtImg
+                        class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
+                        :src="project.NuxtImg"
+                        :alt="project.alt"
+                      />
+                      <p
+                        class="absolute left-[15px] top-[20px] text-white p-1 rounded-lg"
+                        :class="
+                          project.status === 'ONGOING'
+                            ? 'bg-yellow-700'
+                            : 'bg-green-800'
+                        "
+                      >
+                        {{ project.status }}
+                      </p>
+                    </div>
+                  </NuxtLink>
+                  <div class="w-full h-34 absolute bottom-0 p-4 text-white">
+                    <h4
+                      class="font-oswald font-bold text-white text-2xl leading-8 tracking-wider"
+                    >
+                      {{ project.name }} {{ project.id }}
+                    </h4>
+                    <div class="mt-4">
+                      <p
+                        class="sans text-white font-semibold leading-8 tracking-wider"
+                        @click="prevProject"
+                      >
+                        <Icon
+                          name="material-symbols:arrow-circle-left-outline"
+                          color="white"
+                          size="32"
+                          class="cursor-pointer"
+                        />
+                        View previous project
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p
-                class="absolute left-[20px] top-[20px] text-center text-white bg-[#005E24] w-[100px] p-1 rounded-lg"
-              >
-                COMPLETED
-              </p>
             </div>
 
-            <div class="rounded-xl relative h-[320px] lg:w-[456px] xl:w-full">
-              <NuxtImg
-                class="h-full w-full filter brightness-[0.6] relative object-cover rounded-xl"
-                src="project.jpeg"
-                alt="rectangle"
-              />
-              <div class="w-full text-end h-34 absolute bottom-0 p-4 text-white">
-                <h4
-                  class="font-oswald font-bold text-white text-[28px] leading-8 tracking-wider"
+            <div class="relative overflow-hidden">
+              <div
+                class="carousel-wrapper flex mt-4 lg:mt-0"
+                :style="{
+                  transform: `translateX(-${nextProjectIndex * 100}%)`,
+                }"
+              >
+                <div
+                  v-for="project in projects"
+                  :key="project.id"
+                  class="carousel-item"
                 >
-                  {{ project.name }} {{ project.id }}
-                </h4>
-                <div class="mt-4">
-                  <p
-                    class="sans text-white font-semibold leading-8 tracking-wider"
+                  <NuxtLink
+                    :to="`/projects/${project.id}`"
+                    class="w-full flex flex-col gap-3"
                   >
-                    View previous project
-                    <Icon
-                      name="material-symbols:arrow-circle-right-outline"
-                      color="white"
-                      size="32"
-                      class="cursor-pointer"
-                    />
-                  </p>
+                    <div
+                      class="rounded-xl relative h-[320px] lg:w-[456px] xl:w-full"
+                    >
+                      <NuxtImg
+                        class="h-full w-full filter brightness-[0.9] relative object-cover rounded-xl"
+                        :src="project.NuxtImg"
+                        :alt="project.alt"
+                      />
+                      <p
+                        class="absolute left-[15px] top-[20px] text-white p-1 rounded-lg"
+                        :class="
+                          project.status === 'ONGOING'
+                            ? 'bg-yellow-700'
+                            : 'bg-green-800'
+                        "
+                      >
+                        {{ project.status }}
+                      </p>
+                    </div>
+                  </NuxtLink>
+                  <div class="w-full h-34 absolute bottom-0 p-4 text-white">
+                    <h4
+                      class="font-oswald font-bold text-white text-2xl leading-8 tracking-wider"
+                    >
+                      {{ project.name }} {{ project.id }}
+                    </h4>
+                    <div class="mt-4">
+                      <p
+                        class="sans text-white font-semibold leading-8 tracking-wider"
+                        @click="nextProject"
+                      >
+                        View next project
+
+                        <Icon
+                          name="material-symbols:arrow-circle-right-outline"
+                          color="white"
+                          size="32"
+                          class="cursor-pointer"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p
-                class="absolute left-[20px] top-[20px] text-white bg-[#005E24] w-[100px] p-1 rounded-lg"
-              >
-                COMPLETED
-              </p>
             </div>
           </div>
         </div>
