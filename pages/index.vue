@@ -148,7 +148,7 @@ const prevProject = () => {
     <div
       class="flex bg-white flex-col-reverse xl:flex-row 2xl:container 2xl:mx-auto"
     >
-      <div class="object-cover md:h-[400px] xl:w-[733px] xl:h-full">
+      <div class="object-cover md:h-[400px] xl:w-[733px] xl:h-[680px]">
         <img
           src="/ourservice.png"
           alt="service"
